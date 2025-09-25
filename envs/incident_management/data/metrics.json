@@ -1,0 +1,26 @@
+{
+  "1": {
+    "metric_id": "1",
+    "incident_id": "3",
+    "metric_type": "time_to_comm",
+    "value_minutes": 2117,
+    "target_minutes": null,
+    "computed_at": "2025-08-20T08:55:04.965933+00:00"
+  },
+  "2": {
+    "metric_id": "2",
+    "incident_id": "3",
+    "metric_type": "MTTD",
+    "value_minutes": 3420,
+    "target_minutes": 934,
+    "computed_at": "2025-07-03T08:55:04.965953+00:00"
+  },
+  "3": {
+    "metric_id": "3",
+    "incident_id": "4",
+    "metric_type": "time_to_comm",
+    "value_minutes": 1228,
+    "target_minutes": null,
+    "computed_at": "2025-08-25T08:55:04.965972+00:00"
+  }
+}

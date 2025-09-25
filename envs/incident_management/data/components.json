@@ -1,0 +1,137 @@
+{
+  "1": {
+    "component_id": "1",
+    "name": "GreenYellow-Error",
+    "client_id": "1",
+    "service_tier": "gold",
+    "status": "active",
+    "created_at": "2025-06-14T08:55:04.962074+00:00",
+    "updated_at": "2025-07-09T13:18:47.962074+00:00"
+  },
+  "2": {
+    "component_id": "2",
+    "name": "DarkTurquoise-Suscipit",
+    "client_id": "1",
+    "service_tier": "bronze",
+    "status": "active",
+    "created_at": "2025-04-29T08:55:04.962125+00:00",
+    "updated_at": "2025-05-10T12:40:09.962125+00:00"
+  },
+  "3": {
+    "component_id": "3",
+    "name": "Red-Rem",
+    "client_id": "2",
+    "service_tier": "gold",
+    "status": "active",
+    "created_at": "2025-08-15T08:55:04.962164+00:00",
+    "updated_at": "2025-08-27T05:28:45.962164+00:00"
+  },
+  "4": {
+    "component_id": "4",
+    "name": "DeepPink-Facilis",
+    "client_id": "2",
+    "service_tier": "gold",
+    "status": "active",
+    "created_at": "2025-07-01T08:55:04.962196+00:00",
+    "updated_at": "2025-07-07T13:49:38.962196+00:00"
+  },
+  "5": {
+    "component_id": "5",
+    "name": "Teal-Accusamus",
+    "client_id": "3",
+    "service_tier": "gold",
+    "status": "active",
+    "created_at": "2025-06-30T08:55:04.962228+00:00",
+    "updated_at": "2025-07-10T22:29:07.962228+00:00"
+  },
+  "6": {
+    "component_id": "6",
+    "name": "DarkGray-Reprehenderit",
+    "client_id": "3",
+    "service_tier": "bronze",
+    "status": "active",
+    "created_at": "2025-04-29T08:55:04.962257+00:00",
+    "updated_at": "2025-05-06T15:57:08.962257+00:00"
+  },
+  "7": {
+    "component_id": "7",
+    "name": "PowderBlue-Eius",
+    "client_id": "4",
+    "service_tier": "bronze",
+    "status": "retired",
+    "created_at": "2025-04-12T08:55:04.962287+00:00",
+    "updated_at": "2025-04-23T18:15:28.962287+00:00"
+  },
+  "8": {
+    "component_id": "8",
+    "name": "DarkTurquoise-Doloribus",
+    "client_id": "5",
+    "service_tier": "silver",
+    "status": "active",
+    "created_at": "2025-05-18T08:55:04.962321+00:00",
+    "updated_at": "2025-05-19T14:15:56.962321+00:00"
+  },
+  "9": {
+    "component_id": "9",
+    "name": "LawnGreen-Ipsam",
+    "client_id": "5",
+    "service_tier": "bronze",
+    "status": "active",
+    "created_at": "2025-06-01T08:55:04.962349+00:00",
+    "updated_at": "2025-06-23T12:21:04.962349+00:00"
+  },
+  "10": {
+    "component_id": "10",
+    "name": "LightGoldenRodYellow-Vero",
+    "client_id": "5",
+    "service_tier": "none",
+    "status": "active",
+    "created_at": "2025-07-08T08:55:04.962376+00:00",
+    "updated_at": "2025-07-09T01:39:31.962376+00:00"
+  },
+  "11": {
+    "component_id": "11",
+    "name": "DarkSlateBlue-Sunt",
+    "client_id": "6",
+    "service_tier": "silver",
+    "status": "active",
+    "created_at": "2025-04-02T08:55:04.962405+00:00",
+    "updated_at": "2025-04-19T11:12:37.962405+00:00"
+  },
+  "12": {
+    "component_id": "12",
+    "name": "MediumAquaMarine-Maiores",
+    "client_id": "6",
+    "service_tier": "bronze",
+    "status": "active",
+    "created_at": "2025-06-25T08:55:04.962432+00:00",
+    "updated_at": "2025-07-19T03:55:48.962432+00:00"
+  },
+  "13": {
+    "component_id": "13",
+    "name": "DeepPink-Nam",
+    "client_id": "6",
+    "service_tier": "silver",
+    "status": "active",
+    "created_at": "2025-07-01T08:55:04.962468+00:00",
+    "updated_at": "2025-07-01T12:19:11.962468+00:00"
+  },
+  "14": {
+    "component_id": "14",
+    "name": "Khaki-Sed",
+    "client_id": "7",
+    "service_tier": "silver",
+    "status": "active",
+    "created_at": "2025-07-04T08:55:04.962497+00:00",
+    "updated_at": "2025-07-05T02:51:06.962497+00:00"
+  },
+  "15": {
+    "component_id": "15",
+    "name": "RoyalBlue-Ea",
+    "client_id": "7",
+    "service_tier": "silver",
+    "status": "active",
+    "created_at": "2025-09-13T08:55:04.962525+00:00",
+    "updated_at": "2025-09-14T16:07:35.962525+00:00"
+  }
+}

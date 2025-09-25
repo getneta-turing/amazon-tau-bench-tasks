@@ -1,0 +1,58 @@
+{
+  "1": {
+    "client_id": "1",
+    "legal_name": "Ramos-Case Ltd.",
+    "status": "active",
+    "primary_contact_email": "nicholas.rose580@company.io",
+    "created_at": "2025-04-13T08:55:04.952422+00:00",
+    "updated_at": "2025-04-15T17:03:46.952422+00:00"
+  },
+  "2": {
+    "client_id": "2",
+    "legal_name": "Lloyd, Bryant and Vaughn Ltd.",
+    "status": "active",
+    "primary_contact_email": "kristine.pena692@yahoo.com",
+    "created_at": "2025-05-28T08:55:04.953615+00:00",
+    "updated_at": "2025-06-16T04:08:40.953615+00:00"
+  },
+  "3": {
+    "client_id": "3",
+    "legal_name": "Johnson, Rivera and Carr Ltd.",
+    "status": "active",
+    "primary_contact_email": "darrell.schmidt376@gmail.com",
+    "created_at": "2025-07-27T08:55:04.955131+00:00",
+    "updated_at": "2025-08-09T19:32:10.955131+00:00"
+  },
+  "4": {
+    "client_id": "4",
+    "legal_name": "Martin-Ramirez Ltd.",
+    "status": "active",
+    "primary_contact_email": "isaac.grant576@outlook.com",
+    "created_at": "2025-05-02T08:55:04.956684+00:00",
+    "updated_at": "2025-05-22T07:07:17.956684+00:00"
+  },
+  "5": {
+    "client_id": "5",
+    "legal_name": "Poole, Gardner and Elliott Ltd.",
+    "status": "active",
+    "primary_contact_email": "april.escobar419@yahoo.com",
+    "created_at": "2025-04-07T08:55:04.957786+00:00",
+    "updated_at": "2025-04-09T21:17:16.957786+00:00"
+  },
+  "6": {
+    "client_id": "6",
+    "legal_name": "Kelley, Lawrence and Spencer Ltd.",
+    "status": "active",
+    "primary_contact_email": "thomas.petersen100@gmail.com",
+    "created_at": "2025-06-01T08:55:04.959212+00:00",
+    "updated_at": "2025-06-01T12:09:57.959212+00:00"
+  },
+  "7": {
+    "client_id": "7",
+    "legal_name": "Sanchez, Chapman and Wagner Ltd.",
+    "status": "active",
+    "primary_contact_email": "melissa.harris269@gmail.com",
+    "created_at": "2025-05-04T08:55:04.960636+00:00",
+    "updated_at": "2025-05-16T07:18:21.960636+00:00"
+  }
+}

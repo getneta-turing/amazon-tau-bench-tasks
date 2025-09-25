@@ -1,0 +1,86 @@
+{
+  "1": {
+    "user_group_id": "1",
+    "user_id": "2",
+    "group_id": "2",
+    "role_in_group": "lead",
+    "assigned_at": "2025-09-03T10:17:14.946323+00:00"
+  },
+  "2": {
+    "user_group_id": "2",
+    "user_id": "2",
+    "group_id": "1",
+    "role_in_group": "member",
+    "assigned_at": "2025-09-01T06:50:21.946323+00:00"
+  },
+  "3": {
+    "user_group_id": "3",
+    "user_id": "4",
+    "group_id": "3",
+    "role_in_group": "lead",
+    "assigned_at": "2025-09-11T14:42:43.947879+00:00"
+  },
+  "4": {
+    "user_group_id": "4",
+    "user_id": "5",
+    "group_id": "3",
+    "role_in_group": "member",
+    "assigned_at": "2025-04-29T11:20:40.948442+00:00"
+  },
+  "5": {
+    "user_group_id": "5",
+    "user_id": "6",
+    "group_id": "4",
+    "role_in_group": "lead",
+    "assigned_at": "2025-08-31T20:37:46.948993+00:00"
+  },
+  "6": {
+    "user_group_id": "6",
+    "user_id": "7",
+    "group_id": "4",
+    "role_in_group": "member",
+    "assigned_at": "2025-05-11T09:44:19.949515+00:00"
+  },
+  "7": {
+    "user_group_id": "7",
+    "user_id": "7",
+    "group_id": "2",
+    "role_in_group": "member",
+    "assigned_at": "2025-05-09T09:53:27.949515+00:00"
+  },
+  "8": {
+    "user_group_id": "8",
+    "user_id": "8",
+    "group_id": "1",
+    "role_in_group": "member",
+    "assigned_at": "2025-06-27T10:14:34.950030+00:00"
+  },
+  "9": {
+    "user_group_id": "9",
+    "user_id": "9",
+    "group_id": "2",
+    "role_in_group": "member",
+    "assigned_at": "2025-07-07T11:32:38.950543+00:00"
+  },
+  "10": {
+    "user_group_id": "10",
+    "user_id": "9",
+    "group_id": "4",
+    "role_in_group": "member",
+    "assigned_at": "2025-07-06T23:44:11.950543+00:00"
+  },
+  "11": {
+    "user_group_id": "11",
+    "user_id": "10",
+    "group_id": "3",
+    "role_in_group": "member",
+    "assigned_at": "2025-04-24T17:39:05.951052+00:00"
+  },
+  "12": {
+    "user_group_id": "12",
+    "user_id": "11",
+    "group_id": "1",
+    "role_in_group": "lead",
+    "assigned_at": "2025-06-23T23:04:21.951555+00:00"
+  }
+}

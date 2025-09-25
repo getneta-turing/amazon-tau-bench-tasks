@@ -1,0 +1,82 @@
+{
+  "1": {
+    "workaround_id": "1",
+    "incident_id": "1",
+    "implementing_user_id": "7",
+    "description": "",
+    "effectiveness": "effective",
+    "status": "active",
+    "created_at": "2025-04-14T08:55:04.964703+00:00",
+    "updated_at": "2025-04-16T11:04:42.964703+00:00"
+  },
+  "2": {
+    "workaround_id": "2",
+    "incident_id": "1",
+    "implementing_user_id": "12",
+    "description": "",
+    "effectiveness": "effective",
+    "status": "active",
+    "created_at": "2025-04-08T08:55:04.964728+00:00",
+    "updated_at": "2025-04-10T13:18:13.964728+00:00"
+  },
+  "3": {
+    "workaround_id": "3",
+    "incident_id": "4",
+    "implementing_user_id": "4",
+    "description": "",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "created_at": "2025-07-11T08:55:04.964749+00:00",
+    "updated_at": "2025-07-14T07:48:47.964749+00:00"
+  },
+  "4": {
+    "workaround_id": "4",
+    "incident_id": "4",
+    "implementing_user_id": "3",
+    "description": "",
+    "effectiveness": "effective",
+    "status": "active",
+    "created_at": "2025-08-03T08:55:04.964765+00:00",
+    "updated_at": "2025-08-14T22:52:08.964765+00:00"
+  },
+  "5": {
+    "workaround_id": "5",
+    "incident_id": "5",
+    "implementing_user_id": "6",
+    "description": "",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "created_at": "2025-08-05T08:55:04.964782+00:00",
+    "updated_at": "2025-08-11T04:00:22.964782+00:00"
+  },
+  "6": {
+    "workaround_id": "6",
+    "incident_id": "6",
+    "implementing_user_id": "11",
+    "description": "",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "created_at": "2025-05-14T08:55:04.964799+00:00",
+    "updated_at": "2025-05-24T17:16:00.964799+00:00"
+  },
+  "7": {
+    "workaround_id": "7",
+    "incident_id": "7",
+    "implementing_user_id": "5",
+    "description": "",
+    "effectiveness": "effective",
+    "status": "active",
+    "created_at": "2025-04-27T08:55:04.964820+00:00",
+    "updated_at": "2025-04-28T01:40:36.964820+00:00"
+  },
+  "8": {
+    "workaround_id": "8",
+    "incident_id": "9",
+    "implementing_user_id": "3",
+    "description": "",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "created_at": "2025-04-30T08:55:04.964840+00:00",
+    "updated_at": "2025-05-08T03:29:34.964840+00:00"
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "1": {
+    "group_id": "1",
+    "name": "Change CAB",
+    "group_type": "service_desk",
+    "created_at": "2025-08-10T08:55:04.952096+00:00",
+    "updated_at": "2025-08-18T17:42:57.952096+00:00"
+  },
+  "2": {
+    "group_id": "2",
+    "name": "Network SRE",
+    "group_type": "communications",
+    "created_at": "2025-06-27T08:55:04.952121+00:00",
+    "updated_at": "2025-06-29T00:41:18.952121+00:00"
+  },
+  "3": {
+    "group_id": "3",
+    "name": "Service Desk A",
+    "group_type": "service_desk",
+    "created_at": "2025-06-14T08:55:04.952142+00:00",
+    "updated_at": "2025-06-16T18:25:05.952142+00:00"
+  },
+  "4": {
+    "group_id": "4",
+    "name": "Compliance Team",
+    "group_type": "service_desk",
+    "created_at": "2025-04-14T08:55:04.952160+00:00",
+    "updated_at": "2025-04-25T07:32:36.952160+00:00"
+  }
+}
