@@ -1,0 +1,58 @@
+{
+  "1": {
+    "incident_workaround_id": "1",
+    "incident_id": "5",
+    "summary": "",
+    "applied_by_user_id": "8",
+    "applied_at": "2024-08-18T17:20:57.270114",
+    "active": true
+  },
+  "2": {
+    "incident_workaround_id": "2",
+    "incident_id": "7",
+    "summary": "",
+    "applied_by_user_id": "14",
+    "applied_at": "2024-08-22T02:47:55.270114",
+    "active": true
+  },
+  "3": {
+    "incident_workaround_id": "3",
+    "incident_id": "3",
+    "summary": "",
+    "applied_by_user_id": "14",
+    "applied_at": "2025-08-14T19:23:09.270114",
+    "active": false
+  },
+  "4": {
+    "incident_workaround_id": "4",
+    "incident_id": "17",
+    "summary": "",
+    "applied_by_user_id": "8",
+    "applied_at": "2023-10-05T08:40:00.270114",
+    "active": false
+  },
+  "5": {
+    "incident_workaround_id": "5",
+    "incident_id": "15",
+    "summary": "",
+    "applied_by_user_id": "13",
+    "applied_at": "2024-07-29T16:38:01.270114",
+    "active": true
+  },
+  "6": {
+    "incident_workaround_id": "6",
+    "incident_id": "6",
+    "summary": "",
+    "applied_by_user_id": "8",
+    "applied_at": "2024-03-19T05:04:17.270114",
+    "active": false
+  },
+  "7": {
+    "incident_workaround_id": "7",
+    "incident_id": "9",
+    "summary": "",
+    "applied_by_user_id": "8",
+    "applied_at": "2023-10-23T07:49:03.270114",
+    "active": false
+  }
+}

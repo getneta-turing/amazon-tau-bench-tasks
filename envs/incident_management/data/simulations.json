@@ -1,0 +1,52 @@
+{
+  "1": {
+    "simulation_id": "1",
+    "scenario_name": "Drill In",
+    "simulated_by_user_id": "3",
+    "scope": "Visualize Holistic Interfaces Service",
+    "started_at": "2025-04-28T10:39:54.270114",
+    "ended_at": "2025-05-04T23:46:44.270114",
+    "outcome": "completed",
+    "notes": ""
+  },
+  "2": {
+    "simulation_id": "2",
+    "scenario_name": "Drill Tempore",
+    "simulated_by_user_id": "3",
+    "scope": "Matrix Customized Eyeballs Service",
+    "started_at": "2025-05-22T16:19:23.270114",
+    "ended_at": "2025-05-28T12:40:17.270114",
+    "outcome": "completed",
+    "notes": ""
+  },
+  "3": {
+    "simulation_id": "3",
+    "scenario_name": "Drill Quae",
+    "simulated_by_user_id": "3",
+    "scope": "Architect Extensible E-Tailers Service",
+    "started_at": "2025-07-02T17:20:17.270114",
+    "ended_at": "2025-07-03T15:16:14.270114",
+    "outcome": "failed",
+    "notes": ""
+  },
+  "4": {
+    "simulation_id": "4",
+    "scenario_name": "Drill Sequi",
+    "simulated_by_user_id": "3",
+    "scope": "Enhance Robust Vortals Service",
+    "started_at": "2025-09-14T00:12:38.270114",
+    "ended_at": "2025-09-20T18:32:22.270114",
+    "outcome": "failed",
+    "notes": ""
+  },
+  "5": {
+    "simulation_id": "5",
+    "scenario_name": "Drill Eius",
+    "simulated_by_user_id": "3",
+    "scope": "Extend Sexy Applications Service",
+    "started_at": "2025-04-05T11:37:17.270114",
+    "ended_at": "2025-04-08T16:39:01.270114",
+    "outcome": "failed",
+    "notes": ""
+  }
+}

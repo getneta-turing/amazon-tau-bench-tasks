@@ -1,0 +1,146 @@
+{
+  "1": {
+    "assignment_id": "1",
+    "incident_id": "1",
+    "assigned_team": "devops",
+    "responder_user_id": null,
+    "assigned_at": "2025-04-24T21:18:45.270114",
+    "unassigned_at": null
+  },
+  "2": {
+    "assignment_id": "2",
+    "incident_id": "2",
+    "assigned_team": "devops",
+    "responder_user_id": "5",
+    "assigned_at": "2024-04-25T00:22:29.270114",
+    "unassigned_at": null
+  },
+  "3": {
+    "assignment_id": "3",
+    "incident_id": "3",
+    "assigned_team": "l1",
+    "responder_user_id": "1",
+    "assigned_at": "2025-07-28T16:05:38.270114",
+    "unassigned_at": null
+  },
+  "4": {
+    "assignment_id": "4",
+    "incident_id": "4",
+    "assigned_team": "l3",
+    "responder_user_id": null,
+    "assigned_at": "2024-09-22T07:25:48.270114",
+    "unassigned_at": null
+  },
+  "5": {
+    "assignment_id": "5",
+    "incident_id": "5",
+    "assigned_team": "facilities",
+    "responder_user_id": "5",
+    "assigned_at": "2024-03-21T22:21:07.270114",
+    "unassigned_at": null
+  },
+  "6": {
+    "assignment_id": "6",
+    "incident_id": "6",
+    "assigned_team": "l3",
+    "responder_user_id": "6",
+    "assigned_at": "2025-08-02T03:27:45.270114",
+    "unassigned_at": null
+  },
+  "7": {
+    "assignment_id": "7",
+    "incident_id": "7",
+    "assigned_team": "facilities",
+    "responder_user_id": "12",
+    "assigned_at": "2024-08-06T05:18:03.270114",
+    "unassigned_at": null
+  },
+  "8": {
+    "assignment_id": "8",
+    "incident_id": "8",
+    "assigned_team": "change_mgmt",
+    "responder_user_id": "3",
+    "assigned_at": "2025-08-11T23:56:12.270114",
+    "unassigned_at": null
+  },
+  "9": {
+    "assignment_id": "9",
+    "incident_id": "9",
+    "assigned_team": "l2",
+    "responder_user_id": "6",
+    "assigned_at": "2023-10-30T11:55:18.270114",
+    "unassigned_at": null
+  },
+  "10": {
+    "assignment_id": "10",
+    "incident_id": "10",
+    "assigned_team": "devops",
+    "responder_user_id": "7",
+    "assigned_at": "2024-09-03T17:43:38.270114",
+    "unassigned_at": null
+  },
+  "11": {
+    "assignment_id": "11",
+    "incident_id": "11",
+    "assigned_team": "l1",
+    "responder_user_id": "14",
+    "assigned_at": "2024-02-25T10:04:51.270114",
+    "unassigned_at": null
+  },
+  "12": {
+    "assignment_id": "12",
+    "incident_id": "12",
+    "assigned_team": "service_desk",
+    "responder_user_id": "1",
+    "assigned_at": "2024-11-07T14:46:24.270114",
+    "unassigned_at": null
+  },
+  "13": {
+    "assignment_id": "13",
+    "incident_id": "13",
+    "assigned_team": "l3",
+    "responder_user_id": "3",
+    "assigned_at": "2025-02-27T17:02:37.270114",
+    "unassigned_at": null
+  },
+  "14": {
+    "assignment_id": "14",
+    "incident_id": "14",
+    "assigned_team": "change_mgmt",
+    "responder_user_id": "3",
+    "assigned_at": "2025-04-11T19:56:51.270114",
+    "unassigned_at": null
+  },
+  "15": {
+    "assignment_id": "15",
+    "incident_id": "15",
+    "assigned_team": "facilities",
+    "responder_user_id": "7",
+    "assigned_at": "2024-08-08T08:02:33.270114",
+    "unassigned_at": null
+  },
+  "16": {
+    "assignment_id": "16",
+    "incident_id": "16",
+    "assigned_team": "facilities",
+    "responder_user_id": "5",
+    "assigned_at": "2024-08-22T08:26:36.270114",
+    "unassigned_at": null
+  },
+  "17": {
+    "assignment_id": "17",
+    "incident_id": "17",
+    "assigned_team": "devops",
+    "responder_user_id": "4",
+    "assigned_at": "2025-01-20T20:47:07.270114",
+    "unassigned_at": null
+  },
+  "18": {
+    "assignment_id": "18",
+    "incident_id": "18",
+    "assigned_team": "facilities",
+    "responder_user_id": "1",
+    "assigned_at": "2024-05-23T19:23:43.270114",
+    "unassigned_at": null
+  }
+}
