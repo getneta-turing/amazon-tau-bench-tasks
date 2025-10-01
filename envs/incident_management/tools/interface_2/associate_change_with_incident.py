@@ -1,6 +1,6 @@
 
 import json
-from typing import Any, Dict, Optional, List
+from typing import Any, Dict
 from tau_bench.envs.tool import Tool
 
 def _generate_id(table: Dict[str, Any]) -> str:
@@ -13,7 +13,7 @@ def _generate_id(table: Dict[str, Any]) -> str:
         return str(len(table) + 1)
 
 TIMESTAMP = "2025-10-01T00:00:00"
-class AssociateChangeToIncident(Tool):
+class AssociateChangeWithIncident(Tool):
     @staticmethod
     def invoke(
         data: Dict[str, Any],
@@ -52,7 +52,7 @@ class AssociateChangeToIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"Associate_change_to_incident",
+                "name":"associate_change_with_incident",
                 "description":"Record the change coordination reference and approvals related to the incident.",
                 "parameters":{
                     "type":"object",

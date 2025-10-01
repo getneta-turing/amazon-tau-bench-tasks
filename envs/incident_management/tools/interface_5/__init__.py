@@ -1,11 +1,11 @@
 from .add_incident_update import AddIncidentUpdate
 from .add_problem_workaround import AddProblemWorkaround
-from .apply_incident_kb_update import ApplyIncidentKBUpdate
+from .apply_incident_kb_update import ApplyIncidentKbUpdate
 from .attach_change_to_incident import AttachChangeToIncident
 from .close_out_incident import CloseOutIncident
 from .close_problem import CloseProblem
 from .conclude_incident_resolution import ConcludeIncidentResolution
-from .create_pir_record import CreatePIRRecord
+from .create_pir_record import CreatePirRecord
 from .create_problem import CreateProblem
 from .derive_incident_from_monitoring import DeriveIncidentFromMonitoring
 from .designate_incident import DesignateIncident
@@ -31,12 +31,12 @@ from .update_problem import UpdateProblem
 ALL_TOOLS_INTERFACE_5 = [
     AddIncidentUpdate,
     AddProblemWorkaround,
-    ApplyIncidentKBUpdate,
+    ApplyIncidentKbUpdate,
     AttachChangeToIncident,
     CloseOutIncident,
     CloseProblem,
     ConcludeIncidentResolution,
-    CreatePIRRecord,
+    CreatePirRecord,
     CreateProblem,
     DeriveIncidentFromMonitoring,
     DesignateIncident,

@@ -13,7 +13,7 @@ def _generate_id(table: Dict[str, Any]) -> str:
         return str(len(table) + 1)
 
 TIMESTAMP = "2025-10-01T00:00:00"
-class ApplyIncidentKBUpdate(Tool):
+class ApplyIncidentKbUpdate(Tool):
     @staticmethod
     def invoke(
         data: Dict[str, Any],

@@ -26,7 +26,7 @@ class LabelIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"categorize_incident",
+                "name":"label_incident",
                 "description":"Set incident category (and optional subcategory).",
                 "parameters":{
                     "type":"object",

@@ -12,7 +12,7 @@ def _generate_id(table: Dict[str, Any]) -> str:
         return str(len(table) + 1)
 
 TIMESTAMP = "2025-10-01T00:00:00"
-class upgradeIncident(Tool):
+class UpgradeIncident(Tool):
     @staticmethod
     def invoke(
         data: Dict[str, Any],
@@ -55,7 +55,7 @@ class upgradeIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"escalate_incident",
+                "name":"upgrade_incident",
                 "description":"Escalate incident ownership and set status to escalated.",
                 "parameters":{
                     "type":"object",

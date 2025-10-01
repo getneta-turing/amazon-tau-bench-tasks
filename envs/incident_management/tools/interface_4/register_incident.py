@@ -50,7 +50,7 @@ class RegisterIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_incident",
+                "name":"register_incident",
                 "description":"Incident identification; start a new incident in open status.",
                 "parameters":{
                     "type":"object",

@@ -25,7 +25,7 @@ class SetIncidentPriority(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"prioritize_incident",
+                "name":"set_incident_priority",
                 "description":"Set incident priority with justification.",
                 "parameters":{
                     "type":"object",

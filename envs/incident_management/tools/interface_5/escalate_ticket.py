@@ -55,7 +55,7 @@ class EscalateTicket(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"escalate_incident",
+                "name":"escalate_ticket",
                 "description":"Escalate incident ownership and set status to escalated.",
                 "parameters":{
                     "type":"object",

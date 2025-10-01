@@ -45,7 +45,7 @@ class SearchEntities(Tool):
         return {
             "type": "function",
             "function": {
-                "name": "entities_lookup",
+                "name": "search_entities",
                 "description": "Find/verify incidents, users, services/systems, problems, vendor engagements, changes, KB entries, or monitoring events before taking another action.",
                 "parameters": {
                     "type": "object",

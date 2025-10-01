@@ -1,5 +1,5 @@
 from .allocate_incident import AllocateIncident
-from .associate_change_with_incident import AssociateChangeToIncident
+from .associate_change_with_incident import AssociateChangeWithIncident
 from .associate_incident_with_problem import AssociateIncidentWithProblem
 from .classify_incident import ClassifyIncident
 from .document_diagnosis_workaround import DocumentDiagnosisWorkaround
@@ -19,7 +19,7 @@ from .log_tool_usage import LogToolUsage
 from .modify_problem import ModifyProblem
 from .open_incident import OpenIncident
 from .open_problem import OpenProblem
-from .publish_incident_kb_update import publishIncidentKBUpdate
+from .publish_incident_kb_update import PublishIncidentKbUpdate
 from .query_entities import QueryEntities
 from .rank_incident import RankIncident
 from .record_incident_communication import RecordIncidentCommunication
@@ -31,7 +31,7 @@ from .remedy_problem import RemedyProblem
 ALL_TOOLS_INTERFACE_2 = [
     OpenIncident,
     AllocateIncident,
-    AssociateChangeToIncident,
+    AssociateChangeWithIncident,
     AssociateIncidentWithProblem,
     ClassifyIncident,
     DocumentDiagnosisWorkaround,
@@ -50,7 +50,7 @@ ALL_TOOLS_INTERFACE_2 = [
     LogToolUsage,
     ModifyProblem,
     OpenProblem,
-    publishIncidentKBUpdate,
+    PublishIncidentKbUpdate,
     QueryEntities,
     RankIncident,
     RecordIncidentCommunication,

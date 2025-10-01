@@ -35,7 +35,7 @@ class ConcludeProblem(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"conculde_problem",
+                "name":"conclude_problem",
                 "description":"Close a resolved problem.",
                 "parameters":{
                     "type":"object",

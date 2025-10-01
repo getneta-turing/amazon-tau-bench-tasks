@@ -8,13 +8,13 @@ from .fix_problem import FixProblem
 from .get_incident_communications import GetIncidentCommunications
 from .initiate_problem import InitiateProblem
 from .label_incident import LabelIncident
-from .open_postmortem import OpenPostMortem
+from .open_postmortem import OpenPostmortem
 from .open_vendor_case import OpenVendorCase
 from .raise_incident_from_event import RaiseIncidentFromEvent
 from .read_incident import ReadIncident
 from .read_problem import ReadProblem
 from .record_incident_drill import RecordIncidentDrill
-from .record_incident_kb_update import RecordIncidentKBUpdate
+from .record_incident_kb_update import RecordIncidentKbUpdate
 from .record_tool_activity import RecordToolActivity
 from .register_incident import RegisterIncident
 from .register_problem_workaround import RegisterProblemWorkaround
@@ -25,7 +25,7 @@ from .route_incident import RouteIncident
 from .search_incidents import SearchIncidents
 from .terminate_incident import TerminateIncident
 from .terminate_problem import TerminateProblem
-from .upgrade_incident import upgradeIncident
+from .upgrade_incident import UpgradeIncident
 from .write_audit_record import WriteAuditRecord
 
 ALL_TOOLS_INTERFACE_4 = [
@@ -39,13 +39,13 @@ ALL_TOOLS_INTERFACE_4 = [
     GetIncidentCommunications,
     InitiateProblem,
     LabelIncident,
-    OpenPostMortem,
+    OpenPostmortem,
     OpenVendorCase,
     RaiseIncidentFromEvent,
     ReadIncident,
     ReadProblem,
     RecordIncidentDrill,
-    RecordIncidentKBUpdate,
+    RecordIncidentKbUpdate,
     RecordToolActivity,
     RegisterIncident,
     RegisterProblemWorkaround,
@@ -56,6 +56,6 @@ ALL_TOOLS_INTERFACE_4 = [
     SearchIncidents,
     TerminateIncident,
     TerminateProblem,
-    upgradeIncident,
+    UpgradeIncident,
     WriteAuditRecord,
 ]

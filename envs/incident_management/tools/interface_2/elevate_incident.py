@@ -55,7 +55,7 @@ class ElevateIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"escalate_incident",
+                "name":"elevate_incident",
                 "description":"Escalate incident ownership and set status to escalated.",
                 "parameters":{
                     "type":"object",

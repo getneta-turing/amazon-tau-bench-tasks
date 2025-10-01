@@ -69,7 +69,7 @@ class DesignateIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"assign_incident",
+                "name":"designate_incident",
                 "description":"Acknowledge and assign the incident to the correct tier; move to in_progress.",
                 "parameters":{
                     "type":"object",

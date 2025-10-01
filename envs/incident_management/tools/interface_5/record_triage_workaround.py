@@ -63,7 +63,7 @@ class RecordTriageWorkaround(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"record_diagnosis_workaround",
+                "name":"record_triage_workaround",
                 "description":"Record diagnostic steps and optionally a temporary workaround.",
                 "parameters":{
                     "type":"object",

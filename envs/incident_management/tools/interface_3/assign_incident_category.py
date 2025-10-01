@@ -26,7 +26,7 @@ class AssignIncidentCategory(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"categorize_incident",
+                "name":"assign_incident_category",
                 "description":"Set incident category (and optional subcategory).",
                 "parameters":{
                     "type":"object",

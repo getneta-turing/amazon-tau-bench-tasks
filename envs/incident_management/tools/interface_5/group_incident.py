@@ -26,7 +26,7 @@ class GroupIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"categorize_incident",
+                "name":"group_incident",
                 "description":"Set incident category (and optional subcategory).",
                 "parameters":{
                     "type":"object",

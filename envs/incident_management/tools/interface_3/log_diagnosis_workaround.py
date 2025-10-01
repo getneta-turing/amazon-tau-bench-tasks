@@ -63,7 +63,7 @@ class LogDiagnosisWorkaround(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"record_diagnosis_workaround",
+                "name":"log_diagnosis_workaround",
                 "description":"Record diagnostic steps and optionally a temporary workaround.",
                 "parameters":{
                     "type":"object",

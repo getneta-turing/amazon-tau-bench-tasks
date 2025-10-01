@@ -25,7 +25,7 @@ class RankIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"prioritize_incident",
+                "name":"rank_incident",
                 "description":"Set incident priority with justification.",
                 "parameters":{
                     "type":"object",

@@ -69,7 +69,7 @@ class RecordIncidentDetails(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"log_incident_details",
+                "name":"record_incident_details",
                 "description":"Capture/append core details (description, impact, affected service) to an existing incident.",
                 "parameters":{
                     "type":"object",

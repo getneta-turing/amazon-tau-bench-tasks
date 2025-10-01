@@ -50,7 +50,7 @@ class InitiateIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_incident",
+                "name":"initiate_incident",
                 "description":"Incident identification; start a new incident in open status.",
                 "parameters":{
                     "type":"object",

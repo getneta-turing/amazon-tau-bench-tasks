@@ -34,7 +34,7 @@ class ReviseProblem(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"revice_problem",
+                "name":"revise_problem",
                 "description":"Update mutable fields on a problem (title, description).",
                 "parameters":{
                     "type":"object",
