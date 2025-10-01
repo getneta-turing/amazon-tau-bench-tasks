@@ -4,22 +4,7 @@ import json
 from typing import Any, Dict, Optional, List
 from tau_bench.envs.tool import Tool
 
-def _generate_id(table: Dict[str, Any]) -> str:
-    if not table:
-        return "1"
-    try:
-        return str(max(int(k) for k in table.keys()) + 1)
-    except Exception:
-        # Fallback in case keys are not numeric strings
-        return str(len(table) + 1)
-
 TIMESTAMP = "2025-10-01T00:00:00"
-
-
-
-
-
-
 
 class GetProblem(Tool):
     @staticmethod

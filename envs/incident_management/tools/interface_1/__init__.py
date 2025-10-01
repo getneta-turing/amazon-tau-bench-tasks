@@ -1,4 +1,3 @@
-
 from .create_incident import CreateIncident
 from .add_incident_communication import AddIncidentCommunication
 from .assign_incident import AssignIncident

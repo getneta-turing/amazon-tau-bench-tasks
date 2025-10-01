@@ -28,7 +28,7 @@ class EscalateIncident(Tool):
         if str(escalated_by_user_id) not in users:
             return json.dumps({"error": f"User {escalated_by_user_id} not found"})
 
-        allowed = ["l2","l3","incident_manager","change_mgmt","facilities","devops","L2","L3"]
+        allowed = ["l2","l3","incident_manager","change_mgmt","facilities","devops"]
         if escalated_to not in allowed:
             return json.dumps({"error": "Invalid escalated_to. Allowed: L2, L3, incident_manager, change_mgmt, facilities, devops"})
 
