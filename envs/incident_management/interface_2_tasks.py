@@ -13,7 +13,7 @@ changes, communications, monitoring events, simulations, tool usage, and audits.
 # - Enum values follow the Incident Management Policy & SOPs.
 
 
-# 1) entities_lookup — read
+# 1) entities_lookup
 QUERY_ENTITIES_TASK = {
     "task_id": "if1_task_001",
     "description": "Lookup a user by email for verification",
@@ -26,7 +26,7 @@ QUERY_ENTITIES_TASK = {
     "expected_result": "Zero, one, or many users matching the email"
 }
 
-# 2) create_incident — create
+# 2) create_incident
 OPEN_INCIDENT_TASK = {
     "task_id": "if1_task_002",
     "description": "Create a new incident reported by a user",
@@ -39,7 +39,7 @@ OPEN_INCIDENT_TASK = {
     "expected_result": "{\"incident_id\": <str>, \"status\": \"open\", \"success\": true}"
 }
 
-# 3) log_incident_details — update
+# 3) log_incident_details
 RECORD_INCIDENT_DETAILS_TASK = {
     "task_id": "if1_task_003",
     "description": "Append core details to an existing incident",
@@ -55,7 +55,7 @@ RECORD_INCIDENT_DETAILS_TASK = {
     "expected_result": "Updated incident summary reflecting new details"
 }
 
-# 4) categorize_incident — update
+# 4) categorize_incident
 CLASSIFY_INCIDENT_TASK = {
     "task_id": "if1_task_004",
     "description": "Categorize an incident as a software issue",
@@ -68,7 +68,7 @@ CLASSIFY_INCIDENT_TASK = {
     "expected_result": "{\"incident_id\": \"2002\", \"category\": \"software\", \"success\": true}"
 }
 
-# 5) prioritize_incident — update
+# 5) prioritize_incident
 RANK_INCIDENT_TASK = {
     "task_id": "if1_task_005",
     "description": "Set incident priority to high with justification",
@@ -81,7 +81,7 @@ RANK_INCIDENT_TASK = {
     "expected_result": "{\"incident_id\": \"2003\", \"priority\": \"high\", \"success\": true}"
 }
 
-# 6) assign_incident — update + create (communication)
+# 6) assign_incident
 ALLOCATE_INCIDENT_TASK = {
     "task_id": "if1_task_006",
     "description": "Assign the incident to L2 and acknowledge",
@@ -94,7 +94,7 @@ ALLOCATE_INCIDENT_TASK = {
     },
     "expected_result": "{\"incident_id\": \"2004\", \"status\": \"in_progress\", \"assigned_team\": \"L2\", \"success\": true}"
 }
-# 7) record_diagnosis_workaround — update
+# 7) record_diagnosis_workaround
 DOCUMENT_DIAGNOSIS_WORKAROUND_TASK = {
     "task_id": "if1_task_007",
     "description": "Record diagnostic steps and temporary workaround",
@@ -109,7 +109,7 @@ DOCUMENT_DIAGNOSIS_WORKAROUND_TASK = {
     "expected_result": "Incident updated with diagnosis and workaround details"
 }
 
-# 8) escalate_incident — update
+# 8) escalate_incident
 ELEVATE_INCIDENT_TASK = {
     "task_id": "if1_task_008",
     "description": "Escalate incident to L3 specialists",
@@ -123,7 +123,7 @@ ELEVATE_INCIDENT_TASK = {
     "expected_result": "{\"incident_id\": \"2006\", \"status\": \"escalated\", \"escalated_to\": \"L3\", \"success\": true}"
 }
 
-# 9) create_vendor_engagement — create/update
+# 9) create_vendor_engagement
 INITIATE_VENDOR_ENGAGEMENT_TASK = {
     "task_id": "if1_task_009",
     "description": "Engage vendor via portal and mark incident pending_vendor",
@@ -137,7 +137,7 @@ INITIATE_VENDOR_ENGAGEMENT_TASK = {
     },
     "expected_result": "{\"incident_id\": \"2007\", \"vendor_engagement_id\": <str>, \"status\": \"pending_vendor\", \"success\": true}"
 }
-# 10) link_change_to_incident — update
+# 10) link_change_to_incident
 ASSOCIATE_CHANGE_TO_INCIDENT_TASK = {
     "task_id": "if1_task_010",
     "description": "Record a change coordination reference for the incident",
@@ -151,7 +151,7 @@ ASSOCIATE_CHANGE_TO_INCIDENT_TASK = {
     "expected_result": "{\"incident_id\": \"2008\", \"change_link_id\": <str>, \"success\": true}"
 }
 
-# 11) resolve_incident — update
+# 11) resolve_incident
 REMEDY_INCIDENT_TASK = {
     "task_id": "if1_task_011",
     "description": "Resolve the incident after permanent fix",
@@ -165,7 +165,7 @@ REMEDY_INCIDENT_TASK = {
     "expected_result": "{\"incident_id\": \"2009\", \"status\": \"resolved\", \"success\": true}"
 }
 
-# 12) add_incident_communication — create
+# 12) add_incident_communication
 RECORD_INCIDENT_COMMUNICATION_TASK = {
     "task_id": "if1_task_012",
     "description": "Post a stakeholder update on incident progress",
@@ -179,7 +179,7 @@ RECORD_INCIDENT_COMMUNICATION_TASK = {
     "expected_result": "{\"communication_id\": <str>, \"incident_id\": \"2010\", \"success\": true}"
 }
 
-# 13) close_incident — update
+# 13) close_incident
 FINALIZE_INCIDENT_TASK = {
     "task_id": "if1_task_013",
     "description": "Close a resolved incident with closure notes",
@@ -193,7 +193,7 @@ FINALIZE_INCIDENT_TASK = {
     "expected_result": "{\"incident_id\": \"2011\", \"status\": \"closed\", \"success\": true}"
 }
 
-# 14) create_post_incident_review — create
+# 14) create_post_incident_review
 INITIATE_POST_INCIDENT_REVIEW_TASK = {
     "task_id": "if1_task_014",
     "description": "Create a PIR for a high-priority incident",
@@ -206,7 +206,7 @@ INITIATE_POST_INCIDENT_REVIEW_TASK = {
     "expected_result": "{\"review_id\": <str>, \"incident_id\": \"2012\", \"success\": true}"
 }
 
-# 15) update_knowledge_base_from_incident — create/update
+# 15) update_knowledge_base_from_incident
 PUBLISH_INCIDENT_KB_UPDATE_TASK = {
     "task_id": "if1_task_015",
     "description": "Publish KB update with resolution and preventive actions",
@@ -219,7 +219,7 @@ PUBLISH_INCIDENT_KB_UPDATE_TASK = {
     "expected_result": "{\"kb_entry_id\": <str>, \"linked_incident_id\": \"2013\", \"success\": true}"
 }
 
-# 16) create_incident_from_monitoring_event — create
+# 16) create_incident_from_monitoring_event.
 GENERATE_INCIDENT_FROM_EVENT_TASK = {
     "task_id": "if1_task_016",
     "description": "Create an incident from an existing monitoring event",
@@ -231,7 +231,7 @@ GENERATE_INCIDENT_FROM_EVENT_TASK = {
     },
     "expected_result": "{\"incident_id\": <str>, \"source\": \"monitoring\", \"status\": \"open\", \"success\": true}"
 }
-# 17) record_tool_usage — create
+# 17) record_tool_usage
 LOG_TOOL_USAGE_TASK = {
     "task_id": "if1_task_017",
     "description": "Log the use of an AIOps correlation run on an incident",
@@ -245,7 +245,7 @@ LOG_TOOL_USAGE_TASK = {
     "expected_result": "{\"tool_use_id\": <str>, \"incident_id\": \"2014\", \"success\": true}"
 }
 
-# 18) record_incident_simulation — create
+# 18) record_incident_simulation
 LOG_INCIDENT_SIMULATION_TASK = {
     "task_id": "if1_task_018",
     "description": "Record a simulated incident drill for the core email service",
@@ -258,7 +258,7 @@ LOG_INCIDENT_SIMULATION_TASK = {
     "expected_result": "{\"simulation_id\": <str>, \"success\": true}"
 }
 
-# 19) problem_create — create
+# 19) problem_create
 OPEN_PROBLEM_TASK = {
     "task_id": "if1_task_019",
     "description": "Create a problem for recurring MX queue backlogs",
@@ -273,7 +273,7 @@ OPEN_PROBLEM_TASK = {
     "expected_result": "{\"problem_id\": <str>, \"status\": \"open\", \"success\": true}"
 }
 
-# 20) problem_update — update
+# 20) problem_update
 MODIFY_PROBLEM_TASK = {
     "task_id": "if1_task_020",
     "description": "Update a problem with refined scope and assignee",
@@ -291,7 +291,7 @@ MODIFY_PROBLEM_TASK = {
     "expected_result": "{\"problem_id\": \"P-3001\", \"success\": true}"
 }
 
-# 21) problem_link_incident — update
+# 21) problem_link_incident
 ASSOCIATE_INCIDENT_WITH_PROBLEM = {
     "task_id": "if1_task_021",
     "description": "Link an incident to an existing problem",
@@ -304,7 +304,7 @@ ASSOCIATE_INCIDENT_WITH_PROBLEM = {
     "expected_result": "{\"problem_id\": \"P-3001\", \"incident_id\": \"2015\", \"success\": true}"
 }
 
-# 22) problem_add_workaround — update
+# 22) problem_add_workaround
 RECORD_PROBLEM_WORKAROUND_TASK = {
     "task_id": "if1_task_022",
     "description": "Add a workaround to the problem and publish to KB",
@@ -317,7 +317,7 @@ RECORD_PROBLEM_WORKAROUND_TASK = {
     "expected_result": "{\"problem_id\": \"P-3002\", \"status\": \"workaround_available\", \"kb_link_id\": <str>, \"success\": true}"
 }
 
-# 23) problem_resolve — update
+# 23) problem_resolve
 REMEDY_PROBLEM_TASK = {
     "task_id": "if1_task_023",
     "description": "Resolve the problem with a validated permanent fix",
@@ -331,7 +331,7 @@ REMEDY_PROBLEM_TASK = {
     "expected_result": "{\"problem_id\": \"P-3003\", \"status\": \"resolved\", \"success\": true}"
 }
 
-# 24) problem_close — update
+# 24) problem_close
 FINALIZE_PROBLEM_TASK = {
     "task_id": "if1_task_024",
     "description": "Close a resolved problem after stability window",
@@ -344,7 +344,7 @@ FINALIZE_PROBLEM_TASK = {
     "expected_result": "{\"problem_id\": \"P-3003\", \"status\": \"closed\", \"success\": true}"
 }
 
-# 25) audit_log_action — create
+# 25) audit_log_action
 LOG_AUDIT_ACTION_TASK = {
     "task_id": "if1_task_025",
     "description": "Write an audit entry for an update action on an incident",
@@ -359,7 +359,7 @@ LOG_AUDIT_ACTION_TASK = {
     "expected_result": "{\"audit_id\": <str>, \"success\": true}"
 }
 
-# 26) get_incident — read
+# 26) get_incident
 FETCH_INCIDENT_TASK = {
     "task_id": "if1_task_026",
     "description": "Read a single incident by ID",
@@ -369,7 +369,7 @@ FETCH_INCIDENT_TASK = {
     },
     "expected_result": "Incident object including status, priority, category, assignments"
 }
-# 27) list_incidents — read
+# 27) list_incidents
 ENUMERATE_INCIDENTS_TASK = {
     "task_id": "if1_task_027",
     "description": "List open high-priority software incidents for dashboards",
@@ -385,7 +385,7 @@ ENUMERATE_INCIDENTS_TASK = {
     "expected_result": "Array of incident summaries matching the filters"
 }
 
-# 28) get_problem — read
+# 28) get_problem
 FETCH_PROBLEM_TASK = {
     "task_id": "if1_task_028",
     "description": "Fetch a problem by ID with linked incidents",
@@ -396,7 +396,7 @@ FETCH_PROBLEM_TASK = {
     "expected_result": "Problem object with status and related links"
 }
 
-# 29) list_communications — read
+# 29) list_communications
 FETCH_INCIDENT_COMMUNICATION_TASK = {
     "task_id": "if1_task_029",
     "description": "Retrieve all communications for an incident",
@@ -408,13 +408,12 @@ FETCH_INCIDENT_COMMUNICATION_TASK = {
 }
 
 
-# All tasks for Interface 1
 INTERFACE_1_TASKS = [
     QUERY_ENTITIES_TASK,
     OPEN_INCIDENT_TASK,
     RECORD_INCIDENT_DETAILS_TASK,
     CLASSIFY_INCIDENT_TASK,
-    RANK_INCIDENT_TASK.
+    RANK_INCIDENT_TASK,
     ALLOCATE_INCIDENT_TASK,
     DOCUMENT_DIAGNOSIS_WORKAROUND_TASK,
     ELEVATE_INCIDENT_TASK,
