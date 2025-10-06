@@ -1,0 +1,702 @@
+You are given API documentation containing multiple APIs, it can contain one ore more fields like these:
+
+* **API Name** 
+* **Signature** 
+* **Returns** 
+* A category: either **Get APIs** or **Set APIs**
+
+Your task is to produce a YAML file in the following structure:
+
+```yaml
+interface_x:
+  set:
+    - <list of all Set API names from the provided documentation>
+  get:
+    - <list of all Get API names from the provided documentation>
+```
+interface_x can be interface_1 to interface_5 depending on the API documentation.
+
+**Rules:**
+
+1. If the API name given to you says "AddDevice" you have to use "add_device"
+2. Group all APIs under `set` if they are in the **Set APIs** section.
+3. Group all APIs under `get` if they are in the **Get APIs** section.
+4. Keep the YAML indentation exactly 2 spaces per level.
+5. The output should be **pure YAML only**, without explanations or extra text.
+6. Output should be enclosed in code block i,e within ```yaml ```
+
+**Example:**
+
+If given:
+
+Get APIs
+
+ get_address
+ get_commands
+
+Set APIs
+
+acknowledge_or_resolve_alert
+
+Then the output should be:
+
+```yaml
+interface_1:
+  set:
+    - acknowledge_or_resolve_alert
+  get:
+    - get_address
+    - get_commands
+```
+
+
+# Incident Management Policy Actions Analysis
+
+## Create / Register
+
+### 1) discover_entities  *(type: get/search)*
+
+**Purpose:** Search for and verify entities before other SOPs.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `entity_type`: str — one of `client|user|vendor|product|component|subscription|sla|incident|workaround|rca|escalation|change_request|rollback_request|metric|incident_report|kb_article|post_incident_review|event_record`
+* `filters`: Dict[str, Any] = None — only known filters for the entity
+* `requester_id`: str — user performing discovery
+  **Returns:** JSON array of matching entities (empty array allowed)
+
+---
+
+### 2) create_event_record  *(type: create)*
+
+**Purpose:** Store a user-provided alert/event into the internal DB.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `source`: str — `alert_log|incident_portal_submission|internal_tool` (required)
+* `payload_summary`: str — concise summary (required)
+* `severity_hint`: str = None — `P1|P2|P3|P4`
+* `recorded_by_id`: str = None — user who provided/loaded the event
+  **Returns:** JSON: `{"event_id": str, "success": True}`
+
+---
+
+### 3) correlate_events_once  *(type: create)*
+
+**Purpose:** One-time correlation of provided/queried events in the current interaction.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `event_ids`: List[str] — events to correlate (required)
+* `correlation_key`: str — rule/key used (required)
+* `link_incident_id`: str = None — optional existing incident to link
+  **Returns:** JSON array of `{correlation_id, event_id, incident_id?}`
+
+---
+
+### 4) create_client  *(type: create)*
+
+**Purpose:** Register a new client.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `name`: str (required)
+* `registration_number`: str (required)
+* `contact_email`: str (required)
+* `client_type`: str — `enterprise|mid_market|small_business|startup` (required)
+* `contact_phone`: str = None
+* `address`: str = None
+  **Returns:** JSON: `{"client_id": str, "success": True}`
+
+---
+
+### 5) create_user  *(type: create)*
+
+**Purpose:** Add a user with role/associations.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `name`: str (required)
+* `email`: str (required)
+* `role`: str — `incident_manager|technical_support|account_manager|executive|vendor_contact|system_administrator|client_contact` (required)
+* `timezone`: str (required)
+* `department`: str = None
+* `client_id`: str = None
+* `vendor_id`: str = None
+  **Returns:** JSON: `{"user_id": str, "success": True}`
+
+---
+
+### 6) register_vendor  *(type: create)*
+
+**Purpose:** Onboard a vendor/third party.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `vendor_name`: str (required)
+* `contact_email`: str (required)
+* `contact_phone`: str (required)
+* `vendor_type`: str — `hardware_provider|software_provider|cloud_service_provider|consulting_partner` (required)
+  **Returns:** JSON: `{"vendor_id": str, "success": True}`
+
+---
+
+### 7) create_product  *(type: create)*
+
+**Purpose:** Track a supported system/app.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `product_name`: str (required)
+* `product_type`: str (required)
+* `version`: str = None
+* `vendor_id`: str = None
+  **Returns:** JSON: `{"product_id": str, "success": True}`
+
+---
+
+### 8) create_component  *(type: create)*
+
+**Purpose:** Register an infrastructure component under a product.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `product_id`: str (required)
+* `component_name`: str (required)
+* `component_type`: str — e.g., `sftp_server|api_endpoint|database|load_balancer|firewall|authentication_service|payment_gateway|file_storage|monitoring_system` (required)
+* `environment`: str — `production|staging|development|test` (required)
+* `location`: str = None
+* `ports`: str = None
+* `status`: str — `online|offline|maintenance|degraded` (required)
+  **Returns:** JSON: `{"component_id": str, "success": True}`
+
+---
+
+### 9) create_subscription  *(type: create)*
+
+**Purpose:** Establish client coverage for a product.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `client_id`: str (required)
+* `product_id`: str (required)
+* `subscription_type`: str — `full_service|limited_service|trial|custom` (required)
+* `service_level_tier`: str — `premium|standard|basic` (required)
+* `start_date`: str (required, YYYY-MM-DD)
+* `end_date`: str = None
+* `recovery_objectives`: str = None
+  **Returns:** JSON: `{"subscription_id": str, "success": True}`
+
+---
+
+### 10) create_sla  *(type: create)*
+
+**Purpose:** Define SLA per severity for a subscription.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `subscription_id`: str (required)
+* `severity_level`: str — `P1|P2|P3|P4` (required)
+* `response_time_minutes`: int (required)
+* `resolution_time_hours`: int (required)
+* `availability_target`: float = None  // e.g., 99.9
+  **Returns:** JSON: `{"sla_id": str, "success": True}`
+
+---
+
+### 11) create_incident  *(type: create)*
+
+**Purpose:** Formally log an incident.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `reporter_id`: str (required)
+* `client_id`: str (required)
+* `title`: str (required)
+* `description`: str (required)
+* `category`: str — one of policy list (required)
+* `severity`: str — `P1|P2|P3|P4` (required)
+* `impact_level`: str — `critical|high|medium|low` (required)
+* `component_id`: str = None
+  **Returns:** JSON: `{"incident_id": str, "success": True}`
+
+---
+
+### 12) record_communication  *(type: create)*
+
+**Purpose:** Log incident communications.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required)
+* `sender_user`: str (required)
+* `recipient`: str (required) — user or group identifier
+* `delivery_method`: str — `email|phone_call|chat|incident_portal_update|automated_notification` (required)
+* `message_content`: str (required)
+  **Returns:** JSON: `{"communication_id": str, "success": True, "delivery_status": "pending|sent|delivered|failed"}`
+
+---
+
+### 13) implement_workaround  *(type: create)*
+
+**Purpose:** Capture temporary mitigation.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required)
+* `description`: str (required)
+* `effectiveness`: str — `effective|partially_effective|ineffective` (required)
+* `implemented_by`: str (required)
+  **Returns:** JSON: `{"workaround_id": str, "success": True}`
+
+---
+
+### 14) start_rca  *(type: create)*
+
+**Purpose:** Initiate root-cause analysis.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required)
+* `analysis_method`: str — `five_whys|fishbone_diagram|fault_tree_analysis|cause_effect_matrix|pareto_analysis` (required)
+* `assigned_to`: str (required)
+  **Returns:** JSON: `{"rca_id": str, "status": "in_progress", "success": True}`
+
+---
+
+### 15) create_escalation  *(type: create)*
+
+**Purpose:** Escalate an incident.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required)
+* `target_user`: str (required)
+* `reason`: str — `sla_breach|severity_increase|resource_unavailable|executive_request|client_demand` (required)
+* `requested_by`: str (required)
+* `escalation_level`: str — `technical|management|executive|vendor` (required)
+  **Returns:** JSON: `{"escalation_id": str, "success": True}`
+
+---
+
+### 16) create_change_request  *(type: create)*
+
+**Purpose:** Propose a change linked to an incident (optional).
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `change_title`: str (required)
+* `change_type`: str — `standard|emergency|normal` (required)
+* `risk_level`: str — `low|medium|high|critical` (required)
+* `requested_by`: str (required)
+* `incident_id`: str = None
+  **Returns:** JSON: `{"change_id": str, "status": "requested", "success": True}`
+
+---
+
+### 17) create_rollback_request  *(type: create)*
+
+**Purpose:** Request rollback of a change.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `change_id`: str (required)
+* `justification`: str (required)
+* `requested_by`: str (required)
+* `incident_id`: str = None
+  **Returns:** JSON: `{"rollback_id": str, "status": "requested", "success": True}`
+
+---
+
+### 18) record_metric  *(type: create)*
+
+**Purpose:** Store performance metrics for a closed incident.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required, must be closed)
+* `metric_type`: str — `mean_time_to_detect|mean_time_to_acknowledge|mean_time_to_resolve|mean_time_between_failures|sla_breach_rate` (required)
+* `calculated_value_minutes`: int (required)
+* `target_minutes`: int = None
+  **Returns:** JSON: `{"metric_id": str, "success": True}`
+
+---
+
+### 19) generate_incident_report  *(type: create)*
+
+**Purpose:** Produce formal incident documentation.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required)
+* `report_type`: str — `executive_summary|postmortem_report|compliance_report|performance_dashboard|trend_analysis` (required)
+* `generated_by`: str (required)
+  **Returns:** JSON: `{"report_id": str, "status": "completed|draft|failed", "success": True}`
+
+---
+
+### 20) create_kb_article  *(type: create)*
+
+**Purpose:** Document a resolution/best practice.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `title`: str (required)
+* `content_type`: str — `troubleshooting|resolution_steps|prevention_guide|faq` (required)
+* `category`: str — `incident_resolution|problem_management|change_management|troubleshooting|best_practice` (required)
+* `author_id`: str (required)
+* `incident_id`: str = None
+* `reviewer_user_id`: str = None
+  **Returns:** JSON: `{"article_id": str, "status": "draft", "success": True}`
+
+---
+
+### 21) create_post_incident_review  *(type: create)*
+
+**Purpose:** Schedule a post-incident review (PIR).
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required, must be resolved/closed)
+* `scheduled_date`: str (required, YYYY-MM-DD)
+* `facilitator_user_id`: str (required)
+  **Returns:** JSON: `{"pir_id": str, "status": "scheduled", "success": True}`
+
+---
+
+## Get / Retrieve
+
+### 22) get_incident  *(type: get)*
+
+**Purpose:** Retrieve one incident or a filtered list.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str = None
+* `filters`: Dict[str, Any] = None — e.g., `client_id|status|severity|category|detected_at_from|detected_at_to`
+  **Returns:** JSON array of incidents (single-item array if `incident_id` supplied)
+
+---
+
+### 23) get_event_records  *(type: get)*
+
+**Purpose:** List event records with filters.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `event_id`: str = None
+* `source`: str = None
+* `severity_hint`: str = None
+* `detected_from`: str = None
+* `detected_to`: str = None
+  **Returns:** JSON array of event records
+
+---
+
+### 24) get_escalations  *(type: get)*
+
+**Purpose:** Retrieve escalations for an incident or user.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str = None
+* `escalated_to_id`: str = None
+* `status`: str = None — `open|acknowledged|resolved`
+  **Returns:** JSON array of escalation objects
+
+---
+
+### 25) get_communications  *(type: get)*
+
+**Purpose:** List communications for an incident.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required)
+* `delivery_status`: str = None — `pending|sent|delivered|failed`
+  **Returns:** JSON array of communication objects
+
+---
+
+### 26) get_kb_articles  *(type: get)*
+
+**Purpose:** Retrieve knowledge articles by filters.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `article_id`: str = None
+* `category`: str = None
+* `status`: str = None — `draft|published|archived`
+  **Returns:** JSON array of KB articles
+
+---
+
+## Update / Modify
+
+### 27) update_client  *(type: update)*
+
+**Purpose:** Modify client fields.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `client_id`: str (required)
+* `changes`: Dict[str, Any] — allowed fields: `name|registration_number|contact_email|client_type|contact_phone|address|status` (at least one)
+* `requester_id`: str (required)
+  **Returns:** JSON: `{"client_id": str, "success": True}`
+
+---
+
+### 28) update_user_permissions  *(type: update)*
+
+**Purpose:** Change user role or status.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `user_id`: str (required)
+* `requested_changes`: Dict[str, Any] — allowed fields: `role|status`
+* `modified_by`: str (required)
+  **Returns:** JSON: `{"user_id": str, "success": True}`
+
+---
+
+### 29) update_product  *(type: update)*
+
+**Purpose:** Modify product details.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `product_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `name|product_type|version|vendor_id|status`
+  **Returns:** JSON: `{"product_id": str, "success": True}`
+
+---
+
+### 30) update_component  *(type: update)*
+
+**Purpose:** Modify component details.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `component_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `name|component_type|environment|location|ports|status`
+  **Returns:** JSON: `{"component_id": str, "success": True}`
+
+---
+
+### 31) update_subscription  *(type: update)*
+
+**Purpose:** Modify a client subscription.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `subscription_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `subscription_type|service_level_tier|start_date|end_date|rto_hours|status`
+  **Returns:** JSON: `{"subscription_id": str, "success": True}`
+
+---
+
+### 32) update_sla  *(type: update)*
+
+**Purpose:** Update an SLA row.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `sla_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `response_time_minutes|resolution_time_hours|availability_target|status|severity_level`
+  **Returns:** JSON: `{"sla_id": str, "success": True}`
+
+---
+
+### 33) update_incident  *(type: update)*
+
+**Purpose:** Update incident fields and/or status.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required)
+* `new_status`: str = None — `open|in_progress|escalated|resolved|closed`
+* `field_updates`: Dict[str, Any] = None — allowed: `assigned_manager_id|component_id|severity|impact|urgency|category|is_recurring|downtime_minutes|sla_breach|rto_breach`
+* `updated_by`: str (required)
+  **Returns:** JSON: `{"incident_id": str, "success": True}`
+
+---
+
+### 34) update_escalation  *(type: update)*
+
+**Purpose:** Modify escalation timestamps/status.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `escalation_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `acknowledged_at|resolved_at|status`
+  **Returns:** JSON: `{"escalation_id": str, "success": True}`
+
+---
+
+### 35) update_change_request  *(type: update)*
+
+**Purpose:** Adjust details or advance status of a change.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `change_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `title|change_type|approved_by_id|risk_level|scheduled_start|scheduled_end|actual_start|actual_end|status`
+  **Returns:** JSON: `{"change_id": str, "success": True}`
+
+---
+
+### 36) update_rollback_request  *(type: update)*
+
+**Purpose:** Advance rollback lifecycle.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `rollback_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `approved_by_id|executed_at|validation_completed|status`
+  **Returns:** JSON: `{"rollback_id": str, "success": True}`
+
+---
+
+### 37) update_rca  *(type: update)*
+
+**Purpose:** Update RCA details or mark as completed/approved.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `rca_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `analysis_method|status|summary|completed_at`
+  **Returns:** JSON: `{"rca_id": str, "success": True}`
+
+---
+
+### 38) update_communication  *(type: update)*
+
+**Purpose:** Adjust a communication record (while pending).
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `communication_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `recipient|recipient_user_id|delivery_method|message_content|delivery_status|sent_at`
+  **Returns:** JSON: `{"communication_id": str, "success": True}`
+
+---
+
+### 39) update_kb_article  *(type: update)*
+
+**Purpose:** Modify KB article metadata or status.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `article_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `title|content_type|category|reviewer_user_id|incident_id|status`
+  **Returns:** JSON: `{"article_id": str, "success": True}`
+
+---
+
+### 40) update_post_incident_review  *(type: update)*
+
+**Purpose:** Amend a PIR record.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `pir_id`: str (required)
+* `changes`: Dict[str, Any] — allowed: `scheduled_date|facilitator_user_id|timeline_accuracy_rating|communication_effectiveness_rating|technical_response_rating|status`
+  **Returns:** JSON: `{"pir_id": str, "success": True}`
+
+---
+
+## Resolve / Close
+
+### 41) resolve_incident  *(type: resolve)*
+
+**Purpose:** Mark incident as resolved; capture summary.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required; must be `open|in_progress`)
+* `resolved_by`: str (required)
+* `resolution_summary`: str (required)
+  **Returns:** JSON: `{"incident_id": str, "status": "resolved", "success": True}`
+
+---
+
+### 42) close_incident  *(type: close)*
+
+**Purpose:** Close an already resolved incident.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `incident_id`: str (required; must be `resolved`)
+* `closed_by`: str (required)
+  **Returns:** JSON: `{"incident_id": str, "status": "closed", "success": True}`
+
+---
+
+## Controls / Governance
+
+### 43) classify_severity  *(type: compute/helper)*
+
+**Purpose:** Classify severity P1–P4 based on provided criteria snapshot.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `complete_outage`: bool = None
+* `client_count_impacted`: int = None
+* `has_workaround`: bool = None
+* `regulatory_or_financial_impact`: bool = None
+* `is_priority_client`: bool = None
+  **Returns:** JSON: `{"suggested_severity": "P1|P2|P3|P4"}`
+
+---
+
+### 44) check_approval  *(type: get/validate)*
+
+**Purpose:** Validate that required approval(s) exist for an action.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `reference_type`: str — target entity type (required)
+* `reference_id`: str — target entity id (required)
+* `requested_action`: str — `create|update|resolve|close|escalate|publish|schedule|link|unlink` (required)
+* `approver_id`: str — approver user id (required)
+  **Returns:** JSON: `{"status": "approved|pending|rejected"}`
+
+---
+
+### 45) log_audit_trail  *(type: create/log)*
+
+**Purpose:** Write required audit records.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `user_id`: str (required)
+* `action`: str — `identify|create|update|escalate|notify|resolve|close|review|kb_update|vendor_engagement|simulation|tool_use` (required)
+* `reference_type`: str (required)
+* `reference_id`: str (required)
+* `field_name`: str = None
+* `old_value`: str = None
+* `new_value`: str = None
+  **Returns:** JSON: `{"audit_id": str, "success": True}`
+
+---
+
+### 46) transfer_to_human  *(type: control)*
+
+**Purpose:** Escalate the current request to a human operator when a halt condition is met.
+**Parameters:**
+
+* `data`: Dict[str, Any]
+* `reason_code`: str — brief code (required)
+* `details`: str = None — short explanation
+  **Returns:** JSON: `{"success": True, "message": "Transferred to human"}`
+
+---
+
+## Notes on Validation & Halts (applies to all)
+
+* **Validation first**: If required inputs are missing/invalid → return an error with halt instruction.
+* **Authorization/Approvals**: Enforce role-based checks; for elevated ops, verify via `check_approval`.
+* **Segregation of duties**: Enforce where applicable (e.g., creator cannot self-approve close requiring higher authority).
+* **Audit**: On every create/update/approve/reject/close/notify/escalate, call `log_audit_trail`.
+* **Halt conditions**: If inputs/authorization/approvals missing, or any DB/tool call fails → return error + recommend `transfer_to_human`.
+

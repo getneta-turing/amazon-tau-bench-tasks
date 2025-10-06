@@ -1,0 +1,359 @@
+enums:
+  users:
+    role:
+      - incident_manager
+      - technical_support
+      - account_manager
+      - executive
+      - vendor_contact
+      - system_administrator
+      - client_contact
+    status:
+      - active
+      - inactive
+      - on_leave
+      - suspended
+
+  clients:
+    client_type:
+      - enterprise
+      - mid_market
+      - small_business
+      - startup
+    status:
+      - active
+      - inactive
+      - suspended
+
+  vendors:
+    vendor_type:
+      - hardware_provider
+      - software_provider
+      - cloud_service_provider
+      - consulting_partner
+    status:
+      - active
+      - inactive
+      - suspended
+
+  products:
+    product_type:
+      - payment_processing
+      - banking_system
+      - api_gateway
+      - data_integration
+      - reporting_platform
+      - security_service
+      - backup_service
+      - monitoring_tool
+      - other
+    status:
+      - active
+      - maintenance
+      - deprecated
+
+  components:
+    component_type:
+      - sftp_server
+      - api_endpoint
+      - database
+      - load_balancer
+      - firewall
+      - authentication_service
+      - payment_gateway
+      - file_storage
+      - monitoring_system
+      - other
+    environment:
+      - production
+      - staging
+      - development
+      - test
+    status:
+      - online
+      - offline
+      - maintenance
+      - degraded
+
+  subscriptions:
+    subscription_type:
+      - full_service
+      - limited_service
+      - trial
+      - custom
+    service_level_tier:
+      - premium
+      - standard
+      - basic
+    status:
+      - active
+      - expired
+      - cancelled
+      - suspended
+
+  sla_agreements:
+    severity_level:
+      - P1
+      - P2
+      - P3
+      - P4
+    status:
+      - active
+      - inactive
+
+  incidents:
+    category:
+      - system_outage
+      - performance_degradation
+      - security_incident
+      - data_corruption
+      - integration_failure
+      - network_issue
+      - hardware_failure
+      - software_bug
+      - configuration_error
+      - capacity_issue
+      - backup_failure
+      - authentication_failure
+      - api_error
+      - database_issue
+      - service_unavailable
+    severity:
+      - P1
+      - P2
+      - P3
+      - P4
+    impact:
+      - critical
+      - high
+      - medium
+      - low
+    urgency:
+      - critical
+      - high
+      - medium
+      - low
+    status:
+      - open
+      - in_progress
+      - escalated
+      - resolved
+      - closed
+    detection_source:
+      - client_reported
+      - internally_detected
+      - monitoring_alert
+      - vendor_reported
+      - scheduled_maintenance
+      - emergency_maintenance
+
+  communications:
+    recipient_type:
+      - user
+      - group
+      - client_contact
+      - vendor_contact
+      - executive_team
+    communication_type:
+      - email
+      - phone_call
+      - chat
+      - incident_portal_update
+      - automated_notification
+    delivery_status:
+      - pending
+      - sent
+      - delivered
+      - failed
+
+  workarounds:
+    effectiveness:
+      - effective
+      - partially_effective
+      - ineffective
+    status:
+      - active
+      - inactive
+      - replaced
+
+  root_cause_analyses:
+    analysis_method:
+      - five_whys
+      - fishbone_diagram
+      - fault_tree_analysis
+      - cause_effect_matrix
+      - pareto_analysis
+    status:
+      - in_progress
+      - completed
+      - approved
+
+  escalations:
+    escalation_reason:
+      - sla_breach
+      - severity_increase
+      - resource_unavailable
+      - executive_request
+      - client_demand
+    escalation_level:
+      - technical
+      - management
+      - executive
+      - vendor
+    status:
+      - open
+      - acknowledged
+      - resolved
+
+  change_requests:
+    change_type:
+      - standard
+      - emergency
+      - normal
+    risk_level:
+      - low
+      - medium
+      - high
+      - critical
+    status:
+      - requested
+      - approved
+      - scheduled
+      - in_progress
+      - completed
+      - failed
+      - rolled_back
+
+  rollback_requests:
+    status:
+      - requested
+      - approved
+      - in_progress
+      - completed
+      - failed
+
+  metrics:
+    metric_type:
+      - mean_time_to_detect
+      - mean_time_to_acknowledge
+      - mean_time_to_resolve
+      - mean_time_between_failures
+      - sla_breach_rate
+
+  incident_reports:
+    report_type:
+      - executive_summary
+      - postmortem_report
+      - compliance_report
+      - performance_dashboard
+      - trend_analysis
+    status:
+      - draft
+      - completed
+      - failed
+
+  knowledge_base_articles:
+    content_type:
+      - troubleshooting
+      - resolution_steps
+      - prevention_guide
+      - faq
+    category:
+      - incident_resolution
+      - problem_management
+      - change_management
+      - troubleshooting
+      - best_practice
+    status:
+      - draft
+      - published
+      - archived
+
+  post_incident_reviews:
+    status:
+      - scheduled
+      - in_progress
+      - completed
+      - cancelled
+
+  approvals:
+    reference_type:
+      - client
+      - user
+      - vendor
+      - product
+      - component
+      - subscription
+      - sla
+      - incident
+      - communication
+      - workaround
+      - rca
+      - escalation
+      - change_request
+      - rollback_request
+      - metric
+      - incident_report
+      - kb_article
+      - post_incident_review
+    requested_action:
+      - create
+      - update
+      - resolve
+      - close
+      - escalate
+      - publish
+      - schedule
+      - link
+      - unlink
+    status:
+      - pending
+      - approved
+      - rejected
+
+  event_records:
+    source:
+      - alert_log
+      - incident_portal_submission
+      - internal_tool
+    severity_hint:
+      - P1
+      - P2
+      - P3
+      - P4
+
+  audit_trails:
+    reference_type:
+      - client
+      - user
+      - vendor
+      - product
+      - component
+      - subscription
+      - sla
+      - incident
+      - communication
+      - workaround
+      - rca
+      - escalation
+      - change_request
+      - rollback_request
+      - metric
+      - incident_report
+      - kb_article
+      - post_incident_review
+      - event_record
+      - event_correlation
+    action:
+      - identify
+      - create
+      - update
+      - escalate
+      - notify
+      - resolve
+      - close
+      - review
+      - kb_update
+      - vendor_engagement
+      - simulation
+      - tool_use

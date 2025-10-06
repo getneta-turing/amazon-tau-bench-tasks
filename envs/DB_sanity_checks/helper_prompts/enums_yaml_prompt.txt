@@ -1,0 +1,427 @@
+You are given:
+1. A CREATE TABLE SQL schema containing table definitions with columns, including `enum(...)` types.
+2. An example of how to convert those enums into a YAML format.
+
+**Example conversion:**
+
+SQL:
+CREATE TABLE `homes` (
+  `home_type` enum(Home,Apartment)
+);
+
+CREATE TABLE `users` (
+  `role` enum(Owner,Partner,Child,Guest,Servant),
+  `status` enum(active,inactive)
+);
+
+YAML:
+enums:
+  homes:
+    home_type:
+      - Home
+      - Apartment
+
+  users:
+    role:
+      - Owner
+      - Partner
+      - Child
+      - Guest
+      - Servant
+    status:
+      - active
+      - inactive
+
+---
+
+**Task:**  
+From the SQL schema I will provide, extract **all enum columns** for each table and convert them into the exact YAML structure shown above:
+- The YAML root key must be `enums:`
+- Each table name (lowercase, without backticks) becomes a key under `enums:`
+- Under each table, list each enum column name as a key, and under it, a list of its allowed values (order preserved from the SQL)
+- Output **only** the YAML in codeblocks (no explanations, no extra formatting)
+
+**My schema:**
+// Incident Management System (IMS) Database Schema
+// Fully aligned with the Incident Management Policies & SOPs
+// Notes:
+// - All IDs are strings (varchar).
+// - No json/jsonb fields.
+// - Enums mirror the policy enumerations.
+// - Bounded varchar sizes (no large free-form fields unless necessary).
+// - Foreign keys connect all operational entities for traceability.
+
+// =========================
+// Core Reference Entities
+// =========================
+
+// Use DBML to define your database structure
+// Docs: https://dbml.dbdiagram.io/docs
+//
+// Incident Management Database Schema
+// Derived from the provided Incident Management policy & SOPs
+// Notes:
+// - All IDs are strings
+// - No json/jsonb types
+// - Enums reflect the policy
+// - Fields are scoped to avoid unnecessary free-form text
+// - Relationships are explicit via foreign keys
+
+Table users {
+  user_id varchar(64) [primary key]
+  first_name varchar(80) [not null]
+  last_name varchar(80) [not null]
+  email varchar(320) [not null, unique]
+  role enum('incident_manager','technical_support','account_manager','executive','vendor_contact','system_administrator','client_contact') [not null]
+  timezone varchar(50) [not null]
+  status enum('active','inactive','on_leave','suspended') [not null, default: 'active']
+  client_id varchar(64) // optional association (when relevant)
+  vendor_id varchar(64) // optional association (when relevant)
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+}
+
+Table clients {
+  client_id varchar(64) [primary key]
+  name varchar(200) [not null, unique]
+  registration_number varchar(100) [unique]
+  contact_email varchar(320) [not null, unique]
+  client_type enum('enterprise','mid_market','small_business','startup') [not null]
+  status enum('active','inactive','suspended') [not null, default: 'active']
+  contact_phone varchar(30)
+  address varchar(200)
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+}
+
+Table vendors {
+  vendor_id varchar(64) [primary key]
+  name varchar(200) [not null, unique]
+  vendor_type enum('hardware_provider','software_provider','cloud_service_provider','consulting_partner') [not null]
+  contact_email varchar(320) [not null, unique]
+  contact_phone varchar(30) [not null]
+  status enum('active','inactive','suspended') [not null, default: 'active']
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+}
+
+Table products {
+  product_id varchar(64) [primary key]
+  name varchar(200) [not null, unique]
+  product_type enum('payment_processing','banking_system','api_gateway','data_integration','reporting_platform','security_service','backup_service','monitoring_tool','other') [not null]
+  version varchar(50)
+  vendor_id varchar(64) // external support, optional
+  status enum('active','maintenance','deprecated') [not null, default: 'active']
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+}
+
+Table components {
+  component_id varchar(64) [primary key]
+  product_id varchar(64) [not null]
+  name varchar(200) [not null] // unique per product
+  component_type enum('sftp_server','api_endpoint','database','load_balancer','firewall','authentication_service','payment_gateway','file_storage','monitoring_system','other') [not null]
+  environment enum('production','staging','development','test') [not null]
+  location varchar(100)
+  port_number int
+  status enum('online','offline','maintenance','degraded') [not null, default: 'online']
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+
+  Note: 'name must be unique within (product_id)'
+     Indexes {
+    (product_id, name) [unique, name: 'ux_components_product_name']
+  }
+}
+
+Table subscriptions {
+  subscription_id varchar(64) [primary key]
+  client_id varchar(64) [not null]
+  product_id varchar(64) [not null]
+  subscription_type enum('full_service','limited_service','trial','custom') [not null]
+  service_level_tier enum('premium','standard','basic') [not null]
+  rto_hours int [not null]
+  start_date date [not null]
+  end_date date
+  status enum('active','expired','cancelled','suspended') [not null, default: 'active']
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+}
+
+Table sla_agreements {
+  sla_id varchar(64) [primary key]
+  subscription_id varchar(64) [not null]
+  severity_level enum('P1','P2','P3','P4') [not null]
+  response_time_minutes int [not null]
+  resolution_time_hours int [not null]
+  availability_target decimal(5,2) // percentage like 99.90
+  status enum('active','inactive') [not null, default: 'active']
+  created_at timestamp [not null, default: `NOW()`]
+
+  Note: 'one row per (subscription_id, severity_level) recommended'
+     Indexes {
+    (subscription_id, severity_level) [unique, name: 'ux_sla_subscription_severity']
+  }
+}
+
+Table incidents {
+  incident_id varchar(64) [primary key]
+  incident_code varchar(40) [unique] // optional human-readable code
+  client_id varchar(64) [not null]
+  component_id varchar(64) // optional
+  reporter_id varchar(64) [not null]
+  assigned_manager_id varchar(64)
+  title varchar(200) [not null]
+  description varchar(1000)
+  category enum('system_outage','performance_degradation','security_incident','data_corruption','integration_failure','network_issue','hardware_failure','software_bug','configuration_error','capacity_issue','backup_failure','authentication_failure','api_error','database_issue','service_unavailable') [not null]
+  severity enum('P1','P2','P3','P4') [not null]
+  impact enum('critical','high','medium','low') [not null]
+  urgency enum('critical','high','medium','low') [not null]
+  status enum('open','in_progress','escalated','resolved','closed') [not null, default: 'open']
+  detection_source enum('client_reported','internally_detected','monitoring_alert','vendor_reported','scheduled_maintenance','emergency_maintenance') [not null]
+  is_recurring boolean [not null, default: false]
+  downtime_minutes int
+  sla_breach boolean
+  rto_breach boolean
+  detected_at timestamp [not null, default: `NOW()`]
+  resolved_at timestamp
+  closed_at timestamp
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+}
+
+Table communications {
+  communication_id varchar(64) [primary key]
+  incident_id varchar(64) [not null]
+  sender_id varchar(64) [not null]
+  recipient_type enum('user','group','client_contact','vendor_contact','executive_team') [not null]
+  recipient_user_id varchar(64) // nullable depending on type
+  communication_type enum('email','phone_call','chat','incident_portal_update','automated_notification') [not null]
+  delivery_status enum('pending','sent','delivered','failed') [not null, default: 'pending']
+  subject varchar(150)
+  message_body varchar(1000)
+  sent_at timestamp
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table workarounds {
+  workaround_id varchar(64) [primary key]
+  incident_id varchar(64) [not null]
+  implemented_by_id varchar(64) [not null]
+  effectiveness enum('effective','partially_effective','ineffective') [not null]
+  status enum('active','inactive','replaced') [not null, default: 'active']
+  description varchar(500)
+  implemented_at timestamp [not null, default: `NOW()`]
+}
+
+Table root_cause_analyses {
+  rca_id varchar(64) [primary key]
+  incident_id varchar(64) [not null]
+  conducted_by_id varchar(64) [not null]
+  analysis_method enum('five_whys','fishbone_diagram','fault_tree_analysis','cause_effect_matrix','pareto_analysis') [not null]
+  status enum('in_progress','completed','approved') [not null, default: 'in_progress']
+  summary varchar(1000)
+  completed_at timestamp
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table escalations {
+  escalation_id varchar(64) [primary key]
+  incident_id varchar(64) [not null]
+  escalated_by_id varchar(64) [not null]
+  escalated_to_id varchar(64) [not null]
+  escalation_reason enum('sla_breach','severity_increase','resource_unavailable','executive_request','client_demand') [not null]
+  escalation_level enum('technical','management','executive','vendor') [not null]
+  status enum('open','acknowledged','resolved') [not null, default: 'open']
+  escalated_at timestamp [not null, default: `NOW()`]
+  acknowledged_at timestamp
+  resolved_at timestamp
+}
+
+Table change_requests {
+  change_id varchar(64) [primary key]
+  incident_id varchar(64) // optional linkage
+  title varchar(200) [not null]
+  change_type enum('standard','emergency','normal') [not null]
+  risk_level enum('low','medium','high','critical') [not null]
+  requested_by_id varchar(64) [not null]
+  approved_by_id varchar(64)
+  status enum('requested','approved','scheduled','in_progress','completed','failed','rolled_back') [not null, default: 'requested']
+  scheduled_start timestamp
+  scheduled_end timestamp
+  actual_start timestamp
+  actual_end timestamp
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table rollback_requests {
+  rollback_id varchar(64) [primary key]
+  change_id varchar(64) [not null]
+  incident_id varchar(64)
+  requested_by_id varchar(64) [not null]
+  approved_by_id varchar(64)
+  status enum('requested','approved','in_progress','completed','failed') [not null, default: 'requested']
+  executed_at timestamp
+  justification varchar(500) [not null]
+  validation_completed boolean
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table metrics {
+  metric_id varchar(64) [primary key]
+  incident_id varchar(64) [not null]
+  metric_type enum('mean_time_to_detect','mean_time_to_acknowledge','mean_time_to_resolve','mean_time_between_failures','sla_breach_rate') [not null]
+  value_minutes int [not null]
+  target_minutes int
+  recorded_by_id varchar(64) [not null]
+  recorded_at timestamp [not null, default: `NOW()`]
+
+  Note: 'value_minutes represents the computed metric value in minutes where applicable'
+}
+
+Table incident_reports {
+  report_id varchar(64) [primary key]
+  incident_id varchar(64) [not null]
+  report_type enum('executive_summary','postmortem_report','compliance_report','performance_dashboard','trend_analysis') [not null]
+  generated_by_id varchar(64) [not null]
+  status enum('draft','completed','failed') [not null, default: 'draft']
+  generated_at timestamp [not null, default: `NOW()`]
+}
+
+Table knowledge_base_articles {
+  article_id varchar(64) [primary key]
+  title varchar(200) [not null]
+  content_type enum('troubleshooting','resolution_steps','prevention_guide','faq') [not null]
+  category enum('incident_resolution','problem_management','change_management','troubleshooting','best_practice') [not null]
+  author_id varchar(64) [not null]
+  reviewer_user_id varchar(64)
+  incident_id varchar(64)
+  status enum('draft','published','archived') [not null, default: 'draft']
+  view_count int [not null, default: 0]
+  created_at timestamp [not null, default: `NOW()`]
+  updated_at timestamp [not null, default: `NOW()`]
+}
+
+Table post_incident_reviews {
+  pir_id varchar(64) [primary key]
+  incident_id varchar(64) [not null]
+  scheduled_date date [not null]
+  facilitator_user_id varchar(64) [not null]
+  status enum('scheduled','in_progress','completed','cancelled') [not null, default: 'scheduled']
+  timeline_accuracy_rating smallint
+  communication_effectiveness_rating smallint
+  technical_response_rating smallint
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table approvals {
+  approval_id varchar(64) [primary key]
+  reference_type enum('client','user','vendor','product','component','subscription','sla','incident','communication','workaround','rca','escalation','change_request','rollback_request','metric','incident_report','kb_article','post_incident_review') [not null]
+  reference_id varchar(64) [not null]
+  requested_action enum('create','update','resolve','close','escalate','publish','schedule','link','unlink') [not null]
+  approver_id varchar(64) [not null]
+  status enum('pending','approved','rejected') [not null, default: 'pending']
+  comment varchar(300)
+  decided_at timestamp
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table event_records {
+  event_id varchar(64) [primary key]
+  source enum('alert_log','incident_portal_submission','internal_tool') [not null]
+  payload_summary varchar(500) [not null]
+  severity_hint enum('P1','P2','P3','P4')
+  detected_at timestamp [not null, default: `NOW()`]
+  recorded_by_id varchar(64) // user who provided/loaded the event (optional)
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table event_correlations {
+  correlation_id varchar(64) [primary key]
+  event_id varchar(64) [not null]
+  correlation_key varchar(100) [not null]
+  incident_id varchar(64) // nullable until linked
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+Table audit_trails {
+  audit_id varchar(64) [primary key]
+  reference_type enum('client','user','vendor','product','component','subscription','sla','incident','communication','workaround','rca','escalation','change_request','rollback_request','metric','incident_report','kb_article','post_incident_review','event_record','event_correlation') [not null]
+  reference_id varchar(64) [not null]
+  action enum('identify','create','update','escalate','notify','resolve','close','review','kb_update','vendor_engagement','simulation','tool_use') [not null]
+  user_id varchar(64) [not null]
+  field_name varchar(100) // nullable for create/resolve/close
+  old_value varchar(255)
+  new_value varchar(255)
+  created_at timestamp [not null, default: `NOW()`]
+}
+
+// -------------------------
+// Constraints & Index Hints
+// -------------------------
+
+
+// -------------------------
+// Relationships
+// -------------------------
+
+Ref: users.client_id > clients.client_id
+Ref: users.vendor_id > vendors.vendor_id
+
+Ref: products.vendor_id > vendors.vendor_id
+Ref: components.product_id > products.product_id
+
+Ref: subscriptions.client_id > clients.client_id
+Ref: subscriptions.product_id > products.product_id
+
+Ref: sla_agreements.subscription_id > subscriptions.subscription_id
+
+Ref: incidents.client_id > clients.client_id
+Ref: incidents.component_id > components.component_id
+Ref: incidents.reporter_id > users.user_id
+Ref: incidents.assigned_manager_id > users.user_id
+
+Ref: communications.incident_id > incidents.incident_id
+Ref: communications.sender_id > users.user_id
+Ref: communications.recipient_user_id > users.user_id
+
+Ref: workarounds.incident_id > incidents.incident_id
+Ref: workarounds.implemented_by_id > users.user_id
+
+Ref: root_cause_analyses.incident_id > incidents.incident_id
+Ref: root_cause_analyses.conducted_by_id > users.user_id
+
+Ref: escalations.incident_id > incidents.incident_id
+Ref: escalations.escalated_by_id > users.user_id
+Ref: escalations.escalated_to_id > users.user_id
+
+Ref: change_requests.incident_id > incidents.incident_id
+Ref: change_requests.requested_by_id > users.user_id
+Ref: change_requests.approved_by_id > users.user_id
+
+Ref: rollback_requests.change_id > change_requests.change_id
+Ref: rollback_requests.incident_id > incidents.incident_id
+Ref: rollback_requests.requested_by_id > users.user_id
+Ref: rollback_requests.approved_by_id > users.user_id
+
+Ref: metrics.incident_id > incidents.incident_id
+Ref: metrics.recorded_by_id > users.user_id
+
+Ref: incident_reports.incident_id > incidents.incident_id
+Ref: incident_reports.generated_by_id > users.user_id
+
+Ref: knowledge_base_articles.author_id > users.user_id
+Ref: knowledge_base_articles.reviewer_user_id > users.user_id
+Ref: knowledge_base_articles.incident_id > incidents.incident_id
+
+Ref: post_incident_reviews.incident_id > incidents.incident_id
+Ref: post_incident_reviews.facilitator_user_id > users.user_id
+
+Ref: approvals.approver_id > users.user_id
+
+Ref: event_correlations.event_id > event_records.event_id
+Ref: event_correlations.incident_id > incidents.incident_id
+
+Ref: audit_trails.user_id > users.user_id
+
+// End of schema

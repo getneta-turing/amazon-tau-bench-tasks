@@ -1,0 +1,4380 @@
+{
+  "timestamp": "2025-10-06T16:55:46.832935",
+  "tables": {
+    "vendors": {
+      "row_count": 4,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "vendor_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "subscriptions": {
+      "row_count": 13,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "subscription_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "rollback_requests": {
+      "row_count": 12,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "rollback_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "users": {
+      "row_count": 38,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "user_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "audit_trails": {
+      "row_count": 83,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "audit_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "escalations": {
+      "row_count": 28,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "escalation_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "change_requests": {
+      "row_count": 28,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "change_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "incident_reports": {
+      "row_count": 18,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "report_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "event_correlations": {
+      "row_count": 35,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "correlation_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "event_records": {
+      "row_count": 20,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "event_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "knowledge_base_articles": {
+      "row_count": 19,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "article_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "metrics": {
+      "row_count": 10,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "metric_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "incidents": {
+      "row_count": 16,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "incident_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "root_cause_analyses": {
+      "row_count": 10,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "rca_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "post_incident_reviews": {
+      "row_count": 8,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "pir_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "clients": {
+      "row_count": 6,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "client_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "components": {
+      "row_count": 14,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "component_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "approvals": {
+      "row_count": 92,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "approval_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "products": {
+      "row_count": 8,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "product_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "communications": {
+      "row_count": 15,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "communication_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "workarounds": {
+      "row_count": 17,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "workaround_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    },
+    "sla_agreements": {
+      "row_count": 26,
+      "checks": [
+        {
+          "check": "Keys are strings",
+          "result": true
+        },
+        {
+          "check": "sla_id matches key",
+          "result": true
+        },
+        {
+          "check": "Primary keys non-null",
+          "result": true
+        },
+        {
+          "check": "Primary keys unique",
+          "result": true
+        }
+      ]
+    }
+  },
+  "enum_tables": {
+    "vendors": [
+      {
+        "check": "vendor_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "subscriptions": [
+      {
+        "check": "subscription_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "service_level_tier in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "rollback_requests": [
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "users": [
+      {
+        "check": "role in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "audit_trails": [
+      {
+        "check": "reference_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "action in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "escalations": [
+      {
+        "check": "escalation_reason in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "escalation_level in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "change_requests": [
+      {
+        "check": "change_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "risk_level in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "incident_reports": [
+      {
+        "check": "report_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "event_correlations": [],
+    "event_records": [
+      {
+        "check": "source in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "severity_hint in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "knowledge_base_articles": [
+      {
+        "check": "content_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "category in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "metrics": [
+      {
+        "check": "metric_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "incidents": [
+      {
+        "check": "category in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "severity in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "impact in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "urgency in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "detection_source in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "root_cause_analyses": [
+      {
+        "check": "analysis_method in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "post_incident_reviews": [
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "clients": [
+      {
+        "check": "client_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "components": [
+      {
+        "check": "component_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "environment in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "approvals": [
+      {
+        "check": "reference_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "requested_action in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "products": [
+      {
+        "check": "product_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "communications": [
+      {
+        "check": "recipient_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "communication_type in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "delivery_status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "workarounds": [
+      {
+        "check": "effectiveness in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ],
+    "sla_agreements": [
+      {
+        "check": "severity_level in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      },
+      {
+        "check": "status in enum",
+        "result": true,
+        "details": {
+          "invalid_values": [],
+          "sample_keys": []
+        }
+      }
+    ]
+  },
+  "relationships": [
+    {
+      "relationship": "clients.client_id \u2192 users.client_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "clients",
+        "column": "client_id"
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 users.client_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "client_id"
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 users.client_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "null_count": 30,
+        "non_null_count": 8
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 users.client_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 users.client_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 users.client_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.6,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "5": 3,
+          "6": 2,
+          "1": 1,
+          "4": 1,
+          "3": 1
+        }
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 users.vendor_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "vendors",
+        "column": "vendor_id"
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 users.vendor_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "vendor_id"
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 users.vendor_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "vendor_id",
+        "null_count": 33,
+        "non_null_count": 5
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 users.vendor_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "vendor_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 users.vendor_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "vendor_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 users.vendor_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.5,
+        "min": 2,
+        "max": 3,
+        "top5_parents_by_children": {
+          "2": 3,
+          "1": 2
+        }
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 products.vendor_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "vendors",
+        "column": "vendor_id"
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 products.vendor_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "products",
+        "column": "vendor_id"
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 products.vendor_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "vendor_id",
+        "null_count": 4,
+        "non_null_count": 4
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 products.vendor_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "vendor_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 products.vendor_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "vendor_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "vendors.vendor_id \u2192 products.vendor_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.33,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "3": 2,
+          "1": 1,
+          "4": 1
+        }
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 components.product_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "products",
+        "column": "product_id"
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 components.product_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "components",
+        "column": "product_id"
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 components.product_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "product_id",
+        "null_count": 0,
+        "non_null_count": 14
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 components.product_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "product_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 components.product_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "product_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 components.product_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.0,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "6": 3,
+          "2": 2,
+          "1": 2,
+          "7": 2,
+          "5": 2
+        }
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 subscriptions.client_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "clients",
+        "column": "client_id"
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 subscriptions.client_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "subscriptions",
+        "column": "client_id"
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 subscriptions.client_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "null_count": 0,
+        "non_null_count": 13
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 subscriptions.client_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 subscriptions.client_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 subscriptions.client_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.17,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "2": 3,
+          "3": 3,
+          "5": 3,
+          "4": 2,
+          "1": 1
+        }
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 subscriptions.product_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "products",
+        "column": "product_id"
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 subscriptions.product_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "subscriptions",
+        "column": "product_id"
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 subscriptions.product_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "product_id",
+        "null_count": 0,
+        "non_null_count": 13
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 subscriptions.product_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "product_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 subscriptions.product_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "product_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "products.product_id \u2192 subscriptions.product_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.17,
+        "min": 1,
+        "max": 6,
+        "top5_parents_by_children": {
+          "5": 6,
+          "1": 2,
+          "7": 2,
+          "8": 1,
+          "2": 1
+        }
+      }
+    },
+    {
+      "relationship": "subscriptions.subscription_id \u2192 sla_agreements.subscription_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "subscriptions",
+        "column": "subscription_id"
+      }
+    },
+    {
+      "relationship": "subscriptions.subscription_id \u2192 sla_agreements.subscription_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "sla_agreements",
+        "column": "subscription_id"
+      }
+    },
+    {
+      "relationship": "subscriptions.subscription_id \u2192 sla_agreements.subscription_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "subscription_id",
+        "null_count": 0,
+        "non_null_count": 26
+      }
+    },
+    {
+      "relationship": "subscriptions.subscription_id \u2192 sla_agreements.subscription_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "subscription_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "subscriptions.subscription_id \u2192 sla_agreements.subscription_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "subscription_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "subscriptions.subscription_id \u2192 sla_agreements.subscription_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.0,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "4": 3,
+          "7": 3,
+          "8": 3,
+          "6": 3,
+          "5": 2
+        }
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 incidents.client_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "clients",
+        "column": "client_id"
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 incidents.client_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "client_id"
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 incidents.client_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "null_count": 0,
+        "non_null_count": 16
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 incidents.client_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 incidents.client_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "client_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "clients.client_id \u2192 incidents.client_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.67,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "1": 3,
+          "2": 3,
+          "3": 3,
+          "5": 3,
+          "6": 3
+        }
+      }
+    },
+    {
+      "relationship": "components.component_id \u2192 incidents.component_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "components",
+        "column": "component_id"
+      }
+    },
+    {
+      "relationship": "components.component_id \u2192 incidents.component_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "component_id"
+      }
+    },
+    {
+      "relationship": "components.component_id \u2192 incidents.component_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "component_id",
+        "null_count": 1,
+        "non_null_count": 15
+      }
+    },
+    {
+      "relationship": "components.component_id \u2192 incidents.component_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "component_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "components.component_id \u2192 incidents.component_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "component_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "components.component_id \u2192 incidents.component_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.36,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "6": 2,
+          "9": 2,
+          "1": 2,
+          "10": 2,
+          "4": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.reporter_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.reporter_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "reporter_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.reporter_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "reporter_id",
+        "null_count": 0,
+        "non_null_count": 16
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.reporter_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "reporter_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.reporter_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.reporter_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.14,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "13": 3,
+          "17": 1,
+          "19": 1,
+          "16": 1,
+          "29": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.assigned_manager_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.assigned_manager_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "assigned_manager_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.assigned_manager_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "assigned_manager_id",
+        "null_count": 0,
+        "non_null_count": 16
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.assigned_manager_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "assigned_manager_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.assigned_manager_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incidents.assigned_manager_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 16.0,
+        "min": 16,
+        "max": 16,
+        "top5_parents_by_children": {
+          "1": 16
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 communications.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 communications.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "communications",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 communications.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 15
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 communications.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 communications.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 communications.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.36,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "14": 3,
+          "11": 2,
+          "3": 2,
+          "2": 1,
+          "1": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.sender_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.sender_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "communications",
+        "column": "sender_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.sender_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "sender_id",
+        "null_count": 0,
+        "non_null_count": 15
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.sender_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "sender_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.sender_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.sender_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.15,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "4": 2,
+          "33": 2,
+          "12": 1,
+          "10": 1,
+          "17": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.recipient_user_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.recipient_user_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "communications",
+        "column": "recipient_user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.recipient_user_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "recipient_user_id",
+        "null_count": 4,
+        "non_null_count": 11
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.recipient_user_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "recipient_user_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.recipient_user_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 communications.recipient_user_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.1,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "33": 2,
+          "11": 1,
+          "29": 1,
+          "22": 1,
+          "38": 1
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 workarounds.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 workarounds.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "workarounds",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 workarounds.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 17
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 workarounds.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 workarounds.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 workarounds.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.7,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "1": 3,
+          "6": 2,
+          "9": 2,
+          "12": 2,
+          "16": 2
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 workarounds.implemented_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 workarounds.implemented_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "workarounds",
+        "column": "implemented_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 workarounds.implemented_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "implemented_by_id",
+        "null_count": 0,
+        "non_null_count": 17
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 workarounds.implemented_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "implemented_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 workarounds.implemented_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 workarounds.implemented_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.42,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "3": 3,
+          "11": 3,
+          "1": 2,
+          "7": 1,
+          "13": 1
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 root_cause_analyses.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 root_cause_analyses.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "root_cause_analyses",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 root_cause_analyses.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 10
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 root_cause_analyses.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 root_cause_analyses.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 root_cause_analyses.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.0,
+        "min": 1,
+        "max": 1,
+        "top5_parents_by_children": {
+          "1": 1,
+          "2": 1,
+          "4": 1,
+          "5": 1,
+          "6": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 root_cause_analyses.conducted_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 root_cause_analyses.conducted_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "root_cause_analyses",
+        "column": "conducted_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 root_cause_analyses.conducted_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "conducted_by_id",
+        "null_count": 0,
+        "non_null_count": 10
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 root_cause_analyses.conducted_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "conducted_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 root_cause_analyses.conducted_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 root_cause_analyses.conducted_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.11,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "7": 2,
+          "5": 1,
+          "10": 1,
+          "15": 1,
+          "17": 1
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 escalations.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 escalations.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "escalations",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 escalations.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 28
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 escalations.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 escalations.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 escalations.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.87,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "1": 3,
+          "7": 3,
+          "10": 3,
+          "12": 3,
+          "13": 3
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "escalations",
+        "column": "escalated_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "escalated_by_id",
+        "null_count": 0,
+        "non_null_count": 28
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "escalated_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 28.0,
+        "min": 28,
+        "max": 28,
+        "top5_parents_by_children": {
+          "1": 28
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_to_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_to_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "escalations",
+        "column": "escalated_to_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_to_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "escalated_to_id",
+        "null_count": 0,
+        "non_null_count": 28
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_to_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "escalated_to_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_to_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 escalations.escalated_to_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.47,
+        "min": 1,
+        "max": 4,
+        "top5_parents_by_children": {
+          "9": 4,
+          "28": 3,
+          "38": 2,
+          "12": 2,
+          "26": 2
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 change_requests.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 change_requests.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "change_requests",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 change_requests.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 28
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 change_requests.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 change_requests.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 change_requests.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.33,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "3": 3,
+          "6": 3,
+          "10": 3,
+          "8": 3,
+          "11": 3
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.requested_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.requested_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "change_requests",
+        "column": "requested_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.requested_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "requested_by_id",
+        "null_count": 0,
+        "non_null_count": 28
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.requested_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "requested_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.requested_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.requested_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.65,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "24": 3,
+          "17": 3,
+          "1": 3,
+          "8": 3,
+          "16": 2
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.approved_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.approved_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "change_requests",
+        "column": "approved_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.approved_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "approved_by_id",
+        "null_count": 10,
+        "non_null_count": 18
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.approved_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "approved_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.approved_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 change_requests.approved_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.29,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "29": 3,
+          "23": 2,
+          "13": 2,
+          "17": 1,
+          "34": 1
+        }
+      }
+    },
+    {
+      "relationship": "change_requests.change_id \u2192 rollback_requests.change_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "change_requests",
+        "column": "change_id"
+      }
+    },
+    {
+      "relationship": "change_requests.change_id \u2192 rollback_requests.change_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "rollback_requests",
+        "column": "change_id"
+      }
+    },
+    {
+      "relationship": "change_requests.change_id \u2192 rollback_requests.change_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "change_id",
+        "null_count": 0,
+        "non_null_count": 12
+      }
+    },
+    {
+      "relationship": "change_requests.change_id \u2192 rollback_requests.change_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "change_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "change_requests.change_id \u2192 rollback_requests.change_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "change_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "change_requests.change_id \u2192 rollback_requests.change_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.0,
+        "min": 1,
+        "max": 1,
+        "top5_parents_by_children": {
+          "3": 1,
+          "7": 1,
+          "10": 1,
+          "11": 1,
+          "12": 1
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 rollback_requests.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 rollback_requests.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "rollback_requests",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 rollback_requests.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 12
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 rollback_requests.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 rollback_requests.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 rollback_requests.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.2,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "10": 2,
+          "8": 2,
+          "6": 1,
+          "3": 1,
+          "7": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.requested_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.requested_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "rollback_requests",
+        "column": "requested_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.requested_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "requested_by_id",
+        "null_count": 0,
+        "non_null_count": 12
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.requested_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "requested_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.requested_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.requested_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.2,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "1": 2,
+          "17": 2,
+          "9": 1,
+          "13": 1,
+          "15": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.approved_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.approved_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "rollback_requests",
+        "column": "approved_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.approved_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "approved_by_id",
+        "null_count": 8,
+        "non_null_count": 4
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.approved_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "approved_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.approved_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 rollback_requests.approved_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.33,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "20": 2,
+          "23": 1,
+          "2": 1
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 metrics.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 metrics.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "metrics",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 metrics.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 10
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 metrics.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 metrics.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 metrics.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.67,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "7": 3,
+          "8": 2,
+          "13": 2,
+          "3": 1,
+          "6": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 metrics.recorded_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 metrics.recorded_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "metrics",
+        "column": "recorded_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 metrics.recorded_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "recorded_by_id",
+        "null_count": 0,
+        "non_null_count": 10
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 metrics.recorded_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "recorded_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 metrics.recorded_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 metrics.recorded_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 10.0,
+        "min": 10,
+        "max": 10,
+        "top5_parents_by_children": {
+          "1": 10
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 incident_reports.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 incident_reports.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "incident_reports",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 incident_reports.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 18
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 incident_reports.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 incident_reports.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 incident_reports.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.8,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "15": 3,
+          "13": 3,
+          "12": 3,
+          "1": 2,
+          "8": 2
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incident_reports.generated_by_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incident_reports.generated_by_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "incident_reports",
+        "column": "generated_by_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incident_reports.generated_by_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "generated_by_id",
+        "null_count": 0,
+        "non_null_count": 18
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incident_reports.generated_by_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "generated_by_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incident_reports.generated_by_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 incident_reports.generated_by_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 18.0,
+        "min": 18,
+        "max": 18,
+        "top5_parents_by_children": {
+          "1": 18
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.author_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.author_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "knowledge_base_articles",
+        "column": "author_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.author_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "author_id",
+        "null_count": 0,
+        "non_null_count": 19
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.author_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "author_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.author_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.author_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.36,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "37": 3,
+          "26": 2,
+          "19": 2,
+          "9": 2,
+          "36": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.reviewer_user_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.reviewer_user_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "knowledge_base_articles",
+        "column": "reviewer_user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.reviewer_user_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "reviewer_user_id",
+        "null_count": 8,
+        "non_null_count": 11
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.reviewer_user_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "reviewer_user_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.reviewer_user_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 knowledge_base_articles.reviewer_user_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.38,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "26": 3,
+          "11": 2,
+          "6": 1,
+          "13": 1,
+          "4": 1
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 knowledge_base_articles.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 knowledge_base_articles.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "knowledge_base_articles",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 knowledge_base_articles.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 19
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 knowledge_base_articles.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 knowledge_base_articles.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 knowledge_base_articles.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.46,
+        "min": 1,
+        "max": 2,
+        "top5_parents_by_children": {
+          "1": 2,
+          "3": 2,
+          "4": 2,
+          "9": 2,
+          "8": 2
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 post_incident_reviews.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 post_incident_reviews.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "post_incident_reviews",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 post_incident_reviews.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 0,
+        "non_null_count": 8
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 post_incident_reviews.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 post_incident_reviews.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 post_incident_reviews.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 1.0,
+        "min": 1,
+        "max": 1,
+        "top5_parents_by_children": {
+          "1": 1,
+          "2": 1,
+          "3": 1,
+          "4": 1,
+          "8": 1
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 post_incident_reviews.facilitator_user_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 post_incident_reviews.facilitator_user_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "post_incident_reviews",
+        "column": "facilitator_user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 post_incident_reviews.facilitator_user_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "facilitator_user_id",
+        "null_count": 0,
+        "non_null_count": 8
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 post_incident_reviews.facilitator_user_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "facilitator_user_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 post_incident_reviews.facilitator_user_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 post_incident_reviews.facilitator_user_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 8.0,
+        "min": 8,
+        "max": 8,
+        "top5_parents_by_children": {
+          "1": 8
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 approvals.approver_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 approvals.approver_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "approvals",
+        "column": "approver_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 approvals.approver_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "approver_id",
+        "null_count": 0,
+        "non_null_count": 92
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 approvals.approver_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "approver_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 approvals.approver_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 approvals.approver_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 92.0,
+        "min": 92,
+        "max": 92,
+        "top5_parents_by_children": {
+          "1": 92
+        }
+      }
+    },
+    {
+      "relationship": "event_records.event_id \u2192 event_correlations.event_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "event_records",
+        "column": "event_id"
+      }
+    },
+    {
+      "relationship": "event_records.event_id \u2192 event_correlations.event_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "event_correlations",
+        "column": "event_id"
+      }
+    },
+    {
+      "relationship": "event_records.event_id \u2192 event_correlations.event_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "event_id",
+        "null_count": 0,
+        "non_null_count": 35
+      }
+    },
+    {
+      "relationship": "event_records.event_id \u2192 event_correlations.event_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "event_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "event_records.event_id \u2192 event_correlations.event_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "event_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "event_records.event_id \u2192 event_correlations.event_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.5,
+        "min": 1,
+        "max": 3,
+        "top5_parents_by_children": {
+          "1": 3,
+          "2": 3,
+          "4": 3,
+          "7": 3,
+          "14": 3
+        }
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 event_correlations.incident_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "incidents",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 event_correlations.incident_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "event_correlations",
+        "column": "incident_id"
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 event_correlations.incident_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "null_count": 1,
+        "non_null_count": 34
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 event_correlations.incident_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 event_correlations.incident_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "incident_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "incidents.incident_id \u2192 event_correlations.incident_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 2.27,
+        "min": 1,
+        "max": 5,
+        "top5_parents_by_children": {
+          "5": 5,
+          "11": 4,
+          "14": 4,
+          "10": 3,
+          "15": 3
+        }
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 audit_trails.user_id",
+      "check": "Parent column exists",
+      "result": true,
+      "details": {
+        "table": "users",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 audit_trails.user_id",
+      "check": "Child column exists",
+      "result": true,
+      "details": {
+        "table": "audit_trails",
+        "column": "user_id"
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 audit_trails.user_id",
+      "check": "Child column nulls",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "null_count": 0,
+        "non_null_count": 83
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 audit_trails.user_id",
+      "check": "All children have parents",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "missing_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 audit_trails.user_id",
+      "check": "Parent column unique",
+      "result": true,
+      "details": {
+        "column": "user_id",
+        "duplicate_parent_ids_sample": [],
+        "count": 0
+      }
+    },
+    {
+      "relationship": "users.user_id \u2192 audit_trails.user_id",
+      "check": "Children per parent (distribution)",
+      "result": true,
+      "details": {
+        "avg": 83.0,
+        "min": 83,
+        "max": 83,
+        "top5_parents_by_children": {
+          "1": 83
+        }
+      }
+    },
+    {
+      "relationship": "approvals.reference_id (type via reference_type)",
+      "check": "All type values are mapped",
+      "result": true,
+      "details": {
+        "unmapped_types": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type via reference_type)",
+      "check": "Stale mapping entries (info)",
+      "result": true,
+      "details": {
+        "stale_types": [
+          "client",
+          "communication",
+          "component",
+          "escalation",
+          "incident",
+          "metric",
+          "product",
+          "rca",
+          "user",
+          "vendor"
+        ],
+        "count": 11
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "Average children per parent (info)",
+      "result": 1.75,
+      "details": {
+        "type": "change_request",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='incident_report') \u2192 incident_reports.report_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "incident_report",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='incident_report') \u2192 incident_reports.report_id",
+      "check": "Average children per parent (info)",
+      "result": 2.33,
+      "details": {
+        "type": "incident_report",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "Average children per parent (info)",
+      "result": 2.2,
+      "details": {
+        "type": "kb_article",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='post_incident_review') \u2192 post_incident_reviews.pir_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "post_incident_review",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='post_incident_review') \u2192 post_incident_reviews.pir_id",
+      "check": "Average children per parent (info)",
+      "result": 2.29,
+      "details": {
+        "type": "post_incident_review",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='post_incident_review') \u2192 post_incident_reviews.pir_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "post_incident_review",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='rollback_request') \u2192 rollback_requests.rollback_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "rollback_request",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='rollback_request') \u2192 rollback_requests.rollback_id",
+      "check": "Average children per parent (info)",
+      "result": 2.29,
+      "details": {
+        "type": "rollback_request",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='rollback_request') \u2192 rollback_requests.rollback_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "rollback_request",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='sla') \u2192 sla_agreements.sla_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "sla",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='sla') \u2192 sla_agreements.sla_id",
+      "check": "Average children per parent (info)",
+      "result": 2.6,
+      "details": {
+        "type": "sla",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='sla') \u2192 sla_agreements.sla_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "sla",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='subscription') \u2192 subscriptions.subscription_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "subscription",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='subscription') \u2192 subscriptions.subscription_id",
+      "check": "Average children per parent (info)",
+      "result": 1.67,
+      "details": {
+        "type": "subscription",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='subscription') \u2192 subscriptions.subscription_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "subscription",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type via reference_type)",
+      "check": "All type values are mapped",
+      "result": true,
+      "details": {
+        "unmapped_types": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type via reference_type)",
+      "check": "Stale mapping entries (info)",
+      "result": true,
+      "details": {
+        "stale_types": [
+          "client",
+          "communication",
+          "component",
+          "escalation",
+          "event_correlation",
+          "incident_report",
+          "metric",
+          "post_incident_review",
+          "product",
+          "rca"
+        ],
+        "count": 16
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "change_request",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='event_record') \u2192 event_records.event_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "event_record",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='event_record') \u2192 event_records.event_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "event_record",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='event_record') \u2192 event_records.event_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "event_record",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='incident') \u2192 incidents.incident_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "incident",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='incident') \u2192 incidents.incident_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "incident",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='incident') \u2192 incidents.incident_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "incident",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "kb_article",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.user_id \u2192 users.user_id",
+      "check": "All children have valid users",
+      "result": true,
+      "details": {
+        "missing_user_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    }
+  ],
+  "generic_relationships": [
+    {
+      "relationship": "approvals.reference_id (type via reference_type)",
+      "check": "All type values are mapped",
+      "result": true,
+      "details": {
+        "unmapped_types": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type via reference_type)",
+      "check": "Stale mapping entries (info)",
+      "result": true,
+      "details": {
+        "stale_types": [
+          "client",
+          "communication",
+          "component",
+          "escalation",
+          "incident",
+          "metric",
+          "product",
+          "rca",
+          "user",
+          "vendor"
+        ],
+        "count": 11
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "Average children per parent (info)",
+      "result": 1.75,
+      "details": {
+        "type": "change_request",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='incident_report') \u2192 incident_reports.report_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "incident_report",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='incident_report') \u2192 incident_reports.report_id",
+      "check": "Average children per parent (info)",
+      "result": 2.33,
+      "details": {
+        "type": "incident_report",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "Average children per parent (info)",
+      "result": 2.2,
+      "details": {
+        "type": "kb_article",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='post_incident_review') \u2192 post_incident_reviews.pir_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "post_incident_review",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='post_incident_review') \u2192 post_incident_reviews.pir_id",
+      "check": "Average children per parent (info)",
+      "result": 2.29,
+      "details": {
+        "type": "post_incident_review",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='post_incident_review') \u2192 post_incident_reviews.pir_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "post_incident_review",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='rollback_request') \u2192 rollback_requests.rollback_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "rollback_request",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='rollback_request') \u2192 rollback_requests.rollback_id",
+      "check": "Average children per parent (info)",
+      "result": 2.29,
+      "details": {
+        "type": "rollback_request",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='rollback_request') \u2192 rollback_requests.rollback_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "rollback_request",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='sla') \u2192 sla_agreements.sla_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "sla",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='sla') \u2192 sla_agreements.sla_id",
+      "check": "Average children per parent (info)",
+      "result": 2.6,
+      "details": {
+        "type": "sla",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='sla') \u2192 sla_agreements.sla_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "sla",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='subscription') \u2192 subscriptions.subscription_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "subscription",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='subscription') \u2192 subscriptions.subscription_id",
+      "check": "Average children per parent (info)",
+      "result": 1.67,
+      "details": {
+        "type": "subscription",
+        "max_children_for_single_parent": 3
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "approvals.reference_id (type='subscription') \u2192 subscriptions.subscription_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "subscription",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type via reference_type)",
+      "check": "All type values are mapped",
+      "result": true,
+      "details": {
+        "unmapped_types": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type via reference_type)",
+      "check": "Stale mapping entries (info)",
+      "result": true,
+      "details": {
+        "stale_types": [
+          "client",
+          "communication",
+          "component",
+          "escalation",
+          "event_correlation",
+          "incident_report",
+          "metric",
+          "post_incident_review",
+          "product",
+          "rca"
+        ],
+        "count": 16
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "change_request",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='change_request') \u2192 change_requests.change_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "change_request",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='event_record') \u2192 event_records.event_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "event_record",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='event_record') \u2192 event_records.event_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "event_record",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='event_record') \u2192 event_records.event_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "event_record",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='incident') \u2192 incidents.incident_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "incident",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='incident') \u2192 incidents.incident_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "incident",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='incident') \u2192 incidents.incident_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "incident",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "All children have parents (polymorphic)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "child_column": "reference_id",
+        "missing_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "Average children per parent (info)",
+      "result": 1.0,
+      "details": {
+        "type": "kb_article",
+        "max_children_for_single_parent": 1
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.reference_id (type='kb_article') \u2192 knowledge_base_articles.article_id",
+      "check": "created_at sequence valid (child \u2265 parent)",
+      "result": true,
+      "details": {
+        "type": "kb_article",
+        "violations": 0
+      },
+      "kind": "generic"
+    },
+    {
+      "relationship": "audit_trails.user_id \u2192 users.user_id",
+      "check": "All children have valid users",
+      "result": true,
+      "details": {
+        "missing_user_ids": [],
+        "count": 0
+      },
+      "kind": "generic"
+    }
+  ],
+  "generic_fk_summary": {
+    "total_checks": 37,
+    "passes": 26,
+    "fails": 0,
+    "info_metrics_count": 11
+  }
+}

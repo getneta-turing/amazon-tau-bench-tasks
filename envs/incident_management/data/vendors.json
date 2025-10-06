@@ -1,0 +1,42 @@
+{
+  "1": {
+    "vendor_id": "1",
+    "name": "Sawyer PLC",
+    "vendor_type": "hardware_provider",
+    "contact_email": "nicholas.walters@gmail.com",
+    "contact_phone": "+18057719388",
+    "status": "active",
+    "created_at": "2024-08-03T07:53:33.754891",
+    "updated_at": "2024-10-29T13:25:33.754891"
+  },
+  "2": {
+    "vendor_id": "2",
+    "name": "Guzman-Wells",
+    "vendor_type": "hardware_provider",
+    "contact_email": "darrellfreeman817@proton.me",
+    "contact_phone": "+18182954422",
+    "status": "active",
+    "created_at": "2024-10-22T01:08:56.754891",
+    "updated_at": "2025-03-23T19:13:56.754891"
+  },
+  "3": {
+    "vendor_id": "3",
+    "name": "Castillo-Collins",
+    "vendor_type": "cloud_service_provider",
+    "contact_email": "douglasbrady592@corp.io",
+    "contact_phone": "+17185955685",
+    "status": "active",
+    "created_at": "2023-10-23T11:31:55.754891",
+    "updated_at": "2023-11-07T22:48:15.754891"
+  },
+  "4": {
+    "vendor_id": "4",
+    "name": "Baker, Poole and Martin",
+    "vendor_type": "software_provider",
+    "contact_email": "andrew.tapia@example.com",
+    "contact_phone": "+18054942119",
+    "status": "inactive",
+    "created_at": "2024-06-20T00:57:23.754891",
+    "updated_at": "2024-08-02T23:11:57.754891"
+  }
+}

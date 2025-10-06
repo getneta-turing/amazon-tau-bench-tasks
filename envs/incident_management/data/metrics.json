@@ -1,0 +1,92 @@
+{
+  "1": {
+    "metric_id": "1",
+    "incident_id": "3",
+    "metric_type": "mean_time_to_acknowledge",
+    "value_minutes": 6640,
+    "target_minutes": null,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-08-05T02:46:41.754891"
+  },
+  "2": {
+    "metric_id": "2",
+    "incident_id": "6",
+    "metric_type": "mean_time_to_detect",
+    "value_minutes": 12442,
+    "target_minutes": 7420,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-08-05T06:49:45.754891"
+  },
+  "3": {
+    "metric_id": "3",
+    "incident_id": "7",
+    "metric_type": "mean_time_to_resolve",
+    "value_minutes": 226,
+    "target_minutes": 8194,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-04-14T18:57:43.754891"
+  },
+  "4": {
+    "metric_id": "4",
+    "incident_id": "7",
+    "metric_type": "sla_breach_rate",
+    "value_minutes": 12358,
+    "target_minutes": null,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-04-05T06:20:44.754891"
+  },
+  "5": {
+    "metric_id": "5",
+    "incident_id": "7",
+    "metric_type": "mean_time_to_acknowledge",
+    "value_minutes": 13978,
+    "target_minutes": null,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-11-08T16:51:32.754891"
+  },
+  "6": {
+    "metric_id": "6",
+    "incident_id": "8",
+    "metric_type": "sla_breach_rate",
+    "value_minutes": 14097,
+    "target_minutes": 6391,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-04-02T15:30:31.754891"
+  },
+  "7": {
+    "metric_id": "7",
+    "incident_id": "8",
+    "metric_type": "sla_breach_rate",
+    "value_minutes": 7517,
+    "target_minutes": 1631,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-06-30T15:40:14.754891"
+  },
+  "8": {
+    "metric_id": "8",
+    "incident_id": "11",
+    "metric_type": "sla_breach_rate",
+    "value_minutes": 19253,
+    "target_minutes": null,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-07-31T21:43:40.754891"
+  },
+  "9": {
+    "metric_id": "9",
+    "incident_id": "13",
+    "metric_type": "mean_time_to_resolve",
+    "value_minutes": 11256,
+    "target_minutes": 8347,
+    "recorded_by_id": "1",
+    "recorded_at": "2024-04-30T09:45:20.754891"
+  },
+  "10": {
+    "metric_id": "10",
+    "incident_id": "13",
+    "metric_type": "mean_time_to_acknowledge",
+    "value_minutes": 13513,
+    "target_minutes": null,
+    "recorded_by_id": "1",
+    "recorded_at": "2023-06-22T20:47:17.754891"
+  }
+}

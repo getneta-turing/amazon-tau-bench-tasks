@@ -1,0 +1,5864 @@
+{
+  "params": [
+    {
+      "interface": "interface_1",
+      "api_name": "check_approval",
+      "params": [
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "approver_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "classify_severity",
+      "params": [
+        {
+          "name": "complete_outage",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "client_count_impacted",
+          "type": "int",
+          "optional": true
+        },
+        {
+          "name": "has_workaround",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "regulatory_or_financial_impact",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "is_priority_client",
+          "type": "bool",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "close_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "closed_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "correlate_events_once",
+      "params": [
+        {
+          "name": "event_ids",
+          "type": "list",
+          "optional": false
+        },
+        {
+          "name": "correlation_key",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "link_incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_change_request",
+      "params": [
+        {
+          "name": "change_title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "change_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "risk_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_client",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "registration_number",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "address",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_component",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "environment",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "location",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "ports",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_escalation",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "target_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reason",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "escalation_level",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_event_record",
+      "params": [
+        {
+          "name": "source",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "payload_summary",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recorded_by_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_incident",
+      "params": [
+        {
+          "name": "reporter_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "impact_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_kb_article",
+      "params": [
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "content_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "author_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "reviewer_user_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_post_incident_review",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "scheduled_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "facilitator_user_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_product",
+      "params": [
+        {
+          "name": "product_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "version",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_rollback_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "justification",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_sla",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "response_time_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "resolution_time_hours",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "availability_target",
+          "type": "float",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_subscription",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "subscription_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "service_level_tier",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "start_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "end_date",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recovery_objectives",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "create_user",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "role",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "timezone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "department",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "discover_entities",
+      "params": [
+        {
+          "name": "entity_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "generate_incident_report",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "report_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "generated_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "get_communications",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "get_escalations",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "escalated_to_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "get_event_records",
+      "params": [
+        {
+          "name": "event_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "source",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_from",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_to",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "get_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "get_kb_articles",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "implement_workaround",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "effectiveness",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "implemented_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "log_audit_trail",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "field_name",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "old_value",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "new_value",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "record_communication",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "sender_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "recipient",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "message_content",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "record_metric",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "metric_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "calculated_value_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "target_minutes",
+          "type": "int",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "register_vendor",
+      "params": [
+        {
+          "name": "vendor_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "vendor_type",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "resolve_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolved_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolution_summary",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "start_rca",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "analysis_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "assigned_to",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "transfer_to_human",
+      "params": [
+        {
+          "name": "reason_code",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "details",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_change_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_client",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_communication",
+      "params": [
+        {
+          "name": "communication_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_component",
+      "params": [
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_escalation",
+      "params": [
+        {
+          "name": "escalation_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "new_status",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "field_updates",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "updated_by",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_kb_article",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_post_incident_review",
+      "params": [
+        {
+          "name": "pir_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_product",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_rca",
+      "params": [
+        {
+          "name": "rca_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_rollback_request",
+      "params": [
+        {
+          "name": "rollback_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_sla",
+      "params": [
+        {
+          "name": "sla_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_subscription",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_1",
+      "api_name": "update_user_permissions",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "modified_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "add_user",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "role",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "timezone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "department",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "apply_workaround",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "effectiveness",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "implemented_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "assess_severity",
+      "params": [
+        {
+          "name": "complete_outage",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "client_count_impacted",
+          "type": "int",
+          "optional": true
+        },
+        {
+          "name": "has_workaround",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "regulatory_or_financial_impact",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "is_priority_client",
+          "type": "bool",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "correlate_events",
+      "params": [
+        {
+          "name": "event_ids",
+          "type": "list",
+          "optional": false
+        },
+        {
+          "name": "correlation_key",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "link_incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "define_sla",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "response_time_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "resolution_time_hours",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "availability_target",
+          "type": "float",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "draft_kb_article",
+      "params": [
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "content_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "author_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "reviewer_user_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "escalate_to_human",
+      "params": [
+        {
+          "name": "reason_code",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "details",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "fetch_communications",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "fetch_escalations",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "escalated_to_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "fetch_event_records",
+      "params": [
+        {
+          "name": "event_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "source",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_from",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_to",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "fetch_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "fetch_kb_articles",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "finalize_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "closed_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "find_entities",
+      "params": [
+        {
+          "name": "entity_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "initiate_rca",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "analysis_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "assigned_to",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "log_communication",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "sender_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "recipient",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "message_content",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "log_event_record",
+      "params": [
+        {
+          "name": "source",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "payload_summary",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recorded_by_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "log_metric",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "metric_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "calculated_value_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "target_minutes",
+          "type": "int",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "mark_incident_resolved",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolved_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolution_summary",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_change_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_client",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_communication",
+      "params": [
+        {
+          "name": "communication_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_component",
+      "params": [
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_escalation",
+      "params": [
+        {
+          "name": "escalation_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "new_status",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "field_updates",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "updated_by",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_kb_article",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_post_incident_review",
+      "params": [
+        {
+          "name": "pir_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_product",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_rca",
+      "params": [
+        {
+          "name": "rca_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_rollback_request",
+      "params": [
+        {
+          "name": "rollback_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_sla",
+      "params": [
+        {
+          "name": "sla_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_subscription",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "modify_user_permissions",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "modified_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "onboard_vendor",
+      "params": [
+        {
+          "name": "vendor_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "vendor_type",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "open_incident",
+      "params": [
+        {
+          "name": "reporter_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "impact_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "produce_incident_report",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "report_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "generated_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "raise_escalation",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "target_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reason",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "escalation_level",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "register_client",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "registration_number",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "address",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "register_component",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "environment",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "location",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "ports",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "register_product",
+      "params": [
+        {
+          "name": "product_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "version",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "schedule_post_incident_review",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "scheduled_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "facilitator_user_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "start_subscription",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "subscription_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "service_level_tier",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "start_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "end_date",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recovery_objectives",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "submit_change_request",
+      "params": [
+        {
+          "name": "change_title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "change_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "risk_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "submit_rollback_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "justification",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "verify_approval",
+      "params": [
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "approver_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_2",
+      "api_name": "write_audit_trail",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "field_name",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "old_value",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "new_value",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_change_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_client",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_communication",
+      "params": [
+        {
+          "name": "communication_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_component",
+      "params": [
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_escalation",
+      "params": [
+        {
+          "name": "escalation_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "new_status",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "field_updates",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "updated_by",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_kb_article",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_post_incident_review",
+      "params": [
+        {
+          "name": "pir_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_product",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_rca",
+      "params": [
+        {
+          "name": "rca_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_rollback_request",
+      "params": [
+        {
+          "name": "rollback_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_sla",
+      "params": [
+        {
+          "name": "sla_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_subscription",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "amend_user_permissions",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "modified_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "append_event_record",
+      "params": [
+        {
+          "name": "source",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "payload_summary",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recorded_by_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "arrange_post_incident_review",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "scheduled_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "facilitator_user_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "author_kb_article",
+      "params": [
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "content_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "author_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "reviewer_user_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "capture_communication",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "sender_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "recipient",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "message_content",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "capture_metric",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "metric_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "calculated_value_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "target_minutes",
+          "type": "int",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "catalog_component",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "environment",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "location",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "ports",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "catalog_product",
+      "params": [
+        {
+          "name": "product_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "version",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "compose_incident_report",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "report_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "generated_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "conclude_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "closed_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "deploy_workaround",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "effectiveness",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "implemented_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "determine_severity",
+      "params": [
+        {
+          "name": "complete_outage",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "client_count_impacted",
+          "type": "int",
+          "optional": true
+        },
+        {
+          "name": "has_workaround",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "regulatory_or_financial_impact",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "is_priority_client",
+          "type": "bool",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "enlist_user",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "role",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "timezone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "department",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "enroll_client",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "registration_number",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "address",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "enroll_vendor",
+      "params": [
+        {
+          "name": "vendor_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "vendor_type",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "establish_sla",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "response_time_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "resolution_time_hours",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "availability_target",
+          "type": "float",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "file_incident",
+      "params": [
+        {
+          "name": "reporter_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "impact_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "handoff_to_human",
+      "params": [
+        {
+          "name": "reason_code",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "details",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "initiate_escalation",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "target_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reason",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "escalation_level",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "initiate_subscription",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "subscription_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "service_level_tier",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "start_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "end_date",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recovery_objectives",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "launch_rca",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "analysis_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "assigned_to",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "link_events_once",
+      "params": [
+        {
+          "name": "event_ids",
+          "type": "list",
+          "optional": false
+        },
+        {
+          "name": "correlation_key",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "link_incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "locate_entities",
+      "params": [
+        {
+          "name": "entity_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "raise_change_request",
+      "params": [
+        {
+          "name": "change_title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "change_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "risk_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "record_audit_trail",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "field_name",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "old_value",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "new_value",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "request_rollback",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "justification",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "retrieve_communications",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "retrieve_escalations",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "escalated_to_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "retrieve_event_records",
+      "params": [
+        {
+          "name": "event_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "source",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_from",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_to",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "retrieve_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "retrieve_kb_articles",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "set_incident_resolved",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolved_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolution_summary",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_3",
+      "api_name": "validate_approval",
+      "params": [
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "approver_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "add_component_record",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "environment",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "location",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "ports",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "add_product_record",
+      "params": [
+        {
+          "name": "product_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "version",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_change_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_client",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_communication",
+      "params": [
+        {
+          "name": "communication_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_component",
+      "params": [
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_escalation",
+      "params": [
+        {
+          "name": "escalation_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "new_status",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "field_updates",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "updated_by",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_kb_article",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_post_incident_review",
+      "params": [
+        {
+          "name": "pir_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_product",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_rca",
+      "params": [
+        {
+          "name": "rca_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_rollback_request",
+      "params": [
+        {
+          "name": "rollback_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_sla",
+      "params": [
+        {
+          "name": "sla_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_subscription",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "alter_user_permissions",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "modified_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "associate_events_once",
+      "params": [
+        {
+          "name": "event_ids",
+          "type": "list",
+          "optional": false
+        },
+        {
+          "name": "correlation_key",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "link_incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "confirm_approval_status",
+      "params": [
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "approver_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "enact_workaround",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "effectiveness",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "implemented_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "escalate_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "target_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reason",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "escalation_level",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "file_change_request",
+      "params": [
+        {
+          "name": "change_title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "change_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "risk_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "file_rollback_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "justification",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "finalize_case",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "closed_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "flag_incident_resolved",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolved_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolution_summary",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "generate_incident_summary",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "report_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "generated_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "identify_entities",
+      "params": [
+        {
+          "name": "entity_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "initiate_root_cause",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "analysis_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "assigned_to",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "log_incident",
+      "params": [
+        {
+          "name": "reporter_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "impact_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "onboard_supplier",
+      "params": [
+        {
+          "name": "vendor_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "vendor_type",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "provision_subscription",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "subscription_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "service_level_tier",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "start_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "end_date",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recovery_objectives",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "publish_kb_article",
+      "params": [
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "content_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "author_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "reviewer_user_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "pull_communications",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "pull_escalations",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "escalated_to_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "pull_event_records",
+      "params": [
+        {
+          "name": "event_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "source",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_from",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_to",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "pull_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "pull_kb_articles",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "rate_severity",
+      "params": [
+        {
+          "name": "complete_outage",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "client_count_impacted",
+          "type": "int",
+          "optional": true
+        },
+        {
+          "name": "has_workaround",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "regulatory_or_financial_impact",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "is_priority_client",
+          "type": "bool",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "record_communication_entry",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "sender_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "recipient",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "message_content",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "record_event_entry",
+      "params": [
+        {
+          "name": "source",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "payload_summary",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recorded_by_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "record_metric_entry",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "metric_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "calculated_value_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "target_minutes",
+          "type": "int",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "register_customer",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "registration_number",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "address",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "register_user",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "role",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "timezone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "department",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "route_to_human",
+      "params": [
+        {
+          "name": "reason_code",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "details",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "schedule_pir_session",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "scheduled_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "facilitator_user_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "specify_sla",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "response_time_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "resolution_time_hours",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "availability_target",
+          "type": "float",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_4",
+      "api_name": "write_audit_entry",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "field_name",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "old_value",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "new_value",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "activate_subscription",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "subscription_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "service_level_tier",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "start_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "end_date",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recovery_objectives",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "adjust_user_permissions",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "modified_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "apply_mitigation",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "effectiveness",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "implemented_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "author_kb_draft",
+      "params": [
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "content_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "author_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "reviewer_user_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "catalogue_component",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "environment",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "location",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "ports",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "catalogue_product",
+      "params": [
+        {
+          "name": "product_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "product_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "version",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "commence_rca",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "analysis_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "assigned_to",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "compile_incident_report",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "report_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "generated_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "confirm_approval",
+      "params": [
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "approver_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "enlist_vendor",
+      "params": [
+        {
+          "name": "vendor_name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "vendor_type",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "enroll_user",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "role",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "timezone",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "department",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "vendor_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "evaluate_severity",
+      "params": [
+        {
+          "name": "complete_outage",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "client_count_impacted",
+          "type": "int",
+          "optional": true
+        },
+        {
+          "name": "has_workaround",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "regulatory_or_financial_impact",
+          "type": "bool",
+          "optional": true
+        },
+        {
+          "name": "is_priority_client",
+          "type": "bool",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "hand_off_to_human",
+      "params": [
+        {
+          "name": "reason_code",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "details",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "ingest_event_record",
+      "params": [
+        {
+          "name": "source",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "payload_summary",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "recorded_by_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "log_audit_entry",
+      "params": [
+        {
+          "name": "user_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "action",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reference_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "field_name",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "old_value",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "new_value",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "log_interaction",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "sender_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "recipient",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_method",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "message_content",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "match_events_once",
+      "params": [
+        {
+          "name": "event_ids",
+          "type": "list",
+          "optional": false
+        },
+        {
+          "name": "correlation_key",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "link_incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "onboard_client",
+      "params": [
+        {
+          "name": "name",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "registration_number",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_email",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "contact_phone",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "address",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "plan_post_incident_review",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "scheduled_date",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "facilitator_user_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "propose_change_request",
+      "params": [
+        {
+          "name": "change_title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "change_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "risk_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "raise_rollback_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "justification",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "read_communications",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "delivery_status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "read_escalations",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "escalated_to_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "read_event_records",
+      "params": [
+        {
+          "name": "event_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "source",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "severity_hint",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_from",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "detected_to",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "read_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "read_kb_articles",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "status",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "report_incident",
+      "params": [
+        {
+          "name": "reporter_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "title",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "description",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "category",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "impact_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_change_request",
+      "params": [
+        {
+          "name": "change_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_client",
+      "params": [
+        {
+          "name": "client_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_communication",
+      "params": [
+        {
+          "name": "communication_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_component",
+      "params": [
+        {
+          "name": "component_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_escalation",
+      "params": [
+        {
+          "name": "escalation_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "new_status",
+          "type": "str",
+          "optional": true
+        },
+        {
+          "name": "field_updates",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "updated_by",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_kb_article",
+      "params": [
+        {
+          "name": "article_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_post_incident_review",
+      "params": [
+        {
+          "name": "pir_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_product",
+      "params": [
+        {
+          "name": "product_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_rca",
+      "params": [
+        {
+          "name": "rca_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_rollback_request",
+      "params": [
+        {
+          "name": "rollback_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_sla",
+      "params": [
+        {
+          "name": "sla_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "revise_subscription",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "changes",
+          "type": "dict",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "set_sla",
+      "params": [
+        {
+          "name": "subscription_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "severity_level",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "response_time_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "resolution_time_hours",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "availability_target",
+          "type": "float",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "settle_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolved_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "resolution_summary",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "survey_entities",
+      "params": [
+        {
+          "name": "entity_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "filters",
+          "type": "dict",
+          "optional": true
+        },
+        {
+          "name": "requester_id",
+          "type": "str",
+          "optional": true
+        }
+      ],
+      "name_mismatch": false
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "track_metric",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "metric_type",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "calculated_value_minutes",
+          "type": "int",
+          "optional": false
+        },
+        {
+          "name": "target_minutes",
+          "type": "int",
+          "optional": true
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "trigger_escalation",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "target_user",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "reason",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "requested_by",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "escalation_level",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    },
+    {
+      "interface": "interface_5",
+      "api_name": "wrap_up_incident",
+      "params": [
+        {
+          "name": "incident_id",
+          "type": "str",
+          "optional": false
+        },
+        {
+          "name": "closed_by",
+          "type": "str",
+          "optional": false
+        }
+      ],
+      "name_mismatch": true
+    }
+  ]
+}

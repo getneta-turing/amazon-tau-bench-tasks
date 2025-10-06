@@ -1,0 +1,371 @@
+foreign_keys:
+  - parent_table: clients
+    parent_column: client_id
+    child_table: users
+    child_column: client_id
+    type: "1:N"
+
+  - parent_table: vendors
+    parent_column: vendor_id
+    child_table: users
+    child_column: vendor_id
+    type: "1:N"
+
+  - parent_table: vendors
+    parent_column: vendor_id
+    child_table: products
+    child_column: vendor_id
+    type: "1:N"
+
+  - parent_table: products
+    parent_column: product_id
+    child_table: components
+    child_column: product_id
+    type: "1:N"
+
+  - parent_table: clients
+    parent_column: client_id
+    child_table: subscriptions
+    child_column: client_id
+    type: "1:N"
+
+  - parent_table: products
+    parent_column: product_id
+    child_table: subscriptions
+    child_column: product_id
+    type: "1:N"
+
+  - parent_table: subscriptions
+    parent_column: subscription_id
+    child_table: sla_agreements
+    child_column: subscription_id
+    type: "1:N"
+
+  - parent_table: clients
+    parent_column: client_id
+    child_table: incidents
+    child_column: client_id
+    type: "1:N"
+
+  - parent_table: components
+    parent_column: component_id
+    child_table: incidents
+    child_column: component_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: incidents
+    child_column: reporter_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: incidents
+    child_column: assigned_manager_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: communications
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: communications
+    child_column: sender_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: communications
+    child_column: recipient_user_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: workarounds
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: workarounds
+    child_column: implemented_by_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: root_cause_analyses
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: root_cause_analyses
+    child_column: conducted_by_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: escalations
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: escalations
+    child_column: escalated_by_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: escalations
+    child_column: escalated_to_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: change_requests
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: change_requests
+    child_column: requested_by_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: change_requests
+    child_column: approved_by_id
+    type: "1:N"
+
+  - parent_table: change_requests
+    parent_column: change_id
+    child_table: rollback_requests
+    child_column: change_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: rollback_requests
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: rollback_requests
+    child_column: requested_by_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: rollback_requests
+    child_column: approved_by_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: metrics
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: metrics
+    child_column: recorded_by_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: incident_reports
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: incident_reports
+    child_column: generated_by_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: knowledge_base_articles
+    child_column: author_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: knowledge_base_articles
+    child_column: reviewer_user_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: knowledge_base_articles
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: post_incident_reviews
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: post_incident_reviews
+    child_column: facilitator_user_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: approvals
+    child_column: approver_id
+    type: "1:N"
+
+  - parent_table: event_records
+    parent_column: event_id
+    child_table: event_correlations
+    child_column: event_id
+    type: "1:N"
+
+  - parent_table: incidents
+    parent_column: incident_id
+    child_table: event_correlations
+    child_column: incident_id
+    type: "1:N"
+
+  - parent_table: users
+    parent_column: user_id
+    child_table: audit_trails
+    child_column: user_id
+    type: "1:N"
+
+generic_foreign_keys:
+  - child_table: approvals
+    type_column: reference_type
+    id_column: reference_id
+    mapping:
+      client:
+        parent_table: clients
+        parent_column: client_id
+      user:
+        parent_table: users
+        parent_column: user_id
+      vendor:
+        parent_table: vendors
+        parent_column: vendor_id
+      product:
+        parent_table: products
+        parent_column: product_id
+      component:
+        parent_table: components
+        parent_column: component_id
+      subscription:
+        parent_table: subscriptions
+        parent_column: subscription_id
+      sla:
+        parent_table: sla_agreements
+        parent_column: sla_id
+      incident:
+        parent_table: incidents
+        parent_column: incident_id
+      communication:
+        parent_table: communications
+        parent_column: communication_id
+      workaround:
+        parent_table: workarounds
+        parent_column: workaround_id
+      rca:
+        parent_table: root_cause_analyses
+        parent_column: rca_id
+      escalation:
+        parent_table: escalations
+        parent_column: escalation_id
+      change_request:
+        parent_table: change_requests
+        parent_column: change_id
+      rollback_request:
+        parent_table: rollback_requests
+        parent_column: rollback_id
+      metric:
+        parent_table: metrics
+        parent_column: metric_id
+      incident_report:
+        parent_table: incident_reports
+        parent_column: report_id
+      kb_article:
+        parent_table: knowledge_base_articles
+        parent_column: article_id
+      post_incident_review:
+        parent_table: post_incident_reviews
+        parent_column: pir_id
+
+  - child_table: audit_trails
+    type_column: reference_type
+    id_column: reference_id
+    mapping:
+      client:
+        parent_table: clients
+        parent_column: client_id
+      user:
+        parent_table: users
+        parent_column: user_id
+      vendor:
+        parent_table: vendors
+        parent_column: vendor_id
+      product:
+        parent_table: products
+        parent_column: product_id
+      component:
+        parent_table: components
+        parent_column: component_id
+      subscription:
+        parent_table: subscriptions
+        parent_column: subscription_id
+      sla:
+        parent_table: sla_agreements
+        parent_column: sla_id
+      incident:
+        parent_table: incidents
+        parent_column: incident_id
+      communication:
+        parent_table: communications
+        parent_column: communication_id
+      workaround:
+        parent_table: workarounds
+        parent_column: workaround_id
+      rca:
+        parent_table: root_cause_analyses
+        parent_column: rca_id
+      escalation:
+        parent_table: escalations
+        parent_column: escalation_id
+      change_request:
+        parent_table: change_requests
+        parent_column: change_id
+      rollback_request:
+        parent_table: rollback_requests
+        parent_column: rollback_id
+      metric:
+        parent_table: metrics
+        parent_column: metric_id
+      incident_report:
+        parent_table: incident_reports
+        parent_column: report_id
+      kb_article:
+        parent_table: knowledge_base_articles
+        parent_column: article_id
+      post_incident_review:
+        parent_table: post_incident_reviews
+        parent_column: pir_id
+      event_record:
+        parent_table: event_records
+        parent_column: event_id
+      event_correlation:
+        parent_table: event_correlations
+        parent_column: correlation_id
