@@ -5,9 +5,8 @@ A comprehensive incident management system for testing AI agent capabilities acr
 ## Structure
 
 ```
-Incident_managment/
 ├── amazon-tau-bench-tasks/           # Main environment
-│   └── envs/incident_managment-new/
+│   └── envs/incident_managment/
 │       ├── Interface_1-5_tasks.py    # Task definitions
 │       ├── rules.py                  # 200+ business rules
 │       ├── wiki.md                   # Domain policy
