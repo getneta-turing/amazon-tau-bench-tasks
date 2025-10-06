@@ -1,0 +1,82 @@
+{
+  "1": {
+    "product_id": "1",
+    "name": "Product-SI-852",
+    "product_type": "api_gateway",
+    "version": "4.6.17",
+    "vendor_id": null,
+    "status": "maintenance",
+    "created_at": "2025-01-24T23:24:41.754891",
+    "updated_at": "2025-05-05T17:29:19.754891"
+  },
+  "2": {
+    "product_id": "2",
+    "name": "Product-Pf-084",
+    "product_type": "security_service",
+    "version": "4.3.4",
+    "vendor_id": "3",
+    "status": "active",
+    "created_at": "2025-05-17T22:13:25.754891",
+    "updated_at": "2025-10-05T08:21:38.754891"
+  },
+  "3": {
+    "product_id": "3",
+    "name": "Product-kw-485",
+    "product_type": "payment_processing",
+    "version": "4.13.18",
+    "vendor_id": "1",
+    "status": "active",
+    "created_at": "2025-04-08T08:23:24.754891",
+    "updated_at": "2025-06-07T08:21:57.754891"
+  },
+  "4": {
+    "product_id": "4",
+    "name": "Product-XG-388",
+    "product_type": "other",
+    "version": "3.9.18",
+    "vendor_id": "3",
+    "status": "maintenance",
+    "created_at": "2025-01-09T03:38:01.754891",
+    "updated_at": "2025-01-10T08:56:15.754891"
+  },
+  "5": {
+    "product_id": "5",
+    "name": "Product-ZY-539",
+    "product_type": "monitoring_tool",
+    "version": "4.6.12",
+    "vendor_id": null,
+    "status": "deprecated",
+    "created_at": "2025-05-29T19:07:48.754891",
+    "updated_at": "2025-11-04T18:58:35.754891"
+  },
+  "6": {
+    "product_id": "6",
+    "name": "Product-VZ-336",
+    "product_type": "data_integration",
+    "version": "1.3.14",
+    "vendor_id": null,
+    "status": "active",
+    "created_at": "2025-06-20T20:22:00.754891",
+    "updated_at": "2025-11-30T10:56:46.754891"
+  },
+  "7": {
+    "product_id": "7",
+    "name": "Product-Fw-338",
+    "product_type": "payment_processing",
+    "version": "2.8.3",
+    "vendor_id": null,
+    "status": "maintenance",
+    "created_at": "2025-06-15T01:31:03.754891",
+    "updated_at": "2025-11-15T03:25:54.754891"
+  },
+  "8": {
+    "product_id": "8",
+    "name": "Product-Eq-004",
+    "product_type": "backup_service",
+    "version": "2.10.8",
+    "vendor_id": "4",
+    "status": "maintenance",
+    "created_at": "2024-01-16T12:58:12.754891",
+    "updated_at": "2024-02-03T20:32:28.754891"
+  }
+}

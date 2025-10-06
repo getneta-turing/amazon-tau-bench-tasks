@@ -1,0 +1,155 @@
+{
+  "1": {
+    "workaround_id": "1",
+    "incident_id": "1",
+    "implemented_by_id": "7",
+    "effectiveness": "partially_effective",
+    "status": "replaced",
+    "description": "",
+    "implemented_at": "2023-09-24T07:53:06.754891"
+  },
+  "2": {
+    "workaround_id": "2",
+    "incident_id": "1",
+    "implemented_by_id": "1",
+    "effectiveness": "effective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2024-03-06T10:19:10.754891"
+  },
+  "3": {
+    "workaround_id": "3",
+    "incident_id": "1",
+    "implemented_by_id": "1",
+    "effectiveness": "effective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2024-10-19T11:42:03.754891"
+  },
+  "4": {
+    "workaround_id": "4",
+    "incident_id": "6",
+    "implemented_by_id": "13",
+    "effectiveness": "effective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2025-03-14T19:20:36.754891"
+  },
+  "5": {
+    "workaround_id": "5",
+    "incident_id": "6",
+    "implemented_by_id": "3",
+    "effectiveness": "ineffective",
+    "status": "replaced",
+    "description": "",
+    "implemented_at": "2025-06-14T13:53:56.754891"
+  },
+  "6": {
+    "workaround_id": "6",
+    "incident_id": "8",
+    "implemented_by_id": "11",
+    "effectiveness": "partially_effective",
+    "status": "inactive",
+    "description": "",
+    "implemented_at": "2025-06-26T15:29:00.754891"
+  },
+  "7": {
+    "workaround_id": "7",
+    "incident_id": "9",
+    "implemented_by_id": "11",
+    "effectiveness": "ineffective",
+    "status": "replaced",
+    "description": "",
+    "implemented_at": "2025-01-17T05:38:34.754891"
+  },
+  "8": {
+    "workaround_id": "8",
+    "incident_id": "9",
+    "implemented_by_id": "14",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2024-01-12T14:15:14.754891"
+  },
+  "9": {
+    "workaround_id": "9",
+    "incident_id": "11",
+    "implemented_by_id": "6",
+    "effectiveness": "partially_effective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2023-10-05T12:50:21.754891"
+  },
+  "10": {
+    "workaround_id": "10",
+    "incident_id": "12",
+    "implemented_by_id": "16",
+    "effectiveness": "effective",
+    "status": "inactive",
+    "description": "",
+    "implemented_at": "2023-08-17T14:54:01.754891"
+  },
+  "11": {
+    "workaround_id": "11",
+    "incident_id": "12",
+    "implemented_by_id": "9",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2024-05-16T17:32:27.754891"
+  },
+  "12": {
+    "workaround_id": "12",
+    "incident_id": "13",
+    "implemented_by_id": "3",
+    "effectiveness": "partially_effective",
+    "status": "replaced",
+    "description": "",
+    "implemented_at": "2024-05-13T10:15:44.754891"
+  },
+  "13": {
+    "workaround_id": "13",
+    "incident_id": "14",
+    "implemented_by_id": "3",
+    "effectiveness": "partially_effective",
+    "status": "replaced",
+    "description": "",
+    "implemented_at": "2024-10-07T10:33:03.754891"
+  },
+  "14": {
+    "workaround_id": "14",
+    "incident_id": "14",
+    "implemented_by_id": "18",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2025-03-10T04:29:41.754891"
+  },
+  "15": {
+    "workaround_id": "15",
+    "incident_id": "15",
+    "implemented_by_id": "20",
+    "effectiveness": "ineffective",
+    "status": "active",
+    "description": "",
+    "implemented_at": "2024-06-23T10:46:44.754891"
+  },
+  "16": {
+    "workaround_id": "16",
+    "incident_id": "16",
+    "implemented_by_id": "11",
+    "effectiveness": "effective",
+    "status": "inactive",
+    "description": "",
+    "implemented_at": "2024-04-21T10:07:36.754891"
+  },
+  "17": {
+    "workaround_id": "17",
+    "incident_id": "16",
+    "implemented_by_id": "5",
+    "effectiveness": "partially_effective",
+    "status": "inactive",
+    "description": "",
+    "implemented_at": "2023-08-08T07:17:01.754891"
+  }
+}

@@ -1,0 +1,74 @@
+{
+  "1": {
+    "client_id": "1",
+    "name": "Gould-Foster LLC",
+    "registration_number": "077777868",
+    "contact_email": "brandonn@proton.me",
+    "client_type": "enterprise",
+    "status": "suspended",
+    "contact_phone": "+13122381408",
+    "address": "9083 Christopher Manor, East Christopherchester, AZ 39099",
+    "created_at": "2024-11-08T08:24:22.754891",
+    "updated_at": "2025-02-18T08:06:21.754891"
+  },
+  "2": {
+    "client_id": "2",
+    "name": "Williams-Walker LLC",
+    "registration_number": "591682483",
+    "contact_email": "angela.anderson@gmail.com",
+    "client_type": "mid_market",
+    "status": "suspended",
+    "contact_phone": "+12127909593",
+    "address": "81948 Dakota Ports Apt. 518, New Brianborough, NE 57975-4323",
+    "created_at": "2024-07-17T22:40:24.754891",
+    "updated_at": "2024-08-04T07:26:08.754891"
+  },
+  "3": {
+    "client_id": "3",
+    "name": "Andrews PLC PLC",
+    "registration_number": "921773490",
+    "contact_email": "troycooper297@mail.com",
+    "client_type": "mid_market",
+    "status": "suspended",
+    "contact_phone": "+12137845054",
+    "address": "9118 Martin Junctions Apt. 760, Port Angelamouth, LA 97971-1471",
+    "created_at": "2024-08-25T12:05:35.754891",
+    "updated_at": "2024-10-20T13:47:20.754891"
+  },
+  "4": {
+    "client_id": "4",
+    "name": "Simon LLC PLC",
+    "registration_number": "686028113",
+    "contact_email": "deborah.kaiser@mail.com",
+    "client_type": "enterprise",
+    "status": "suspended",
+    "contact_phone": "+12128333374",
+    "address": "6507 Jackson Crescent Suite 034, Lake John, MA 12768-4268",
+    "created_at": "2024-03-11T07:19:06.754891",
+    "updated_at": "2024-04-07T04:29:37.754891"
+  },
+  "5": {
+    "client_id": "5",
+    "name": "Mccarthy-Downs GmbH",
+    "registration_number": "628742260",
+    "contact_email": "feliciaj@gmail.com",
+    "client_type": "mid_market",
+    "status": "active",
+    "contact_phone": "+17189983999",
+    "address": "12233 Todd Radial, West Julian, DC 85995-2890",
+    "created_at": "2024-05-14T18:32:21.754891",
+    "updated_at": "2024-09-01T05:58:36.754891"
+  },
+  "6": {
+    "client_id": "6",
+    "name": "Lam-Deleon GmbH",
+    "registration_number": "939671729",
+    "contact_email": "nancyyates747@outlook.com",
+    "client_type": "small_business",
+    "status": "suspended",
+    "contact_phone": "+12133208387",
+    "address": "6617 Brown Cliff Apt. 721, Carolineville, AL 81590",
+    "created_at": "2025-07-13T16:59:04.754891",
+    "updated_at": "2025-09-28T12:06:22.754891"
+  }
+}
