@@ -71,7 +71,7 @@ class OnboardClient(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_client",
+                "name":"onboard_client",
                 "description":"Register a new client.",
                 "parameters":{
                     "type":"object",

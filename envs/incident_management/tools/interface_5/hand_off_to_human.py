@@ -46,7 +46,7 @@ class HandOffToHuman(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"transfer_to_human",
+                "name":"hand_off_to_human",
                 "description":"Escalate the current request to a human operator when a halt condition is met.",
                 "parameters":{
                     "type":"object",

@@ -56,7 +56,7 @@ class ReviseRca(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_rca",
+                "name":"revise_rca",
                 "description":"Update RCA details or mark as completed/approved.",
                 "parameters":{
                     "type":"object",

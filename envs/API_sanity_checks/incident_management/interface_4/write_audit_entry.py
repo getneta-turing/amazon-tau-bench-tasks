@@ -71,7 +71,7 @@ class WriteAuditEntry(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"log_audit_trail",
+                "name":"write_audit_entry",
                 "description":"Write required audit records.",
                 "parameters":{
                     "type":"object",

@@ -61,7 +61,7 @@ class AlterUserPermissions(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_user_permissions",
+                "name":"alter_user_permissions",
                 "description":"Change user role or status.",
                 "parameters":{
                     "type":"object",

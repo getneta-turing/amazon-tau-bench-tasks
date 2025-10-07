@@ -55,7 +55,7 @@ class ReadEscalations(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_escalations",
+                "name":"read_escalations",
                 "description":"Retrieve escalations for an incident or user.",
                 "parameters":{
                     "type":"object",

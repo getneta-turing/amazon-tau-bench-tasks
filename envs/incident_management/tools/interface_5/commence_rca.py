@@ -70,7 +70,7 @@ class CommenceRca(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"start_rca",
+                "name":"commence_rca",
                 "description":"Initiate root-cause analysis.",
                 "parameters":{
                     "type":"object",

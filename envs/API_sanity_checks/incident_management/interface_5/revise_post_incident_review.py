@@ -56,7 +56,7 @@ class RevisePostIncidentReview(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_post_incident_review",
+                "name":"revise_post_incident_review",
                 "description":"Amend a PIR record.",
                 "parameters":{
                     "type":"object",

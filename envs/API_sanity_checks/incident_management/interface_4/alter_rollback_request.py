@@ -56,7 +56,7 @@ class AlterRollbackRequest(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_rollback_request",
+                "name":"alter_rollback_request",
                 "description":"Advance rollback lifecycle.",
                 "parameters":{
                     "type":"object",

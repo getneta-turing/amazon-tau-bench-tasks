@@ -68,7 +68,7 @@ class RecordMetricEntry(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"record_metric",
+                "name":"record_metric_entry",
                 "description":"Store performance metrics for a closed incident.",
                 "parameters":{
                     "type":"object",

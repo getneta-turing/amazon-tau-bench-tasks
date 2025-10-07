@@ -71,7 +71,7 @@ class CatalogueProduct(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_product",
+                "name":"catalogue_product",
                 "description":"Track a supported system/app.",
                 "parameters":{
                     "type":"object",

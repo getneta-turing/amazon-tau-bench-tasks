@@ -74,7 +74,7 @@ class RecordEventEntry(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_event_record",
+                "name":"record_event_entry",
                 "description":"Store a user-provided alert/event into the internal DB.",
                 "parameters":{
                     "type":"object",

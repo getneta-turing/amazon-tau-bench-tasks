@@ -56,7 +56,7 @@ class ReviseEscalation(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_escalation",
+                "name":"revise_escalation",
                 "description":"Modify escalation timestamps/status.",
                 "parameters":{
                     "type":"object",

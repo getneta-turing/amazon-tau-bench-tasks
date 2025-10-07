@@ -52,7 +52,7 @@ class PullCommunications(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_communications",
+                "name":"pull_communications",
                 "description":"List communications for an incident.",
                 "parameters":{
                     "type":"object",

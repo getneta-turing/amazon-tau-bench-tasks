@@ -60,7 +60,7 @@ class ReviseComponent(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_component",
+                "name":"revise_component",
                 "description":"Modify component details.",
                 "parameters":{
                     "type":"object",

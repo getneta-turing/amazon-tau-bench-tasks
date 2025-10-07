@@ -67,7 +67,7 @@ class EnlistVendor(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"register_vendor",
+                "name":"enlist_vendor",
                 "description":"Onboard a vendor/third party.",
                 "parameters":{
                     "type":"object",

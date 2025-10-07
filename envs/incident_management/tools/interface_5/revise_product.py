@@ -57,7 +57,7 @@ class ReviseProduct(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_product",
+                "name":"revise_product",
                 "description":"Modify product details.",
                 "parameters":{
                     "type":"object",

@@ -67,7 +67,7 @@ class CompileIncidentReport(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"generate_incident_report",
+                "name":"compile_incident_report",
                 "description":"Produce formal incident documentation.",
                 "parameters":{
                     "type":"object",

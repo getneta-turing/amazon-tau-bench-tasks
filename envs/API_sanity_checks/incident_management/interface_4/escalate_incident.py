@@ -78,7 +78,7 @@ class EscalateIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_escalation",
+                "name":"escalate_incident",
                 "description":"Escalate an incident.",
                 "parameters":{
                     "type":"object",

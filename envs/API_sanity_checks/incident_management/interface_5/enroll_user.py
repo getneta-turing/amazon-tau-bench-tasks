@@ -86,7 +86,7 @@ class EnrollUser(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_user",
+                "name":"enroll_user",
                 "description":"Add a user with role/associations.",
                 "parameters":{
                     "type":"object",

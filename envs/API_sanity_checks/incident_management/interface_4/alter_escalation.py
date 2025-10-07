@@ -56,7 +56,7 @@ class AlterEscalation(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_escalation",
+                "name":"alter_escalation",
                 "description":"Modify escalation timestamps/status.",
                 "parameters":{
                     "type":"object",

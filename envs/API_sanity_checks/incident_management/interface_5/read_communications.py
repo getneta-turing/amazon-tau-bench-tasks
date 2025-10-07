@@ -52,7 +52,7 @@ class ReadCommunications(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_communications",
+                "name":"read_communications",
                 "description":"List communications for an incident.",
                 "parameters":{
                     "type":"object",

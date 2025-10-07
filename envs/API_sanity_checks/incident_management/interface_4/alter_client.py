@@ -62,7 +62,7 @@ class AlterClient(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_client",
+                "name":"alter_client",
                 "description":"Modify client fields.",
                 "parameters":{
                     "type":"object",

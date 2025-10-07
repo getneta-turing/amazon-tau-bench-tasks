@@ -56,7 +56,7 @@ class RateSeverity(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"classify_severity",
+                "name":"rate_severity",
                 "description":"Classify severity P1–P4 from provided criteria snapshot.",
                 "parameters":{
                     "type":"object",
