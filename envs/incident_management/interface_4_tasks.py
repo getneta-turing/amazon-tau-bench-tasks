@@ -1,9 +1,10 @@
 """
-Interface 4 Tasks - Incident Management Domain (Synonym Functions)
+Interface 4 Tasks - Incident Management Domain.
 
-This module mirrors the Interface 1 task implementations but renames each task's
-'function' to the Interface 4 API names (synonyms). Parameters and expected
-results remain the same.
+This module contains example tasks for testing the functionality of Interface 4
+in the incident management domain. These tasks demonstrate the basic operations
+for creating, retrieving, and managing incidents, problems, vendor engagements,
+changes, communications, monitoring events, simulations, tool usage, and audits.
 """
 
 # NOTE:
@@ -12,434 +13,588 @@ results remain the same.
 # - Enum values follow the Incident Management Policy & SOPs.
 
 
-# 1) find_entities
-FIND_ENTITIES_TASK = {
-    "task_id": "if4_task_001",
-    "description": "Lookup a user by email for verification",
-    "function": "find_entities",
-    "parameters": {
-        "entity_type": "user",
-        "filters": {"email": "sda.jane.doe@example.com"},
-        "requester_id": "101"
-    },
-    "expected_result": "Zero, one, or many users matching the email"
+# -------------------------
+# Example Tasks (46 total)
+# -------------------------
+
+# 1) identify_entities (GET)
+IDENTIFY_ENTITIES = {
+    "task_id": "T401",
+    "function": "identify_entities",
+    "params": {
+        "entity_type": "incident",
+        "filters": {"client_id": "1", "status": "open"},
+        "requester_id": "1"
+    }
 }
 
-# 2) register_incident
-REGISTER_INCIDENT_TASK = {
-    "task_id": "if4_task_002",
-    "description": "Create a new incident reported by a user",
-    "function": "register_incident",
-    "parameters": {
-        "reporter_id": "101",
-        "detection_source": "user_report",
-        "initial_description": "Email service is intermittently failing for multiple users."
-    },
-    "expected_result": "{\"incident_id\": <str>, \"status\": \"open\", \"success\": true}"
+# 2) record_event_entry (SET)
+RECORD_EVENT_ENTRY = {
+    "task_id": "T402",
+    "function": "record_event_entry",
+    "params": {
+        "source": "alert_log",
+        "payload_summary": "High CPU on web gateway",
+        "severity_hint": "P3",
+        "recorded_by_id": "1"
+    }
 }
 
-# 3) capture_incident_details
-CAPTURE_INCIDENT_DETAILS_TASK = {
-    "task_id": "if4_task_003",
-    "description": "Append core details to an existing incident",
-    "function": "capture_incident_details",
-    "parameters": {
-        "incident_id": "2001",
-        "incident_description": "Impact: company-wide email latency; suspected load spike.",
-        "affected_service": "3001",
-        "timestamp": "2025-10-01T00:00:00",
-        "initial_diagnosis": "Possible mail queue backlog on MX-2.",
-        "workaround_note": "Users advised to retry after 5 minutes."
-    },
-    "expected_result": "Updated incident summary reflecting new details"
+# 3) associate_events_once (SET)
+ASSOCIATE_EVENTS_ONCE = {
+    "task_id": "T403",
+    "function": "associate_events_once",
+    "params": {
+        "event_ids": ["10", "11"],
+        "correlation_key": "SIG-GW-CPU-2025",
+        "link_incident_id": "4"
+    }
 }
 
-# 4) label_incident
-LABEL_INCIDENT_TASK = {
-    "task_id": "if4_task_004",
-    "description": "Categorize an incident as a software issue",
-    "function": "label_incident",
-    "parameters": {
-        "incident_id": "2002",
-        "category": "software",
-        "sub_category": "email_delivery"
-    },
-    "expected_result": "{\"incident_id\": \"2002\", \"category\": \"software\", \"success\": true}"
+# 4) register_customer (SET)
+REGISTER_CUSTOMER = {
+    "task_id": "T404",
+    "function": "register_customer",
+    "params": {
+        "name": "Hooli PLC",
+        "registration_number": "998877665",
+        "contact_email": "ops@hooli.example",
+        "client_type": "enterprise",
+        "contact_phone": "+14155551000",
+        "address": "1 Innovation Dr, SF CA"
+    }
 }
 
-# 5) assign_incident_priority
-ASSIGN_INCIDENT_PRIORITY_TASK = {
-    "task_id": "if4_task_005",
-    "description": "Set incident priority to high with justification",
-    "function": "assign_incident_priority",
-    "parameters": {
-        "incident_id": "2003",
-        "priority": "high",
-        "justification": "Affects most end users; business-critical service impact."
-    },
-    "expected_result": "{\"incident_id\": \"2003\", \"priority\": \"high\", \"success\": true}"
+# 5) register_user (SET)
+REGISTER_USER = {
+    "task_id": "T405",
+    "function": "register_user",
+    "params": {
+        "name": "Sam Carter",
+        "email": "sam.carter@hooli.example",
+        "role": "incident_manager",
+        "timezone": "America/Los_Angeles",
+        "client_id": "4"
+    }
 }
 
-# 6) route_incident
-ROUTE_INCIDENT_TASK = {
-    "task_id": "if4_task_006",
-    "description": "Assign the incident to L2 and acknowledge",
-    "function": "route_incident",
-    "parameters": {
-        "incident_id": "2004",
-        "assigned_team": "L2",
-        "responder_user_id": "205",
-        "communication_message": "Incident acknowledged by L2. Investigation started."
-    },
-    "expected_result": "{\"incident_id\": \"2004\", \"status\": \"in_progress\", \"assigned_team\": \"L2\", \"success\": true}"
+# 6) onboard_supplier (SET)
+ONBOARD_SUPPLIER = {
+    "task_id": "T406",
+    "function": "onboard_supplier",
+    "params": {
+        "vendor_name": "EdgeShield Security",
+        "contact_email": "support@edgeshield.example",
+        "contact_phone": "+13125551234",
+        "vendor_type": "software_provider"
+    }
 }
 
-# 7) capture_diagnosis_workaround
-CAPTURE_DIAGNOSIS_WORKAROUND_TASK = {
-    "task_id": "if4_task_007",
-    "description": "Record diagnostic steps and temporary workaround",
-    "function": "capture_diagnosis_workaround",
-    "parameters": {
-        "incident_id": "2005",
-        "diagnostic_steps_summary": "Checked MX-2 queues; identified burst traffic from misconfigured agent.",
-        "workaround_applied": True,
-        "responder_user_id": "205",
-        "workaround_details": "Throttled offending agent; reduced inbound queue size."
-    },
-    "expected_result": "Incident updated with diagnosis and workaround details"
+# 7) add_product_record (SET)
+ADD_PRODUCT_RECORD = {
+    "task_id": "T407",
+    "function": "add_product_record",
+    "params": {
+        "product_name": "EdgeShield WAF",
+        "product_type": "security_service",
+        "version": "2.9.0",
+        "vendor_id": "5"
+    }
 }
 
-# 8) upgrade_incident
-UPGRADE_INCIDENT_TASK = {
-    "task_id": "if4_task_008",
-    "description": "Escalate incident to L3 specialists",
-    "function": "upgrade_incident",
-    "parameters": {
-        "incident_id": "2006",
-        "escalated_to": "L3",
-        "reason_for_escalation": "Deep mail routing logic issue suspected.",
-        "escalated_by_user_id": "205"
-    },
-    "expected_result": "{\"incident_id\": \"2006\", \"status\": \"escalated\", \"escalated_to\": \"L3\", \"success\": true}"
+# 8) add_component_record (SET)
+ADD_COMPONENT_RECORD = {
+    "task_id": "T408",
+    "function": "add_component_record",
+    "params": {
+        "product_id": "5",
+        "component_name": "waf-gw-prod",
+        "component_type": "firewall",
+        "environment": "production",
+        "location": "us-west-2",
+        "ports": "443",
+        "status": "online"
+    }
 }
 
-# 9) open_vendor_case
-OPEN_VENDOR_CASE_TASK = {
-    "task_id": "if4_task_009",
-    "description": "Engage vendor via portal and mark incident pending_vendor",
-    "function": "open_vendor_case",
-    "parameters": {
-        "incident_id": "2007",
-        "vendor_name": "MailCloud Inc.",
-        "contact_method": "vendor_portal",
-        "vendor_ticket_reference": "MC-CASE-8891",
-        "initiated_by_user_id": "310"
-    },
-    "expected_result": "{\"incident_id\": \"2007\", \"vendor_engagement_id\": <str>, \"status\": \"pending_vendor\", \"success\": true}"
+# 9) provision_subscription (SET)
+PROVISION_SUBSCRIPTION = {
+    "task_id": "T409",
+    "function": "provision_subscription",
+    "params": {
+        "client_id": "4",
+        "product_id": "5",
+        "subscription_type": "full_service",
+        "service_level_tier": "premium",
+        "start_date": "2025-04-01",
+        "end_date": None,
+        "recovery_objectives": "RTO 4h / RPO 30m"
+    }
 }
 
-# 10) relate_change_to_incident
-RELATE_CHANGE_TO_INCIDENT_TASK = {
-    "task_id": "if4_task_010",
-    "description": "Record a change coordination reference for the incident",
-    "function": "relate_change_to_incident",
-    "parameters": {
-        "incident_id": "2008",
-        "change_summary": "Reconfigure MX-2 routing policy and deploy hotfix.",
-        "requested_by": "change_mgmt",
-        "approval_record_id": "A-555"
-    },
-    "expected_result": "{\"incident_id\": \"2008\", \"change_link_id\": <str>, \"success\": true}"
+# 10) specify_sla (SET)
+SPECIFY_SLA = {
+    "task_id": "T410",
+    "function": "specify_sla",
+    "params": {
+        "subscription_id": "5",
+        "severity_level": "P2",
+        "response_time_minutes": 45,
+        "resolution_time_hours": 12,
+        "availability_target": 99.9
+    }
 }
 
-# 11) finalize_incident_resolution
-FINALIZE_INCIDENT_RESOLUTION_TASK = {
-    "task_id": "if4_task_011",
-    "description": "Resolve the incident after permanent fix",
-    "function": "finalize_incident_resolution",
-    "parameters": {
-        "incident_id": "2009",
-        "resolution_summary": "Applied configuration hotfix; queues normalized.",
-        "resolved_by_user_id": "401",
-        "resolution_timestamp": "2025-10-01T01:45:00"
-    },
-    "expected_result": "{\"incident_id\": \"2009\", \"status\": \"resolved\", \"success\": true}"
+# 11) log_incident (SET)
+LOG_INCIDENT = {
+    "task_id": "T411",
+    "function": "log_incident",
+    "params": {
+        "reporter_id": "9",
+        "client_id": "4",
+        "title": "WAF latency impacting checkout",
+        "description": "Spike in TLS handshake time causing slow requests",
+        "category": "performance_degradation",
+        "severity": "P2",
+        "impact_level": "high",
+        "component_id": "6"
+    }
 }
 
-# 12) create_incident_communication
-CREATE_INCIDENT_COMMUNICATION_TASK = {
-    "task_id": "if4_task_012",
-    "description": "Post a stakeholder update on incident progress",
-    "function": "create_incident_communication",
-    "parameters": {
-        "incident_id": "2010",
-        "message_text": "Root cause identified; mitigation in progress. Next update in 30 minutes.",
-        "recipients_group": "stakeholders",
-        "sent_by_user_id": "205"
-    },
-    "expected_result": "{\"communication_id\": <str>, \"incident_id\": \"2010\", \"success\": true}"
+# 12) record_communication_entry (SET)
+RECORD_COMMUNICATION_ENTRY = {
+    "task_id": "T412",
+    "function": "record_communication_entry",
+    "params": {
+        "incident_id": "6",
+        "sender_user": "9",
+        "recipient": "executive_team",
+        "delivery_method": "incident_portal_update",
+        "message_content": "Mitigation is being applied; next update in 15 minutes."
+    }
 }
 
-# 13) terminate_incident
-TERMINATE_INCIDENT_TASK = {
-    "task_id": "if4_task_013",
-    "description": "Close a resolved incident with closure notes",
-    "function": "terminate_incident",
-    "parameters": {
-        "incident_id": "2011",
-        "closed_by_user_id": "102",
-        "closure_notes": "Monitored for 2 hours; stable with normal latency."
-    },
-    "expected_result": "{\"incident_id\": \"2011\", \"status\": \"closed\", \"success\": true}"
+# 13) enact_workaround (SET)
+ENACT_WORKAROUND = {
+    "task_id": "T413",
+    "function": "enact_workaround",
+    "params": {
+        "incident_id": "6",
+        "description": "Temporarily disable aggressive ruleset",
+        "effectiveness": "effective",
+        "implemented_by": "9"
+    }
 }
 
-# 14) open_postmortem
-OPEN_POSTMORTEM_TASK = {
-    "task_id": "if4_task_014",
-    "description": "Create a PIR for a high-priority incident",
-    "function": "open_postmortem",
-    "parameters": {
-        "incident_id": "2012",
-        "review_notes": "Timeline captured; contributing factors include misconfigured agent.",
-        "conducted_by_user_id": "100"
-    },
-    "expected_result": "{\"review_id\": <str>, \"incident_id\": \"2012\", \"success\": true}"
+# 14) initiate_root_cause (SET)
+INITIATE_ROOT_CAUSE = {
+    "task_id": "T414",
+    "function": "initiate_root_cause",
+    "params": {
+        "incident_id": "6",
+        "analysis_method": "fault_tree_analysis",
+        "assigned_to": "10"
+    }
 }
 
-# 15) record_incident_kb_update
-RECORD_INCIDENT_KB_UPDATE_TASK = {
-    "task_id": "if4_task_015",
-    "description": "Publish KB update with resolution and preventive actions",
-    "function": "record_incident_kb_update",
-    "parameters": {
-        "incident_id": "2013",
-        "kb_update_notes": "Add MX queue monitoring threshold and agent config validation checklist.",
-        "submitted_by_user_id": "100"
-    },
-    "expected_result": "{\"kb_entry_id\": <str>, \"linked_incident_id\": \"2013\", \"success\": true}"
+# 15) escalate_incident (SET)
+ESCALATE_INCIDENT = {
+    "task_id": "T415",
+    "function": "escalate_incident",
+    "params": {
+        "incident_id": "6",
+        "target_user": "11",
+        "reason": "client_demand",
+        "requested_by": "9",
+        "escalation_level": "executive"
+    }
 }
 
-# 16) raise_incident_from_event
-RAISE_INCIDENT_FROM_EVENT_TASK = {
-    "task_id": "if4_task_016",
-    "description": "Create an incident from an existing monitoring event",
-    "function": "raise_incident_from_event",
-    "parameters": {
-        "monitoring_event_id": "EVT-9001",
-        "detected_service": "3002",
-        "alert_details": "CPU utilization sustained over 95% for 10 minutes."
-    },
-    "expected_result": "{\"incident_id\": <str>, \"source\": \"monitoring\", \"status\": \"open\", \"success\": true}"
+# 16) file_change_request (SET)
+FILE_CHANGE_REQUEST = {
+    "task_id": "T416",
+    "function": "file_change_request",
+    "params": {
+        "change_title": "Tune WAF TLS settings and caching",
+        "change_type": "normal",
+        "risk_level": "medium",
+        "requested_by": "9",
+        "incident_id": "6"
+    }
 }
 
-# 17) record_tool_activity
-RECORD_TOOL_ACTIVITY_TASK = {
-    "task_id": "if4_task_017",
-    "description": "Log the use of an AIOps correlation run on an incident",
-    "function": "record_tool_activity",
-    "parameters": {
-        "incident_id": "2014",
-        "tool_used": "AIOps",
-        "action_summary": "Correlated spikes to deployment window; suggested rollback.",
-        "executed_by": "205"
-    },
-    "expected_result": "{\"tool_use_id\": <str>, \"incident_id\": \"2014\", \"success\": true}"
+# 17) file_rollback_request (SET)
+FILE_ROLLBACK_REQUEST = {
+    "task_id": "T417",
+    "function": "file_rollback_request",
+    "params": {
+        "change_id": "6",
+        "justification": "New config increased false positives",
+        "requested_by": "9",
+        "incident_id": "6"
+    }
 }
 
-# 18) record_incident_drill
-RECORD_INCIDENT_DRILL_TASK = {
-    "task_id": "if4_task_018",
-    "description": "Record a simulated incident drill for the core email service",
-    "function": "record_incident_drill",
-    "parameters": {
-        "scenario_name": "Email outage tabletop",
-        "simulated_by_user_id": "100",
-        "scope": "email_service"
-    },
-    "expected_result": "{\"simulation_id\": <str>, \"success\": true}"
+# 18) record_metric_entry (SET)
+RECORD_METRIC_ENTRY = {
+    "task_id": "T418",
+    "function": "record_metric_entry",
+    "params": {
+        "incident_id": "6",
+        "metric_type": "mean_time_to_resolve",
+        "calculated_value_minutes": 180,
+        "target_minutes": 240
+    }
 }
 
-# 19) initiate_problem
-INITIATE_PROBLEM_TASK = {
-    "task_id": "if4_task_019",
-    "description": "Create a problem for recurring MX queue backlogs",
-    "function": "initiate_problem",
-    "parameters": {
-        "problem_title": "Recurring MX queue backlog",
-        "description": "Multiple incidents with queue saturation during peak hours.",
-        "detection_source": "monitoring_tool",
-        "created_by_user_id": "401",
-        "related_incident_ids": ["2005", "2007"]
-    },
-    "expected_result": "{\"problem_id\": <str>, \"status\": \"open\", \"success\": true}"
+# 19) generate_incident_summary (SET)
+GENERATE_INCIDENT_SUMMARY = {
+    "task_id": "T419",
+    "function": "generate_incident_summary",
+    "params": {
+        "incident_id": "6",
+        "report_type": "executive_summary",
+        "generated_by": "9"
+    }
 }
 
-# 20) revise_problem
-REVISE_PROBLEM_TASK = {
-    "task_id": "if4_task_020",
-    "description": "Update a problem with refined scope and assignee",
-    "function": "revise_problem",
-    "parameters": {
-        "problem_id": "P-3001",
-        "change_set": {
-            "title": "MX backlog root cause analysis",
-            "description": "Narrowed to policy engine during peak retries.",
-            "assignee_user_id": "405",
-            "priority": "high"
-        },
-        "updated_by_user_id": "401"
-    },
-    "expected_result": "{\"problem_id\": \"P-3001\", \"success\": true}"
+# 20) publish_kb_article (SET)
+PUBLISH_KB_ARTICLE = {
+    "task_id": "T420",
+    "function": "publish_kb_article",
+    "params": {
+        "title": "WAF Latency Troubleshooting",
+        "content_type": "troubleshooting",
+        "category": "incident_resolution",
+        "author_id": "9",
+        "incident_id": "6",
+        "reviewer_user_id": "11"
+    }
 }
 
-# 21) relate_incident_to_problem
-RELATE_INCIDENT_TO_PROBLEM_TASK = {
-    "task_id": "if4_task_021",
-    "description": "Link an incident to an existing problem",
-    "function": "relate_incident_to_problem",
-    "parameters": {
-        "problem_id": "P-3001",
-        "incident_id": "2015",
-        "linked_by_user_id": "405"
-    },
-    "expected_result": "{\"problem_id\": \"P-3001\", \"incident_id\": \"2015\", \"success\": true}"
+# 21) schedule_pir_session (SET)
+SCHEDULE_PIR_SESSION = {
+    "task_id": "T421",
+    "function": "schedule_pir_session",
+    "params": {
+        "incident_id": "6",
+        "scheduled_date": "2025-12-15",
+        "facilitator_user_id": "9"
+    }
 }
 
-# 22) register_problem_workaround
-REGISTER_PROBLEM_WORKAROUND_TASK = {
-    "task_id": "if4_task_022",
-    "description": "Add a workaround to the problem and publish to KB",
-    "function": "register_problem_workaround",
-    "parameters": {
-        "problem_id": "P-3002",
-        "workaround_summary": "Temporarily reduce retry rate; auto-drain queues nightly.",
-        "added_by_user_id": "405"
-    },
-    "expected_result": "{\"problem_id\": \"P-3002\", \"status\": \"workaround_available\", \"kb_link_id\": <str>, \"success\": true}"
+# 22) alter_client (SET - update)
+ALTER_CLIENT = {
+    "task_id": "T422",
+    "function": "alter_client",
+    "params": {
+        "client_id": "4",
+        "changes": {"status": "active", "address": "2 Innovation Dr, SF CA"},
+        "requester_id": "9"
+    }
 }
 
-# 23) fix_problem
-FIX_PROBLEM_TASK = {
-    "task_id": "if4_task_023",
-    "description": "Resolve the problem with a validated permanent fix",
-    "function": "fix_problem",
-    "parameters": {
-        "problem_id": "P-3003",
-        "permanent_fix_summary": "Policy engine patch v2.1; adaptive retry backoff.",
-        "validation_evidence": "Post-patch monitoring shows stable queues over 7 days.",
-        "resolved_by_user_id": "405"
-    },
-    "expected_result": "{\"problem_id\": \"P-3003\", \"status\": \"resolved\", \"success\": true}"
+# 23) alter_user_permissions (SET - update)
+ALTER_USER_PERMISSIONS = {
+    "task_id": "T423",
+    "function": "alter_user_permissions",
+    "params": {
+        "user_id": "11",
+        "requested_changes": {"role": "executive", "status": "active"},
+        "modified_by": "9"
+    }
 }
 
-# 24) terminate_problem
-TERMINATE_PROBLEM_TASK = {
-    "task_id": "if4_task_024",
-    "description": "Close a resolved problem after stability window",
-    "function": "terminate_problem",
-    "parameters": {
-        "problem_id": "P-3003",
-        "closed_by_user_id": "100",
-        "closure_notes": "Stable over 14 days; no reoccurrences."
-    },
-    "expected_result": "{\"problem_id\": \"P-3003\", \"status\": \"closed\", \"success\": true}"
+# 24) alter_product (SET - update)
+ALTER_PRODUCT = {
+    "task_id": "T424",
+    "function": "alter_product",
+    "params": {
+        "product_id": "5",
+        "changes": {"version": "2.9.1", "status": "active"}
+    }
 }
 
-# 25) write_audit_record
-WRITE_AUDIT_RECORD_TASK = {
-    "task_id": "if4_task_025",
-    "description": "Write an audit entry for an update action on an incident",
-    "function": "write_audit_record",
-    "parameters": {
-        "user_id": "205",
+# 25) alter_component (SET - update)
+ALTER_COMPONENT = {
+    "task_id": "T425",
+    "function": "alter_component",
+    "params": {
+        "component_id": "6",
+        "changes": {"status": "maintenance", "environment": "staging"}
+    }
+}
+
+# 26) alter_subscription (SET - update)
+ALTER_SUBSCRIPTION = {
+    "task_id": "T426",
+    "function": "alter_subscription",
+    "params": {
+        "subscription_id": "5",
+        "changes": {"service_level_tier": "standard", "rto_hours": 8}
+    }
+}
+
+# 27) alter_sla (SET - update)
+ALTER_SLA = {
+    "task_id": "T427",
+    "function": "alter_sla",
+    "params": {
+        "sla_id": "5",
+        "changes": {"response_time_minutes": 30, "status": "active"}
+    }
+}
+
+# 28) alter_incident (SET - update)
+ALTER_INCIDENT = {
+    "task_id": "T428",
+    "function": "alter_incident",
+    "params": {
+        "incident_id": "6",
+        "new_status": "in_progress",
+        "field_updates": {"assigned_manager_id": "9", "severity": "P2"},
+        "updated_by": "9"
+    }
+}
+
+# 29) alter_escalation (SET - update)
+ALTER_ESCALATION = {
+    "task_id": "T429",
+    "function": "alter_escalation",
+    "params": {
+        "escalation_id": "6",
+        "changes": {"status": "acknowledged", "acknowledged_at": "2025-10-02T01:25:00"}
+    }
+}
+
+# 30) alter_change_request (SET - update)
+ALTER_CHANGE_REQUEST = {
+    "task_id": "T430",
+    "function": "alter_change_request",
+    "params": {
+        "change_id": "6",
+        "changes": {"status": "scheduled", "scheduled_start": "2025-10-06T03:00:00"}
+    }
+}
+
+# 31) alter_rollback_request (SET - update)
+ALTER_ROLLBACK_REQUEST = {
+    "task_id": "T431",
+    "function": "alter_rollback_request",
+    "params": {
+        "rollback_id": "6",
+        "changes": {"status": "approved", "approved_by_id": "11"}
+    }
+}
+
+# 32) alter_rca (SET - update)
+ALTER_RCA = {
+    "task_id": "T432",
+    "function": "alter_rca",
+    "params": {
+        "rca_id": "6",
+        "changes": {"status": "completed", "summary": "TLS config regression identified"}
+    }
+}
+
+# 33) alter_communication (SET - update)
+ALTER_COMMUNICATION = {
+    "task_id": "T433",
+    "function": "alter_communication",
+    "params": {
+        "communication_id": "6",
+        "changes": {"delivery_status": "delivered", "sent_at": "2025-10-02T00:45:00"}
+    }
+}
+
+# 34) alter_kb_article (SET - update)
+ALTER_KB_ARTICLE = {
+    "task_id": "T434",
+    "function": "alter_kb_article",
+    "params": {
+        "article_id": "6",
+        "changes": {"status": "published", "reviewer_user_id": "11"}
+    }
+}
+
+# 35) alter_post_incident_review (SET - update)
+ALTER_POST_INCIDENT_REVIEW = {
+    "task_id": "T435",
+    "function": "alter_post_incident_review",
+    "params": {
+        "pir_id": "6",
+        "changes": {"status": "in_progress", "scheduled_date": "2025-12-16"}
+    }
+}
+
+# 36) flag_incident_resolved (SET - resolve)
+FLAG_INCIDENT_RESOLVED = {
+    "task_id": "T436",
+    "function": "flag_incident_resolved",
+    "params": {
+        "incident_id": "6",
+        "resolved_by": "9",
+        "resolution_summary": "Ruleset tuned; latency normalized"
+    }
+}
+
+# 37) finalize_case (SET - close)
+FINALIZE_CASE = {
+    "task_id": "T437",
+    "function": "finalize_case",
+    "params": {
+        "incident_id": "6",
+        "closed_by": "9"
+    }
+}
+
+# 38) rate_severity (SET - compute/helper)
+RATE_SEVERITY = {
+    "task_id": "T438",
+    "function": "rate_severity",
+    "params": {
+        "complete_outage": False,
+        "client_count_impacted": 2,
+        "has_workaround": True,
+        "regulatory_or_financial_impact": False,
+        "is_priority_client": False
+    }
+}
+
+# 39) write_audit_entry (SET - log)
+WRITE_AUDIT_ENTRY = {
+    "task_id": "T439",
+    "function": "write_audit_entry",
+    "params": {
+        "user_id": "9",
         "action": "update",
         "reference_type": "incident",
-        "reference_id": "2004",
-        "meta": "Changed priority from medium to high"
-    },
-    "expected_result": "{\"audit_id\": <str>, \"success\": true}"
+        "reference_id": "6",
+        "field_name": "status",
+        "old_value": "in_progress",
+        "new_value": "resolved"
+    }
 }
 
-# 26) read_incident
-READ_INCIDENT_TASK = {
-    "task_id": "if4_task_026",
-    "description": "Read a single incident by ID",
-    "function": "read_incident",
-    "parameters": {
-        "incident_id": "2016"
-    },
-    "expected_result": "Incident object including status, priority, category, assignments"
+# 40) route_to_human (SET - control)
+ROUTE_TO_HUMAN = {
+    "task_id": "T440",
+    "function": "route_to_human",
+    "params": {
+        "reason_code": "approval_blocker",
+        "details": "Executive approval missing for emergency change"
+    }
 }
 
-# 27) search_incidents
-SEARCH_INCIDENTS_TASK = {
-    "task_id": "if4_task_027",
-    "description": "List open high-priority software incidents for dashboards",
-    "function": "search_incidents",
-    "parameters": {
-        "status": "open",
-        "priority": "high",
-        "category": "software",
-        "assigned_team": "L2",
-        "affected_service": "3001",
-        "created_since": "2025-09-20T00:00:00"
-    },
-    "expected_result": "Array of incident summaries matching the filters"
+# 41) pull_incident (GET)
+PULL_INCIDENT = {
+    "task_id": "T441",
+    "function": "pull_incident",
+    "params": {
+        "incident_id": "6"
+    }
 }
 
-# 28) read_problem
-READ_PROBLEM_TASK = {
-    "task_id": "if4_task_028",
-    "description": "Fetch a problem by ID with linked incidents",
-    "function": "read_problem",
-    "parameters": {
-        "problem_id": "P-3001"
-    },
-    "expected_result": "Problem object with status and related links"
+# 42) pull_event_records (GET)
+PULL_EVENT_RECORDS = {
+    "task_id": "T442",
+    "function": "pull_event_records",
+    "params": {
+        "source": "alert_log",
+        "severity_hint": "P3"
+    }
 }
 
-# 29) get_incident_communications
-GET_INCIDENT_COMMUNICATIONS_TASK = {
-    "task_id": "if4_task_029",
-    "description": "Retrieve all communications for an incident",
-    "function": "get_incident_communications",
-    "parameters": {
-        "incident_id": "2010"
-    },
-    "expected_result": "Array of communication records for the incident"
+# 43) pull_escalations (GET)
+PULL_ESCALATIONS = {
+    "task_id": "T443",
+    "function": "pull_escalations",
+    "params": {
+        "incident_id": "6",
+        "status": "acknowledged"
+    }
+}
+
+# 44) pull_communications (GET)
+PULL_COMMUNICATIONS = {
+    "task_id": "T444",
+    "function": "pull_communications",
+    "params": {
+        "incident_id": "6",
+        "delivery_status": "delivered"
+    }
+}
+
+# 45) pull_kb_articles (GET)
+PULL_KB_ARTICLES = {
+    "task_id": "T445",
+    "function": "pull_kb_articles",
+    "params": {
+        "category": "incident_resolution",
+        "status": "published"
+    }
+}
+
+# 46) confirm_approval_status (GET)
+CONFIRM_APPROVAL_STATUS = {
+    "task_id": "T446",
+    "function": "confirm_approval_status",
+    "params": {
+        "reference_type": "change_request",
+        "reference_id": "6",
+        "requested_action": "schedule",
+        "approver_id": "11"
+    }
 }
 
 
 INTERFACE_4_TASKS = [
-    FIND_ENTITIES_TASK,
-    REGISTER_INCIDENT_TASK,
-    CAPTURE_INCIDENT_DETAILS_TASK,
-    LABEL_INCIDENT_TASK,
-    ASSIGN_INCIDENT_PRIORITY_TASK,
-    ROUTE_INCIDENT_TASK,
-    CAPTURE_DIAGNOSIS_WORKAROUND_TASK,
-    UPGRADE_INCIDENT_TASK,
-    OPEN_VENDOR_CASE_TASK,
-    RELATE_CHANGE_TO_INCIDENT_TASK,
-    FINALIZE_INCIDENT_RESOLUTION_TASK,
-    CREATE_INCIDENT_COMMUNICATION_TASK,
-    TERMINATE_INCIDENT_TASK,
-    OPEN_POSTMORTEM_TASK,
-    RECORD_INCIDENT_KB_UPDATE_TASK,
-    RAISE_INCIDENT_FROM_EVENT_TASK,
-    RECORD_TOOL_ACTIVITY_TASK,
-    RECORD_INCIDENT_DRILL_TASK,
-    INITIATE_PROBLEM_TASK,
-    REVISE_PROBLEM_TASK,
-    RELATE_INCIDENT_TO_PROBLEM_TASK,
-    REGISTER_PROBLEM_WORKAROUND_TASK,
-    FIX_PROBLEM_TASK,
-    TERMINATE_PROBLEM_TASK,
-    WRITE_AUDIT_RECORD_TASK,
-    READ_INCIDENT_TASK,
-    SEARCH_INCIDENTS_TASK,
-    READ_PROBLEM_TASK,
-    GET_INCIDENT_COMMUNICATIONS_TASK,
+    IDENTIFY_ENTITIES,
+    RECORD_EVENT_ENTRY,
+    ASSOCIATE_EVENTS_ONCE,
+    REGISTER_CUSTOMER,
+    REGISTER_USER,
+    ONBOARD_SUPPLIER,
+    ADD_PRODUCT_RECORD,
+    ADD_COMPONENT_RECORD,
+    PROVISION_SUBSCRIPTION,
+    SPECIFY_SLA,
+    LOG_INCIDENT,
+    RECORD_COMMUNICATION_ENTRY,
+    ENACT_WORKAROUND,
+    INITIATE_ROOT_CAUSE,
+    ESCALATE_INCIDENT,
+    FILE_CHANGE_REQUEST,
+    FILE_ROLLBACK_REQUEST,
+    RECORD_METRIC_ENTRY,
+    GENERATE_INCIDENT_SUMMARY,
+    PUBLISH_KB_ARTICLE,
+    SCHEDULE_PIR_SESSION,
+    ALTER_CLIENT,
+    ALTER_USER_PERMISSIONS,
+    ALTER_PRODUCT,
+    ALTER_COMPONENT,
+    ALTER_SUBSCRIPTION,
+    ALTER_SLA,
+    ALTER_INCIDENT,
+    ALTER_ESCALATION,
+    ALTER_CHANGE_REQUEST,
+    ALTER_ROLLBACK_REQUEST,
+    ALTER_RCA,
+    ALTER_COMMUNICATION,
+    ALTER_KB_ARTICLE,
+    ALTER_POST_INCIDENT_REVIEW,
+    FLAG_INCIDENT_RESOLVED,
+    FINALIZE_CASE,
+    RATE_SEVERITY,
+    WRITE_AUDIT_ENTRY,
+    ROUTE_TO_HUMAN,
+    PULL_INCIDENT,
+    PULL_EVENT_RECORDS,
+    PULL_ESCALATIONS,
+    PULL_COMMUNICATIONS,
+    PULL_KB_ARTICLES,
+    CONFIRM_APPROVAL_STATUS,
 ]
 
 
