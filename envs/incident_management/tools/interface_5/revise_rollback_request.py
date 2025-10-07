@@ -56,7 +56,7 @@ class ReviseRollbackRequest(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_rollback_request",
+                "name":"revise_rollback_request",
                 "description":"Advance rollback lifecycle.",
                 "parameters":{
                     "type":"object",

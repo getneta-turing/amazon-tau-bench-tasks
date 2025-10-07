@@ -60,7 +60,7 @@ class AlterComponent(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_component",
+                "name":"alter_component",
                 "description":"Modify component details.",
                 "parameters":{
                     "type":"object",

@@ -82,7 +82,7 @@ class AuthorKbDraft(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_kb_article",
+                "name":"author_kb_draft",
                 "description":"Document a resolution/best practice.",
                 "parameters":{
                     "type":"object",

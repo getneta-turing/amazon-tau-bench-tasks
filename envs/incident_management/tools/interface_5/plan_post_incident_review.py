@@ -69,7 +69,7 @@ class PlanPostIncidentReview(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_post_incident_review",
+                "name":"plan_post_incident_review",
                 "description":"Schedule a post-incident review (PIR).",
                 "parameters":{
                     "type":"object",

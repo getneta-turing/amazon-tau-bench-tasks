@@ -74,7 +74,7 @@ class IngestEventRecord(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_event_record",
+                "name":"ingest_event_record",
                 "description":"Store a user-provided alert/event into the internal DB.",
                 "parameters":{
                     "type":"object",

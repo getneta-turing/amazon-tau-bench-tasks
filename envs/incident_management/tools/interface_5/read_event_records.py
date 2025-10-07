@@ -65,7 +65,7 @@ class ReadEventRecords(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_event_records",
+                "name":"read_event_records",
                 "description":"List event records with filters.",
                 "parameters":{
                     "type":"object",

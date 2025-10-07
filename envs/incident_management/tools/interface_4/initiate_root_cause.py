@@ -70,7 +70,7 @@ class InitiateRootCause(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"start_rca",
+                "name":"initiate_root_cause",
                 "description":"Initiate root-cause analysis.",
                 "parameters":{
                     "type":"object",

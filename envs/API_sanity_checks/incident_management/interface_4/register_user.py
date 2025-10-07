@@ -86,7 +86,7 @@ class RegisterUser(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_user",
+                "name":"register_user",
                 "description":"Add a user with role/associations.",
                 "parameters":{
                     "type":"object",

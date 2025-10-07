@@ -56,7 +56,7 @@ class AlterRca(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_rca",
+                "name":"alter_rca",
                 "description":"Update RCA details or mark as completed/approved.",
                 "parameters":{
                     "type":"object",

@@ -57,7 +57,7 @@ class ReviseSla(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_sla",
+                "name":"revise_sla",
                 "description":"Update an SLA row.",
                 "parameters":{
                     "type":"object",

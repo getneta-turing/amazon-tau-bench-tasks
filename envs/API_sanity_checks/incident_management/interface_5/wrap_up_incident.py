@@ -59,7 +59,7 @@ class WrapUpIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"close_incident",
+                "name":"wrap_up_incident",
                 "description":"Close an already resolved incident.",
                 "parameters":{
                     "type":"object",

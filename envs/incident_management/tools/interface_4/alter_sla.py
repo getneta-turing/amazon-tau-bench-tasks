@@ -57,7 +57,7 @@ class AlterSla(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_sla",
+                "name":"alter_sla",
                 "description":"Update an SLA row.",
                 "parameters":{
                     "type":"object",

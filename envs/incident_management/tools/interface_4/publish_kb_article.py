@@ -82,7 +82,7 @@ class PublishKbArticle(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_kb_article",
+                "name":"publish_kb_article",
                 "description":"Document a resolution/best practice.",
                 "parameters":{
                     "type":"object",

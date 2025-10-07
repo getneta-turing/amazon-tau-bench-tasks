@@ -56,7 +56,7 @@ class PullKbArticles(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_kb_articles",
+                "name":"pull_kb_articles",
                 "description":"Retrieve knowledge articles by filters.",
                 "parameters":{
                     "type":"object",

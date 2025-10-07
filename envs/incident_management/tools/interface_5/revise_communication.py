@@ -61,7 +61,7 @@ class ReviseCommunication(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_communication",
+                "name":"revise_communication",
                 "description":"Adjust a communication record (while pending).",
                 "parameters":{
                     "type":"object",

@@ -74,7 +74,7 @@ class RaiseRollbackRequest(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_rollback_request",
+                "name":"raise_rollback_request",
                 "description":"Request rollback of a change.",
                 "parameters":{
                     "type":"object",

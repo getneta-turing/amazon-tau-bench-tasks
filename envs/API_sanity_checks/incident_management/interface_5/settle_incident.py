@@ -61,7 +61,7 @@ class SettleIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"resolve_incident",
+                "name":"settle_incident",
                 "description":"Mark incident as resolved; capture summary.",
                 "parameters":{
                     "type":"object",

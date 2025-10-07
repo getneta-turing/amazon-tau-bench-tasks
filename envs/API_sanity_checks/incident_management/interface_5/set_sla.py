@@ -70,7 +70,7 @@ class SetSla(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_sla",
+                "name":"set_sla",
                 "description":"Define SLA per severity for a subscription.",
                 "parameters":{
                     "type":"object",

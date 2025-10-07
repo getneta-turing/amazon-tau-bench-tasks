@@ -68,7 +68,7 @@ class ReadIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_incident",
+                "name":"read_incident",
                 "description":"Retrieve one incident or a filtered list.",
                 "parameters":{
                     "type":"object",

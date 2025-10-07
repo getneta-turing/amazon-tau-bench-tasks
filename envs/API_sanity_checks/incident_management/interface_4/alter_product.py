@@ -57,7 +57,7 @@ class AlterProduct(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_product",
+                "name":"alter_product",
                 "description":"Modify product details.",
                 "parameters":{
                     "type":"object",

@@ -71,7 +71,7 @@ class RegisterCustomer(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_client",
+                "name":"register_customer",
                 "description":"Register a new client.",
                 "parameters":{
                     "type":"object",

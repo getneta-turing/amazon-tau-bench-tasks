@@ -68,7 +68,7 @@ class TrackMetric(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"record_metric",
+                "name":"track_metric",
                 "description":"Store performance metrics for a closed incident.",
                 "parameters":{
                     "type":"object",

@@ -67,7 +67,7 @@ class GenerateIncidentSummary(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"generate_incident_report",
+                "name":"generate_incident_summary",
                 "description":"Produce formal incident documentation.",
                 "parameters":{
                     "type":"object",

@@ -55,7 +55,7 @@ class PullEscalations(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_escalations",
+                "name":"pull_escalations",
                 "description":"Retrieve escalations for an incident or user.",
                 "parameters":{
                     "type":"object",
