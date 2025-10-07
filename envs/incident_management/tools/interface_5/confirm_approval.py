@@ -56,7 +56,7 @@ class ConfirmApproval(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"check_approval",
+                "name":"confirm_approval",
                 "description":"Validate that required approval(s) exist for an action.",
                 "parameters":{
                     "type":"object",

@@ -102,7 +102,7 @@ class LogIncident(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_incident",
+                "name":"log_incident",
                 "description":"Formally log an incident.",
                 "parameters":{
                     "type":"object",

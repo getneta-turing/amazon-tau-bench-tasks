@@ -59,7 +59,7 @@ class FinalizeCase(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"close_incident",
+                "name":"finalize_case",
                 "description":"Close an already resolved incident.",
                 "parameters":{
                     "type":"object",

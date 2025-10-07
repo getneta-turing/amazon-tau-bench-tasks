@@ -71,7 +71,7 @@ class AddProductRecord(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_product",
+                "name":"add_product_record",
                 "description":"Track a supported system/app.",
                 "parameters":{
                     "type":"object",

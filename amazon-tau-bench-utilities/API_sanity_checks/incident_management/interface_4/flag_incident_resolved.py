@@ -61,7 +61,7 @@ class FlagIncidentResolved(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"resolve_incident",
+                "name":"flag_incident_resolved",
                 "description":"Mark incident as resolved; capture summary.",
                 "parameters":{
                     "type":"object",

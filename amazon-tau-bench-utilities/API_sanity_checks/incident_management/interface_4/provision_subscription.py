@@ -83,7 +83,7 @@ class ProvisionSubscription(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_subscription",
+                "name":"provision_subscription",
                 "description":"Establish client coverage for a product.",
                 "parameters":{
                     "type":"object",

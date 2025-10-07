@@ -72,7 +72,7 @@ class ApplyMitigation(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"implement_workaround",
+                "name":"apply_mitigation",
                 "description":"Capture temporary mitigation.",
                 "parameters":{
                     "type":"object",

@@ -69,7 +69,7 @@ class SchedulePirSession(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_post_incident_review",
+                "name":"schedule_pir_session",
                 "description":"Schedule a post-incident review (PIR).",
                 "parameters":{
                     "type":"object",

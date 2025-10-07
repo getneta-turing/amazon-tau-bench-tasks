@@ -67,7 +67,7 @@ class OnboardSupplier(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"register_vendor",
+                "name":"onboard_supplier",
                 "description":"Onboard a vendor/third party.",
                 "parameters":{
                     "type":"object",

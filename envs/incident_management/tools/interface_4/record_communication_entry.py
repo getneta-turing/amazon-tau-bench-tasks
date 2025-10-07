@@ -77,7 +77,7 @@ class RecordCommunicationEntry(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"record_communication",
+                "name":"record_communication_entry",
                 "description":"Log incident communications.",
                 "parameters":{
                     "type":"object",

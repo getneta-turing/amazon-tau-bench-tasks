@@ -57,7 +57,7 @@ class AlterSubscription(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_subscription",
+                "name":"alter_subscription",
                 "description":"Modify a client subscription.",
                 "parameters":{
                     "type":"object",

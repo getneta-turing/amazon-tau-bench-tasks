@@ -77,7 +77,7 @@ class LogInteraction(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"record_communication",
+                "name":"log_interaction",
                 "description":"Log incident communications.",
                 "parameters":{
                     "type":"object",

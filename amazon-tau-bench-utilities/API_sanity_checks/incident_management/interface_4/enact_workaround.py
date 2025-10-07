@@ -72,7 +72,7 @@ class EnactWorkaround(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"implement_workaround",
+                "name":"enact_workaround",
                 "description":"Capture temporary mitigation.",
                 "parameters":{
                     "type":"object",

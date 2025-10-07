@@ -83,7 +83,7 @@ class ActivateSubscription(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_subscription",
+                "name":"activate_subscription",
                 "description":"Establish client coverage for a product.",
                 "parameters":{
                     "type":"object",

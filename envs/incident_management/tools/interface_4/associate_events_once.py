@@ -71,7 +71,7 @@ class AssociateEventsOnce(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"correlate_events_once",
+                "name":"associate_events_once",
                 "description":"One-time correlation of provided events in the current interaction.",
                 "parameters":{
                     "type":"object",

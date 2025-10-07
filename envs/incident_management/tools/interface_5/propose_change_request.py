@@ -81,7 +81,7 @@ class ProposeChangeRequest(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"create_change_request",
+                "name":"propose_change_request",
                 "description":"Propose a change linked to an incident (optional).",
                 "parameters":{
                     "type":"object",

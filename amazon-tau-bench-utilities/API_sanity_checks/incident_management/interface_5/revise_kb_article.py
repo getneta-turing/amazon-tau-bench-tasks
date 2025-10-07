@@ -57,7 +57,7 @@ class ReviseKbArticle(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_kb_article",
+                "name":"revise_kb_article",
                 "description":"Modify KB article metadata or status.",
                 "parameters":{
                     "type":"object",

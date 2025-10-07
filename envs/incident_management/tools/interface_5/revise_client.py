@@ -62,7 +62,7 @@ class ReviseClient(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_client",
+                "name":"revise_client",
                 "description":"Modify client fields.",
                 "parameters":{
                     "type":"object",

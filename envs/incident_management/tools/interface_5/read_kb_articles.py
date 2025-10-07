@@ -56,7 +56,7 @@ class ReadKbArticles(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"get_kb_articles",
+                "name":"read_kb_articles",
                 "description":"Retrieve knowledge articles by filters.",
                 "parameters":{
                     "type":"object",

@@ -56,7 +56,7 @@ class ReviseChangeRequest(Tool):
         return {
             "type":"function",
             "function":{
-                "name":"update_change_request",
+                "name":"revise_change_request",
                 "description":"Adjust details or advance status of a change.",
                 "parameters":{
                     "type":"object",
