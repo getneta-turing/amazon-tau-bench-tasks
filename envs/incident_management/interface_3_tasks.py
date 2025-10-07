@@ -1,9 +1,10 @@
 """
-Interface 3 Tasks - Incident Management Domain (Synonym Functions)
+Interface 3 Tasks - Incident Management Domain 
 
-This module mirrors the Interface 1 task implementations but renames each task's
-'function' to the Interface 3 API names (synonyms). Parameters and expected
-results remain the same.
+This module contains example tasks for testing the functionality of Interface 3
+in the incident management domain. These tasks demonstrate the basic operations
+for creating, retrieving, and managing incidents, problems, vendor engagements,
+changes, communications, monitoring events, simulations, tool usage, and audits.
 """
 
 # NOTE:
@@ -12,435 +13,584 @@ results remain the same.
 # - Enum values follow the Incident Management Policy & SOPs.
 
 
-# 1) search_entities — read  (was entities_lookup)
-SEARCH_ENTITIES_TASK = {
-    "task_id": "if3_task_001",
-    "description": "Lookup a user by email for verification",
-    "function": "search_entities",
-    "parameters": {
-        "entity_type": "user",
-        "filters": {"email": "sda.jane.doe@example.com"},
-        "requester_id": "101"
-    },
-    "expected_result": "Zero, one, or many users matching the email"
+# 1) locate_entities (GET)
+LOCATE_ENTITIES = {
+    "task_id": "T301",
+    "function": "locate_entities",
+    "params": {
+        "entity_type": "incident",
+        "filters": {"client_id": "1", "status": "open"},
+        "requester_id": "1"
+    }
 }
 
-# 2) initiate_incident — create  (was create_incident)
-INITIATE_INCIDENT_TASK = {
-    "task_id": "if3_task_002",
-    "description": "Create a new incident reported by a user",
-    "function": "initiate_incident",
-    "parameters": {
-        "reporter_id": "101",
-        "detection_source": "user_report",
-        "initial_description": "Email service is intermittently failing for multiple users."
-    },
-    "expected_result": "{\"incident_id\": <str>, \"status\": \"open\", \"success\": true}"
+# 2) append_event_record (SET)
+APPEND_EVENT_RECORD = {
+    "task_id": "T302",
+    "function": "append_event_record",
+    "params": {
+        "source": "alert_log",
+        "payload_summary": "Disk latency spike on database node",
+        "severity_hint": "P2",
+        "recorded_by_id": "1"
+    }
 }
 
-# 3) document_incident_details — update  (was log_incident_details)
-DOCUMENT_INCIDENT_DETAILS_TASK = {
-    "task_id": "if3_task_003",
-    "description": "Append core details to an existing incident",
-    "function": "document_incident_details",
-    "parameters": {
-        "incident_id": "2001",
-        "incident_description": "Impact: company-wide email latency; suspected load spike.",
-        "affected_service": "3001",
-        "timestamp": "2025-10-01T00:00:00",
-        "initial_diagnosis": "Possible mail queue backlog on MX-2.",
-        "workaround_note": "Users advised to retry after 5 minutes."
-    },
-    "expected_result": "Updated incident summary reflecting new details"
+# 3) link_events_once (SET)
+LINK_EVENTS_ONCE = {
+    "task_id": "T303",
+    "function": "link_events_once",
+    "params": {
+        "event_ids": ["7", "8"],
+        "correlation_key": "SIG-DB-LAT-2025",
+        "link_incident_id": "3"
+    }
 }
 
-# 4) assign_incident_category — update  (was categorize_incident)
-ASSIGN_INCIDENT_CATEGORY_TASK = {
-    "task_id": "if3_task_004",
-    "description": "Categorize an incident as a software issue",
-    "function": "assign_incident_category",
-    "parameters": {
-        "incident_id": "2002",
-        "category": "software",
-        "sub_category": "email_delivery"
-    },
-    "expected_result": "{\"incident_id\": \"2002\", \"category\": \"software\", \"success\": true}"
+# 4) enroll_client (SET)
+ENROLL_CLIENT = {
+    "task_id": "T304",
+    "function": "enroll_client",
+    "params": {
+        "name": "Initech GmbH",
+        "registration_number": "123123123",
+        "contact_email": "ops@initech.example",
+        "client_type": "enterprise",
+        "contact_phone": "+12025550199",
+        "address": "7 Factory Way, Berlin DE"
+    }
 }
 
-# 5) set_incident_priority — update  (was prioritize_incident)
-SET_INCIDENT_PRIORITY_TASK = {
-    "task_id": "if3_task_005",
-    "description": "Set incident priority to high with justification",
-    "function": "set_incident_priority",
-    "parameters": {
-        "incident_id": "2003",
-        "priority": "high",
-        "justification": "Affects most end users; business-critical service impact."
-    },
-    "expected_result": "{\"incident_id\": \"2003\", \"priority\": \"high\", \"success\": true}"
+# 5) enlist_user (SET)
+ENLIST_USER = {
+    "task_id": "T305",
+    "function": "enlist_user",
+    "params": {
+        "name": "Ava Johnson",
+        "email": "ava.johnson@initech.example",
+        "role": "technical_support",
+        "timezone": "Europe/Berlin",
+        "client_id": "3"
+    }
 }
 
-# 6) dispatch_incident — update + create (communication)  (was assign_incident)
-DISPATCH_INCIDENT_TASK = {
-    "task_id": "if3_task_006",
-    "description": "Assign the incident to L2 and acknowledge",
-    "function": "dispatch_incident",
-    "parameters": {
-        "incident_id": "2004",
-        "assigned_team": "L2",
-        "responder_user_id": "205",
-        "communication_message": "Incident acknowledged by L2. Investigation started."
-    },
-    "expected_result": "{\"incident_id\": \"2004\", \"status\": \"in_progress\", \"assigned_team\": \"L2\", \"success\": true}"
+# 6) enroll_vendor (SET)
+ENROLL_VENDOR = {
+    "task_id": "T306",
+    "function": "enroll_vendor",
+    "params": {
+        "vendor_name": "CloudArc Partners",
+        "contact_email": "support@cloudarc.example",
+        "contact_phone": "+13125550900",
+        "vendor_type": "cloud_service_provider"
+    }
 }
 
-# 7) log_diagnosis_workaround — update  (was record_diagnosis_workaround)
-LOG_DIAGNOSIS_WORKAROUND_TASK = {
-    "task_id": "if3_task_007",
-    "description": "Record diagnostic steps and temporary workaround",
-    "function": "log_diagnosis_workaround",
-    "parameters": {
-        "incident_id": "2005",
-        "diagnostic_steps_summary": "Checked MX-2 queues; identified burst traffic from misconfigured agent.",
-        "workaround_applied": True,
-        "responder_user_id": "205",
-        "workaround_details": "Throttled offending agent; reduced inbound queue size."
-    },
-    "expected_result": "Incident updated with diagnosis and workaround details"
+# 7) catalog_product (SET)
+CATALOG_PRODUCT = {
+    "task_id": "T307",
+    "function": "catalog_product",
+    "params": {
+        "product_name": "DataBridge",
+        "product_type": "data_integration",
+        "version": "4.2.1",
+        "vendor_id": "3"
+    }
 }
 
-# 8) advance_incident — update  (was escalate_incident)
-ADVANCE_INCIDENT_TASK = {
-    "task_id": "if3_task_008",
-    "description": "Escalate incident to L3 specialists",
-    "function": "advance_incident",
-    "parameters": {
-        "incident_id": "2006",
-        "escalated_to": "L3",
-        "reason_for_escalation": "Deep mail routing logic issue suspected.",
-        "escalated_by_user_id": "205"
-    },
-    "expected_result": "{\"incident_id\": \"2006\", \"status\": \"escalated\", \"escalated_to\": \"L3\", \"success\": true}"
+# 8) catalog_component (SET)
+CATALOG_COMPONENT = {
+    "task_id": "T308",
+    "function": "catalog_component",
+    "params": {
+        "product_id": "3",
+        "component_name": "databridge-api-eu",
+        "component_type": "api_endpoint",
+        "environment": "production",
+        "location": "eu-central-1",
+        "ports": "443",
+        "status": "online"
+    }
 }
 
-# 9) register_vendor_engagement — create/update  (was create_vendor_engagement)
-REGISTER_VENDOR_ENGAGEMENT_TASK = {
-    "task_id": "if3_task_009",
-    "description": "Engage vendor via portal and mark incident pending_vendor",
-    "function": "register_vendor_engagement",
-    "parameters": {
-        "incident_id": "2007",
-        "vendor_name": "MailCloud Inc.",
-        "contact_method": "vendor_portal",
-        "vendor_ticket_reference": "MC-CASE-8891",
-        "initiated_by_user_id": "310"
-    },
-    "expected_result": "{\"incident_id\": \"2007\", \"vendor_engagement_id\": <str>, \"status\": \"pending_vendor\", \"success\": true}"
+# 9) initiate_subscription (SET)
+INITIATE_SUBSCRIPTION = {
+    "task_id": "T309",
+    "function": "initiate_subscription",
+    "params": {
+        "client_id": "3",
+        "product_id": "3",
+        "subscription_type": "full_service",
+        "service_level_tier": "premium",
+        "start_date": "2025-03-01",
+        "end_date": None,
+        "recovery_objectives": "RTO 4h / RPO 15m"
+    }
 }
 
-# 10) connect_change_to_incident — update  (was link_change_to_incident)
-CONNECT_CHANGE_TO_INCIDENT_TASK = {
-    "task_id": "if3_task_010",
-    "description": "Record a change coordination reference for the incident",
-    "function": "connect_change_to_incident",
-    "parameters": {
-        "incident_id": "2008",
-        "change_summary": "Reconfigure MX-2 routing policy and deploy hotfix.",
-        "requested_by": "change_mgmt",
-        "approval_record_id": "A-555"
-    },
-    "expected_result": "{\"incident_id\": \"2008\", \"change_link_id\": <str>, \"success\": true}"
+# 10) establish_sla (SET)
+ESTABLISH_SLA = {
+    "task_id": "T310",
+    "function": "establish_sla",
+    "params": {
+        "subscription_id": "3",
+        "severity_level": "P1",
+        "response_time_minutes": 30,
+        "resolution_time_hours": 8,
+        "availability_target": 99.9
+    }
 }
 
-# 11) rectify_incident — update  (was resolve_incident)
-RECTIFY_INCIDENT_TASK = {
-    "task_id": "if3_task_011",
-    "description": "Resolve the incident after permanent fix",
-    "function": "rectify_incident",
-    "parameters": {
-        "incident_id": "2009",
-        "resolution_summary": "Applied configuration hotfix; queues normalized.",
-        "resolved_by_user_id": "401",
-        "resolution_timestamp": "2025-10-01T01:45:00"
-    },
-    "expected_result": "{\"incident_id\": \"2009\", \"status\": \"resolved\", \"success\": true}"
+# 11) file_incident (SET)
+FILE_INCIDENT = {
+    "task_id": "T311",
+    "function": "file_incident",
+    "params": {
+        "reporter_id": "5",
+        "client_id": "3",
+        "title": "Database connection saturation",
+        "description": "Pool exhaustion under peak load",
+        "category": "database_issue",
+        "severity": "P2",
+        "impact_level": "high",
+        "component_id": "3"
+    }
 }
 
-# 12) log_incident_communication — create  (was add_incident_communication)
-LOG_INCIDENT_COMMUNICATION_TASK = {
-    "task_id": "if3_task_012",
-    "description": "Post a stakeholder update on incident progress",
-    "function": "log_incident_communication",
-    "parameters": {
-        "incident_id": "2010",
-        "message_text": "Root cause identified; mitigation in progress. Next update in 30 minutes.",
-        "recipients_group": "stakeholders",
-        "sent_by_user_id": "205"
-    },
-    "expected_result": "{\"communication_id\": <str>, \"incident_id\": \"2010\", \"success\": true}"
+# 12) capture_communication (SET)
+CAPTURE_COMMUNICATION = {
+    "task_id": "T312",
+    "function": "capture_communication",
+    "params": {
+        "incident_id": "3",
+        "sender_user": "5",
+        "recipient": "client_contact",
+        "delivery_method": "email",
+        "message_content": "We are scaling DB nodes. Next update in 20 minutes."
+    }
 }
 
-# 13) conclude_incident — update  (was close_incident)
-CONCLUDE_INCIDENT_TASK = {
-    "task_id": "if3_task_013",
-    "description": "Close a resolved incident with closure notes",
+# 13) deploy_workaround (SET)
+DEPLOY_WORKAROUND = {
+    "task_id": "T313",
+    "function": "deploy_workaround",
+    "params": {
+        "incident_id": "3",
+        "description": "Increase pool size and enable circuit breaker",
+        "effectiveness": "partially_effective",
+        "implemented_by": "5"
+    }
+}
+
+# 14) launch_rca (SET)
+LAUNCH_RCA = {
+    "task_id": "T314",
+    "function": "launch_rca",
+    "params": {
+        "incident_id": "3",
+        "analysis_method": "five_whys",
+        "assigned_to": "6"
+    }
+}
+
+# 15) initiate_escalation (SET)
+INITIATE_ESCALATION = {
+    "task_id": "T315",
+    "function": "initiate_escalation",
+    "params": {
+        "incident_id": "3",
+        "target_user": "7",
+        "reason": "severity_increase",
+        "requested_by": "5",
+        "escalation_level": "management"
+    }
+}
+
+# 16) raise_change_request (SET)
+RAISE_CHANGE_REQUEST = {
+    "task_id": "T316",
+    "function": "raise_change_request",
+    "params": {
+        "change_title": "Increase DB connection limits and add autoscaling",
+        "change_type": "standard",
+        "risk_level": "high",
+        "requested_by": "5",
+        "incident_id": "3"
+    }
+}
+
+# 17) request_rollback (SET)
+REQUEST_ROLLBACK = {
+    "task_id": "T317",
+    "function": "request_rollback",
+    "params": {
+        "change_id": "3",
+        "justification": "New settings cause lock contention",
+        "requested_by": "5",
+        "incident_id": "3"
+    }
+}
+
+# 18) capture_metric (SET)
+CAPTURE_METRIC = {
+    "task_id": "T318",
+    "function": "capture_metric",
+    "params": {
+        "incident_id": "3",
+        "metric_type": "mean_time_to_detect",
+        "calculated_value_minutes": 12,
+        "target_minutes": 15
+    }
+}
+
+# 19) compose_incident_report (SET)
+COMPOSE_INCIDENT_REPORT = {
+    "task_id": "T319",
+    "function": "compose_incident_report",
+    "params": {
+        "incident_id": "3",
+        "report_type": "executive_summary",
+        "generated_by": "5"
+    }
+}
+
+# 20) author_kb_article (SET)
+AUTHOR_KB_ARTICLE = {
+    "task_id": "T320",
+    "function": "author_kb_article",
+    "params": {
+        "title": "DB Connection Saturation Playbook",
+        "content_type": "resolution_steps",
+        "category": "incident_resolution",
+        "author_id": "5",
+        "incident_id": "3",
+        "reviewer_user_id": "7"
+    }
+}
+
+# 21) arrange_post_incident_review (SET)
+ARRANGE_POST_INCIDENT_REVIEW = {
+    "task_id": "T321",
+    "function": "arrange_post_incident_review",
+    "params": {
+        "incident_id": "3",
+        "scheduled_date": "2025-12-10",
+        "facilitator_user_id": "5"
+    }
+}
+
+# 22) amend_client (SET - update)
+AMEND_CLIENT = {
+    "task_id": "T322",
+    "function": "amend_client",
+    "params": {
+        "client_id": "3",
+        "changes": {"status": "active", "address": "8 Factory Way, Berlin"},
+        "requester_id": "5"
+    }
+}
+
+# 23) amend_user_permissions (SET - update)
+AMEND_USER_PERMISSIONS = {
+    "task_id": "T323",
+    "function": "amend_user_permissions",
+    "params": {
+        "user_id": "7",
+        "requested_changes": {"role": "incident_manager", "status": "active"},
+        "modified_by": "5"
+    }
+}
+
+# 24) amend_product (SET - update)
+AMEND_PRODUCT = {
+    "task_id": "T324",
+    "function": "amend_product",
+    "params": {
+        "product_id": "3",
+        "changes": {"version": "4.2.2", "status": "active"}
+    }
+}
+
+# 25) amend_component (SET - update)
+AMEND_COMPONENT = {
+    "task_id": "T325",
+    "function": "amend_component",
+    "params": {
+        "component_id": "3",
+        "changes": {"status": "maintenance", "environment": "staging"}
+    }
+}
+
+# 26) amend_subscription (SET - update)
+AMEND_SUBSCRIPTION = {
+    "task_id": "T326",
+    "function": "amend_subscription",
+    "params": {
+        "subscription_id": "3",
+        "changes": {"service_level_tier": "premium", "rto_hours": 4}
+    }
+}
+
+# 27) amend_sla (SET - update)
+AMEND_SLA = {
+    "task_id": "T327",
+    "function": "amend_sla",
+    "params": {
+        "sla_id": "3",
+        "changes": {"response_time_minutes": 20, "status": "active"}
+    }
+}
+
+# 28) amend_incident (SET - update)
+AMEND_INCIDENT = {
+    "task_id": "T328",
+    "function": "amend_incident",
+    "params": {
+        "incident_id": "3",
+        "new_status": "in_progress",
+        "field_updates": {"assigned_manager_id": "5", "severity": "P2"},
+        "updated_by": "5"
+    }
+}
+
+# 29) amend_escalation (SET - update)
+AMEND_ESCALATION = {
+    "task_id": "T329",
+    "function": "amend_escalation",
+    "params": {
+        "escalation_id": "3",
+        "changes": {"status": "acknowledged", "acknowledged_at": "2025-10-02T01:10:00"}
+    }
+}
+
+# 30) amend_change_request (SET - update)
+AMEND_CHANGE_REQUEST = {
+    "task_id": "T330",
+    "function": "amend_change_request",
+    "params": {
+        "change_id": "3",
+        "changes": {"status": "scheduled", "scheduled_start": "2025-10-05T02:00:00"}
+    }
+}
+
+# 31) amend_rollback_request (SET - update)
+AMEND_ROLLBACK_REQUEST = {
+    "task_id": "T331",
+    "function": "amend_rollback_request",
+    "params": {
+        "rollback_id": "3",
+        "changes": {"status": "in_progress", "approved_by_id": "7"}
+    }
+}
+
+# 32) amend_rca (SET - update)
+AMEND_RCA = {
+    "task_id": "T332",
+    "function": "amend_rca",
+    "params": {
+        "rca_id": "3",
+        "changes": {"status": "approved", "summary": "Connection pool tuning resolved saturation"}
+    }
+}
+
+# 33) amend_communication (SET - update)
+AMEND_COMMUNICATION = {
+    "task_id": "T333",
+    "function": "amend_communication",
+    "params": {
+        "communication_id": "3",
+        "changes": {"delivery_status": "sent", "sent_at": "2025-10-02T00:30:00"}
+    }
+}
+
+# 34) amend_kb_article (SET - update)
+AMEND_KB_ARTICLE = {
+    "task_id": "T334",
+    "function": "amend_kb_article",
+    "params": {
+        "article_id": "3",
+        "changes": {"status": "published", "reviewer_user_id": "7"}
+    }
+}
+
+# 35) amend_post_incident_review (SET - update)
+AMEND_POST_INCIDENT_REVIEW = {
+    "task_id": "T335",
+    "function": "amend_post_incident_review",
+    "params": {
+        "pir_id": "3",
+        "changes": {"status": "in_progress", "scheduled_date": "2025-12-11"}
+    }
+}
+
+# 36) set_incident_resolved (SET - resolve)
+SET_INCIDENT_RESOLVED = {
+    "task_id": "T336",
+    "function": "set_incident_resolved",
+    "params": {
+        "incident_id": "3",
+        "resolved_by": "5",
+        "resolution_summary": "Autoscaling and pool tuning stabilized DB"
+    }
+}
+
+# 37) conclude_incident (SET - close)
+CONCLUDE_INCIDENT = {
+    "task_id": "T337",
     "function": "conclude_incident",
-    "parameters": {
-        "incident_id": "2011",
-        "closed_by_user_id": "102",
-        "closure_notes": "Monitored for 2 hours; stable with normal latency."
-    },
-    "expected_result": "{\"incident_id\": \"2011\", \"status\": \"closed\", \"success\": true}"
+    "params": {
+        "incident_id": "3",
+        "closed_by": "5"
+    }
 }
 
-# 14) start_post_incident_review — create  (was create_post_incident_review)
-START_POST_INCIDENT_REVIEW_TASK = {
-    "task_id": "if3_task_014",
-    "description": "Create a PIR for a high-priority incident",
-    "function": "start_post_incident_review",
-    "parameters": {
-        "incident_id": "2012",
-        "review_notes": "Timeline captured; contributing factors include misconfigured agent.",
-        "conducted_by_user_id": "100"
-    },
-    "expected_result": "{\"review_id\": <str>, \"incident_id\": \"2012\", \"success\": true}"
+# 38) determine_severity (SET - compute/helper)
+DETERMINE_SEVERITY = {
+    "task_id": "T338",
+    "function": "determine_severity",
+    "params": {
+        "complete_outage": False,
+        "client_count_impacted": 5,
+        "has_workaround": True,
+        "regulatory_or_financial_impact": False,
+        "is_priority_client": True
+    }
 }
 
-# 15) update_kb_with_incident — create/update  (was update_knowledge_base_from_incident)
-UPDATE_KB_WITH_INCIDENT_TASK = {
-    "task_id": "if3_task_015",
-    "description": "Publish KB update with resolution and preventive actions",
-    "function": "update_kb_with_incident",
-    "parameters": {
-        "incident_id": "2013",
-        "kb_update_notes": "Add MX queue monitoring threshold and agent config validation checklist.",
-        "submitted_by_user_id": "100"
-    },
-    "expected_result": "{\"kb_entry_id\": <str>, \"linked_incident_id\": \"2013\", \"success\": true}"
-}
-
-# 16) create_incident_from_alert — create  (was create_incident_from_monitoring_event)
-CREATE_INCIDENT_FROM_ALERT_TASK = {
-    "task_id": "if3_task_016",
-    "description": "Create an incident from an existing monitoring event",
-    "function": "create_incident_from_alert",
-    "parameters": {
-        "monitoring_event_id": "EVT-9001",
-        "detected_service": "3002",
-        "alert_details": "CPU utilization sustained over 95% for 10 minutes."
-    },
-    "expected_result": "{\"incident_id\": <str>, \"source\": \"monitoring\", \"status\": \"open\", \"success\": true}"
-}
-
-# 17) document_tool_usage — create  (was record_tool_usage)
-DOCUMENT_TOOL_USAGE_TASK = {
-    "task_id": "if3_task_017",
-    "description": "Log the use of an AIOps correlation run on an incident",
-    "function": "document_tool_usage",
-    "parameters": {
-        "incident_id": "2014",
-        "tool_used": "AIOps",
-        "action_summary": "Correlated spikes to deployment window; suggested rollback.",
-        "executed_by": "205"
-    },
-    "expected_result": "{\"tool_use_id\": <str>, \"incident_id\": \"2014\", \"success\": true}"
-}
-
-# 18) document_incident_simulation — create  (was record_incident_simulation)
-DOCUMENT_INCIDENT_SIMULATION_TASK = {
-    "task_id": "if3_task_018",
-    "description": "Record a simulated incident drill for the core email service",
-    "function": "document_incident_simulation",
-    "parameters": {
-        "scenario_name": "Email outage tabletop",
-        "simulated_by_user_id": "100",
-        "scope": "email_service"
-    },
-    "expected_result": "{\"simulation_id\": <str>, \"success\": true}"
-}
-
-# 19) register_problem — create  (was problem_create)
-REGISTER_PROBLEM_TASK = {
-    "task_id": "if3_task_019",
-    "description": "Create a problem for recurring MX queue backlogs",
-    "function": "register_problem",
-    "parameters": {
-        "problem_title": "Recurring MX queue backlog",
-        "description": "Multiple incidents with queue saturation during peak hours.",
-        "detection_source": "monitoring_tool",
-        "created_by_user_id": "401",
-        "related_incident_ids": ["2005", "2007"]
-    },
-    "expected_result": "{\"problem_id\": <str>, \"status\": \"open\", \"success\": true}"
-}
-
-# 20) amend_problem — update  (was problem_update)
-AMEND_PROBLEM_TASK = {
-    "task_id": "if3_task_020",
-    "description": "Update a problem with refined scope and assignee",
-    "function": "amend_problem",
-    "parameters": {
-        "problem_id": "P-3001",
-        "change_set": {
-            "title": "MX backlog root cause analysis",
-            "description": "Narrowed to policy engine during peak retries.",
-            "assignee_user_id": "405",
-            "priority": "high"
-        },
-        "updated_by_user_id": "401"
-    },
-    "expected_result": "{\"problem_id\": \"P-3001\", \"success\": true}"
-}
-
-# 21) connect_incident_to_problem — update  (was problem_link_incident)
-CONNECT_INCIDENT_TO_PROBLEM_TASK = {
-    "task_id": "if3_task_021",
-    "description": "Link an incident to an existing problem",
-    "function": "connect_incident_to_problem",
-    "parameters": {
-        "problem_id": "P-3001",
-        "incident_id": "2015",
-        "linked_by_user_id": "405"
-    },
-    "expected_result": "{\"problem_id\": \"P-3001\", \"incident_id\": \"2015\", \"success\": true}"
-}
-
-# 22) document_problem_workaround — update  (was problem_add_workaround)
-DOCUMENT_PROBLEM_WORKAROUND_TASK = {
-    "task_id": "if3_task_022",
-    "description": "Add a workaround to the problem and publish to KB",
-    "function": "document_problem_workaround",
-    "parameters": {
-        "problem_id": "P-3002",
-        "workaround_summary": "Temporarily reduce retry rate; auto-drain queues nightly.",
-        "added_by_user_id": "405"
-    },
-    "expected_result": "{\"problem_id\": \"P-3002\", \"status\": \"workaround_available\", \"kb_link_id\": <str>, \"success\": true}"
-}
-
-# 23) rectify_problem — update  (was problem_resolve)
-RECTIFY_PROBLEM_TASK = {
-    "task_id": "if3_task_023",
-    "description": "Resolve the problem with a validated permanent fix",
-    "function": "rectify_problem",
-    "parameters": {
-        "problem_id": "P-3003",
-        "permanent_fix_summary": "Policy engine patch v2.1; adaptive retry backoff.",
-        "validation_evidence": "Post-patch monitoring shows stable queues over 7 days.",
-        "resolved_by_user_id": "405"
-    },
-    "expected_result": "{\"problem_id\": \"P-3003\", \"status\": \"resolved\", \"success\": true}"
-}
-
-# 24) conclude_problem — update  (was problem_close)
-CONCLUDE_PROBLEM_TASK = {
-    "task_id": "if3_task_024",
-    "description": "Close a resolved problem after stability window",
-    "function": "conclude_problem",
-    "parameters": {
-        "problem_id": "P-3003",
-        "closed_by_user_id": "100",
-        "closure_notes": "Stable over 14 days; no reoccurrences."
-    },
-    "expected_result": "{\"problem_id\": \"P-3003\", \"status\": \"closed\", \"success\": true}"
-}
-
-# 25) record_audit_entry — create  (was audit_log_action)
-RECORD_AUDIT_ENTRY_TASK = {
-    "task_id": "if3_task_025",
-    "description": "Write an audit entry for an update action on an incident",
-    "function": "record_audit_entry",
-    "parameters": {
-        "user_id": "205",
+# 39) record_audit_trail (SET - log)
+RECORD_AUDIT_TRAIL = {
+    "task_id": "T339",
+    "function": "record_audit_trail",
+    "params": {
+        "user_id": "5",
         "action": "update",
         "reference_type": "incident",
-        "reference_id": "2004",
-        "meta": "Changed priority from medium to high"
-    },
-    "expected_result": "{\"audit_id\": <str>, \"success\": true}"
+        "reference_id": "3",
+        "field_name": "status",
+        "old_value": "in_progress",
+        "new_value": "resolved"
+    }
 }
 
-# 26) retrieve_incident — read  (was get_incident)
-RETRIEVE_INCIDENT_TASK = {
-    "task_id": "if3_task_026",
-    "description": "Read a single incident by ID",
+# 40) handoff_to_human (SET - control)
+HANDOFF_TO_HUMAN = {
+    "task_id": "T340",
+    "function": "handoff_to_human",
+    "params": {
+        "reason_code": "policy_exception",
+        "details": "Approval missing from executive for emergency rollback"
+    }
+}
+
+# 41) retrieve_incident (GET)
+RETRIEVE_INCIDENT = {
+    "task_id": "T341",
     "function": "retrieve_incident",
-    "parameters": {
-        "incident_id": "2016"
-    },
-    "expected_result": "Incident object including status, priority, category, assignments"
+    "params": {
+        "incident_id": "3"
+    }
 }
 
-# 27) browse_incidents — read  (was list_incidents)
-BROWSE_INCIDENTS_TASK = {
-    "task_id": "if3_task_027",
-    "description": "List open high-priority software incidents for dashboards",
-    "function": "browse_incidents",
-    "parameters": {
-        "status": "open",
-        "priority": "high",
-        "category": "software",
-        "assigned_team": "L2",
-        "affected_service": "3001",
-        "created_since": "2025-09-20T00:00:00"
-    },
-    "expected_result": "Array of incident summaries matching the filters"
+# 42) retrieve_event_records (GET)
+RETRIEVE_EVENT_RECORDS = {
+    "task_id": "T342",
+    "function": "retrieve_event_records",
+    "params": {
+        "source": "alert_log",
+        "severity_hint": "P2"
+    }
 }
 
-# 28) retrieve_problem — read  (was get_problem)
-RETRIEVE_PROBLEM_TASK = {
-    "task_id": "if3_task_028",
-    "description": "Fetch a problem by ID with linked incidents",
-    "function": "retrieve_problem",
-    "parameters": {
-        "problem_id": "P-3001"
-    },
-    "expected_result": "Problem object with status and related links"
+# 43) retrieve_escalations (GET)
+RETRIEVE_ESCALATIONS = {
+    "task_id": "T343",
+    "function": "retrieve_escalations",
+    "params": {
+        "incident_id": "3",
+        "status": "acknowledged"
+    }
 }
 
-# 29) retrieve_incident_communications — read  (was list_communications)
-RETRIEVE_INCIDENT_COMMUNICATIONS_TASK = {
-    "task_id": "if3_task_029",
-    "description": "Retrieve all communications for an incident",
-    "function": "retrieve_incident_communications",
-    "parameters": {
-        "incident_id": "2010"
-    },
-    "expected_result": "Array of communication records for the incident"
+# 44) retrieve_communications (GET)
+RETRIEVE_COMMUNICATIONS = {
+    "task_id": "T344",
+    "function": "retrieve_communications",
+    "params": {
+        "incident_id": "3",
+        "delivery_status": "sent"
+    }
 }
 
+# 45) retrieve_kb_articles (GET)
+RETRIEVE_KB_ARTICLES = {
+    "task_id": "T345",
+    "function": "retrieve_kb_articles",
+    "params": {
+        "category": "incident_resolution",
+        "status": "published"
+    }
+}
+
+# 46) validate_approval (GET)
+VALIDATE_APPROVAL = {
+    "task_id": "T346",
+    "function": "validate_approval",
+    "params": {
+        "reference_type": "change_request",
+        "reference_id": "3",
+        "requested_action": "schedule",
+        "approver_id": "7"
+    }
+}
 
 # All tasks for Interface 3 (synonym API names)
 INTERFACE_3_TASKS = [
-    SEARCH_ENTITIES_TASK,
-    INITIATE_INCIDENT_TASK,
-    DOCUMENT_INCIDENT_DETAILS_TASK,
-    ASSIGN_INCIDENT_CATEGORY_TASK,
-    SET_INCIDENT_PRIORITY_TASK,
-    DISPATCH_INCIDENT_TASK,
-    LOG_DIAGNOSIS_WORKAROUND_TASK,
-    ADVANCE_INCIDENT_TASK,
-    REGISTER_VENDOR_ENGAGEMENT_TASK,
-    CONNECT_CHANGE_TO_INCIDENT_TASK,
-    RECTIFY_INCIDENT_TASK,
-    LOG_INCIDENT_COMMUNICATION_TASK,
-    CONCLUDE_INCIDENT_TASK,
-    START_POST_INCIDENT_REVIEW_TASK,
-    UPDATE_KB_WITH_INCIDENT_TASK,
-    CREATE_INCIDENT_FROM_ALERT_TASK,
-    DOCUMENT_TOOL_USAGE_TASK,
-    DOCUMENT_INCIDENT_SIMULATION_TASK,
-    REGISTER_PROBLEM_TASK,
-    AMEND_PROBLEM_TASK,
-    CONNECT_INCIDENT_TO_PROBLEM_TASK,
-    DOCUMENT_PROBLEM_WORKAROUND_TASK,
-    RECTIFY_PROBLEM_TASK,
-    CONCLUDE_PROBLEM_TASK,
-    RECORD_AUDIT_ENTRY_TASK,
-    RETRIEVE_INCIDENT_TASK,
-    BROWSE_INCIDENTS_TASK,
-    RETRIEVE_PROBLEM_TASK,
-    RETRIEVE_INCIDENT_COMMUNICATIONS_TASK,
+    LOCATE_ENTITIES,
+    APPEND_EVENT_RECORD,
+    LINK_EVENTS_ONCE,
+    ENROLL_CLIENT,
+    ENLIST_USER,
+    ENROLL_VENDOR,
+    CATALOG_PRODUCT,
+    CATALOG_COMPONENT,
+    INITIATE_SUBSCRIPTION,
+    ESTABLISH_SLA,
+    FILE_INCIDENT,
+    CAPTURE_COMMUNICATION,
+    DEPLOY_WORKAROUND,
+    LAUNCH_RCA,
+    INITIATE_ESCALATION,
+    RAISE_CHANGE_REQUEST,
+    REQUEST_ROLLBACK,
+    CAPTURE_METRIC,
+    COMPOSE_INCIDENT_REPORT,
+    AUTHOR_KB_ARTICLE,
+    ARRANGE_POST_INCIDENT_REVIEW,
+    AMEND_CLIENT,
+    AMEND_USER_PERMISSIONS,
+    AMEND_PRODUCT,
+    AMEND_COMPONENT,
+    AMEND_SUBSCRIPTION,
+    AMEND_SLA,
+    AMEND_INCIDENT,
+    AMEND_ESCALATION,
+    AMEND_CHANGE_REQUEST,
+    AMEND_ROLLBACK_REQUEST,
+    AMEND_RCA,
+    AMEND_COMMUNICATION,
+    AMEND_KB_ARTICLE,
+    AMEND_POST_INCIDENT_REVIEW,
+    SET_INCIDENT_RESOLVED,
+    CONCLUDE_INCIDENT,
+    DETERMINE_SEVERITY,
+    RECORD_AUDIT_TRAIL,
+    HANDOFF_TO_HUMAN,
+    RETRIEVE_INCIDENT,
+    RETRIEVE_EVENT_RECORDS,
+    RETRIEVE_ESCALATIONS,
+    RETRIEVE_COMMUNICATIONS,
+    RETRIEVE_KB_ARTICLES,
+    VALIDATE_APPROVAL,
 ]
 
 
